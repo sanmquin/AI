@@ -16,3 +16,10 @@ To make the common subscription matrix reusable across notebooks and repositorie
    `from google.colab import drive; drive.mount('/content/drive')`
 2. Read artifacts from:
    `/content/drive/MyDrive/finder_artifacts/common_subscription_matrix/`
+
+## Embeddings distance graph artifacts (Google Drive)
+
+`src/Graphiko/Embeddings-Graph.ipynb` writes semantic embedding graph outputs to:
+
+- `/content/drive/MyDrive/Graphiko/embeddings_distance_graph/distance_graph_directed_normalized.csv`
+- `/content/drive/MyDrive/Graphiko/embeddings_distance_graph/channel_embeddings_pca.csv`
