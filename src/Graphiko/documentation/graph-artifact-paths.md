@@ -70,7 +70,7 @@ Derived from the subscription overlap graph using:
 1. Load/fetch channel-description embeddings from Pinecone (`ChannelDescriptions` namespace).
 2. Reduce embedding vectors with PCA.
 3. Compute Euclidean pairwise distances.
-4. Normalize each row by row maximum value.
+4. Normalize each row by row sum so outbound distances sum to `1` (when row sum > 0).
 5. Set diagonal to `0` and export as adjacency matrix.
 
 ### Usage notes

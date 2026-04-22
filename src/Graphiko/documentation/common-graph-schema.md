@@ -54,7 +54,7 @@ The schema is shared, but weight meaning depends on `graph_kind`:
   - Undirected overlap matrix where weight(i,j) = count of shared subscription owners.
 - `subscriptions_normalized_inverse_overlap_distance`
   - Directed matrix derived from overlap via inverse-overlap + row normalization.
-- `embeddings_pca_euclidean_rowmax_normalized_distance`
-  - Directed matrix derived from channel-description embeddings via PCA + Euclidean distance + row-max normalization.
+- `embeddings_pca_euclidean_rowsum_normalized_distance`
+  - Directed matrix derived from channel-description embeddings via PCA + Euclidean distance + row-sum normalization (row-stochastic).
 
 Consumers must always inspect `metadata.json` to interpret edge weights.
