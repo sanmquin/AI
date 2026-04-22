@@ -11,6 +11,9 @@ To make the common subscription matrix reusable across notebooks and repositorie
 - `/content/drive/MyDrive/finder_artifacts/common_subscription_matrix/normalized_distance_matrix.csv`
 - `/content/drive/MyDrive/finder_artifacts/common_subscription_matrix/normalized_distance_edges.csv`
 
+> Deprecated for graph-comparison workflows: use Graphiko schema exports under
+> `/content/drive/MyDrive/Graphiko/graphs/.../latest/adjacency_matrix.csv`.
+
 ### Reuse from any notebook
 1. Mount Google Drive in Colab:
    `from google.colab import drive; drive.mount('/content/drive')`
@@ -21,12 +24,16 @@ To make the common subscription matrix reusable across notebooks and repositorie
 
 `src/Graphiko/Embeddings-Graph.ipynb` writes semantic embedding graph outputs to:
 
-- `/content/drive/MyDrive/Graphiko/embeddings_distance_graph/distance_graph_directed_normalized.csv`
-- `/content/drive/MyDrive/Graphiko/embeddings_distance_graph/channel_embeddings_pca.csv`
+- `/content/drive/MyDrive/Graphiko/graphs/embeddings_distance/latest/adjacency_matrix.csv`
+- `/content/drive/MyDrive/Graphiko/graphs/embeddings_distance/latest/channel_embeddings_pca.csv`
+- `/content/drive/MyDrive/Graphiko/graphs/embeddings_distance/latest/metadata.json`
+
+> Deprecated path (old export format, often edge-list and not square):
+> `/content/drive/MyDrive/Graphiko/embeddings_distance_graph/distance_graph_directed_normalized.csv`
 
 ## Graph similarity analysis notebook (embeddings vs subscriptions)
 
-Use `src/analysis/graph_similarity_analysis.ipynb` to compare the semantic embeddings graph
+Use `src/Graphiko/graph_similarity_analysis.ipynb` to compare the semantic embeddings graph
 against the subscriptions graph.
 
 The notebook provides:
@@ -39,7 +46,7 @@ The notebook provides:
 
 Open and execute:
 
-- `src/analysis/graph_similarity_analysis.ipynb`
+- `src/Graphiko/graph_similarity_analysis.ipynb`
 
 Then set:
 
@@ -49,6 +56,11 @@ Then set:
 - `DISTANCE_TO_SIMILARITY`
 
 and run the analysis cells.
+
+### Default graph inputs (recommended)
+
+- `EMBEDDINGS_DRIVE_SOURCE=/content/drive/MyDrive/Graphiko/graphs/embeddings_distance/latest/adjacency_matrix.csv`
+- `SUBSCRIPTIONS_DRIVE_SOURCE=/content/drive/MyDrive/Graphiko/graphs/subscriptions_normalized_distance/latest/adjacency_matrix.csv`
 
 ### Output artifacts
 
