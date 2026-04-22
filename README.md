@@ -23,3 +23,45 @@ To make the common subscription matrix reusable across notebooks and repositorie
 
 - `/content/drive/MyDrive/Graphiko/embeddings_distance_graph/distance_graph_directed_normalized.csv`
 - `/content/drive/MyDrive/Graphiko/embeddings_distance_graph/channel_embeddings_pca.csv`
+
+## Graph similarity analysis notebook (embeddings vs subscriptions)
+
+Use `src/analysis/graph_similarity_analysis.ipynb` to compare the semantic embeddings graph
+against the subscriptions graph.
+
+The notebook provides:
+
+- **Numerical outputs**: Pearson/Spearman correlation, cosine similarity, RMSE/MAE,
+  edge-overlap Jaccard, Mantel permutation test, and QAP-style permutation test.
+- **Visual outputs**: side-by-side heatmaps, difference heatmap, and edge-weight scatter.
+
+### Run
+
+Open and execute:
+
+- `src/analysis/graph_similarity_analysis.ipynb`
+
+Then set:
+
+- `EMBEDDINGS_CSV`
+- `SUBSCRIPTIONS_CSV`
+- `OUTPUT_DIR`
+- `DISTANCE_TO_SIMILARITY`
+
+and run the analysis cells.
+
+### Output artifacts
+
+- `outputs/graph_similarity/similarity_metrics.json`
+- `outputs/graph_similarity/similarity_metrics.csv`
+- `outputs/graph_similarity/heatmaps_side_by_side.png`
+- `outputs/graph_similarity/difference_heatmap.png`
+- `outputs/graph_similarity/edge_weight_scatter.png`
+- `outputs/graph_similarity/run_summary.json`
+
+### Scientific references implemented in code
+
+- Mantel, N. (1967). *Cancer Research*.
+- Krackhardt, D. (1987). *Social Networks*.
+- Borgatti, S. P., Everett, M. G., & Johnson, J. C. (2018). *Analyzing Social Networks*.
+- Schieber, T. A., et al. (2017). *Nature Communications*.
