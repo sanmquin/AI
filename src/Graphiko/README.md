@@ -119,6 +119,10 @@ Derived from the subscription overlap graph using:
 
 - Notebook: `src/Graphiko/Embeddings-Graph.ipynb`
 - Root path: `/content/drive/MyDrive/Graphiko/graphs/embeddings_distance/`
+- Recommended matrix input for similarity notebook:
+  - `/content/drive/MyDrive/Graphiko/graphs/embeddings_distance/latest/adjacency_matrix.csv`
+- Deprecated legacy export (old format, may be edge-list and non-square):
+  - `/content/drive/MyDrive/Graphiko/embeddings_distance_graph/distance_graph_directed_normalized.csv`
 - Exports:
   - `latest/nodes.csv`
   - `latest/adjacency_matrix.csv`
