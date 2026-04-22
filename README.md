@@ -24,24 +24,31 @@ To make the common subscription matrix reusable across notebooks and repositorie
 - `/content/drive/MyDrive/Graphiko/embeddings_distance_graph/distance_graph_directed_normalized.csv`
 - `/content/drive/MyDrive/Graphiko/embeddings_distance_graph/channel_embeddings_pca.csv`
 
-## Graph similarity analysis (embeddings vs subscriptions)
+## Graph similarity analysis notebook (embeddings vs subscriptions)
 
-Use `src/analysis/graph_similarity_analysis.py` to compare the semantic embeddings graph
-against the subscription graph with:
+Use `src/analysis/graph_similarity_analysis.ipynb` to compare the semantic embeddings graph
+against the subscriptions graph.
+
+The notebook provides:
 
 - **Numerical outputs**: Pearson/Spearman correlation, cosine similarity, RMSE/MAE,
-  binary edge Jaccard overlap, Mantel permutation test, and QAP-style permutation test.
-- **Visualizations**: side-by-side heatmaps, difference heatmap, and edge-weight scatter/regression.
+  edge-overlap Jaccard, Mantel permutation test, and QAP-style permutation test.
+- **Visual outputs**: side-by-side heatmaps, difference heatmap, and edge-weight scatter.
 
 ### Run
 
-```bash
-python src/analysis/graph_similarity_analysis.py \
-  --embeddings /content/drive/MyDrive/Graphiko/embeddings_distance_graph/distance_graph_directed_normalized.csv \
-  --subscriptions /content/drive/MyDrive/finder_artifacts/common_subscription_matrix/normalized_distance_matrix.csv \
-  --output-dir outputs/graph_similarity \
-  --distance-to-similarity
-```
+Open and execute:
+
+- `src/analysis/graph_similarity_analysis.ipynb`
+
+Then set:
+
+- `EMBEDDINGS_CSV`
+- `SUBSCRIPTIONS_CSV`
+- `OUTPUT_DIR`
+- `DISTANCE_TO_SIMILARITY`
+
+and run the analysis cells.
 
 ### Output artifacts
 
