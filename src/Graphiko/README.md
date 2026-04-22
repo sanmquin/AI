@@ -145,3 +145,10 @@ Derived from the subscription overlap graph using:
 
 - Use this graph for semantic-distance analysis between channel descriptions.
 - Compare against overlap graph to detect audience-vs-content alignment gaps.
+
+## Analysis notebooks
+
+- `src/Graphiko/graph_similarity_analysis.ipynb` compares directed row-normalized distance matrices and exports metrics/plots under `/content/drive/MyDrive/Graphiko/analysis/graph_similarity/`.
+- `src/Graphiko/residual_disagreement_analysis.ipynb` consumes similarity outputs and decomposes disagreement at pair, node, and meso levels under `/content/drive/MyDrive/Graphiko/analysis/residual_disagreement/`.
+
+See `docs/Graphiko/similarity_output_artifacts.md` for the artifact contract and path-level documentation.
