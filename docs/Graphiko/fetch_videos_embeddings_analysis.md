@@ -1,43 +1,39 @@
-# Fetch videos embeddings analysis (business cluster)
+# Fetch business-cluster videos: reduced embedding export
 
 Notebook: `src/Graphiko/Fetch-Business-Cluster-Videos.ipynb`
 
-## What the notebook now does
+## Current notebook scope
 
-1. Connects to MongoDB (`finder`) and discovers the latest `business*` channel-description cluster.
-2. Fetches cluster channels and videos.
-3. Connects to Pinecone index `finder`.
-4. Reuses the **fetch-or-embed** pattern for:
-   - `ChannelDescriptions` namespace (channel descriptions)
-   - `VideoTitles` namespace (video titles)
-5. Computes cosine distance per video title to its channel description embedding.
-6. Computes per-channel summary metrics and correlations of `distance` vs `viewCount`.
-7. Saves artifacts to Google Drive.
+The notebook is now intentionally simplified:
 
-## Drive artifacts
+1. Discover the latest `business*` cluster and fetch its channels/videos.
+2. Build or fetch video-title embeddings from Pinecone (`finder` / `VideoTitles`).
+3. Reduce video embeddings to **20 dimensions** using PCA over the full embedded video set in the run.
+4. Export a single artifact table (no correlation/cluster analysis).
 
-Artifacts are written to:
+## Export artifact path
 
-- `/content/drive/MyDrive/Graphiko/analysis/video_title_to_channel_description_distance/latest/video_distances.csv`
-- `/content/drive/MyDrive/Graphiko/analysis/video_title_to_channel_description_distance/latest/channel_correlations.csv`
-- `/content/drive/MyDrive/Graphiko/analysis/video_title_to_channel_description_distance/latest/summary.json`
+The notebook writes the CSV to:
 
-## Documentation gaps identified in this repo
+- `/content/drive/MyDrive/Graphiko/exports/video_embeddings_reduced/latest/business_cluster_video_embeddings_reduced_20d.csv`
 
-The following details were previously missing or scattered:
+## Export schema
 
-1. **Pinecone namespace convention for this workflow**
-   - This notebook requires both `ChannelDescriptions` and `VideoTitles` namespaces in the `finder` index.
-2. **Reusable fetch-or-embed contract**
-   - Expected behavior (fetch existing vectors first, embed only missing ids, then upsert) was not documented in one place for re-use across notebooks.
-3. **Output artifact schema for video-distance analysis**
-   - The output CSV and summary JSON columns/paths were not previously listed in project docs.
-4. **Interpretation guidance for channel-level correlations**
-   - How to interpret negative/positive `distance vs viewCount` correlations by channel was not documented.
+The CSV contains:
 
-## Interpretation guidance
+- Video identifiers and metadata:
+  - `video_id`
+  - `channel_id`
+  - `video_title`
+- Engagement metrics:
+  - `view_count`
+  - `like_count`
+  - `comment_count`
+- Date fields:
+  - `date_created_1` (from `createdAt`, fallback `created_at`)
+  - `date_created_2` (from `dateCreated`, fallback `insertedAt`)
+  - `date_published` (from `publishedAt`)
+- Reduced embedding columns:
+  - `embedding_reduced_01` ... `embedding_reduced_20`
 
-- Lower cosine distance = video title is more semantically aligned with the channel description.
-- Negative correlation (`distance` vs `viewCount`) indicates more aligned titles are associated with higher views.
-- Positive correlation indicates less aligned titles are associated with higher views.
-- Near-zero correlation indicates weak or no monotonic relationship in that channel.
+If fewer than 20 PCA components are possible (very small sample), remaining reduced columns are included and filled with `NaN` to preserve a stable 20-column embedding schema.
