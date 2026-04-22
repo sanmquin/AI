@@ -77,3 +77,18 @@ and run the analysis cells.
 - Krackhardt, D. (1987). *Social Networks*.
 - Borgatti, S. P., Everett, M. G., & Johnson, J. C. (2018). *Analyzing Social Networks*.
 - Schieber, T. A., et al. (2017). *Nature Communications*.
+
+
+## Video-title vs channel-description embedding analysis
+
+Use `src/Graphiko/Fetch-Business-Cluster-Videos.ipynb` to:
+
+- fetch latest business-cluster channels and videos,
+- fetch-or-embed channel descriptions and video titles in Pinecone,
+- compute per-video cosine distance to channel description embeddings,
+- compute per-channel distance-vs-views correlations,
+- save outputs in Drive at:
+  `/content/drive/MyDrive/Graphiko/analysis/video_title_to_channel_description_distance/latest/`.
+
+Additional details and identified documentation gaps are captured in:
+`docs/Graphiko/fetch_videos_embeddings_analysis.md`.
