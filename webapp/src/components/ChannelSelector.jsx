@@ -8,7 +8,7 @@ function ChannelSelector({ channels, selectedChannel, onSelectChannel }) {
             value={selectedChannel}
             onChange={(e) => onSelectChannel(e.target.value)}
           >
-            <option value="">All Channels</option>
+            <option value="" disabled>Select a channel...</option>
             {channels.map((channel) => (
               <option key={channel} value={channel}>
                 {channel}
