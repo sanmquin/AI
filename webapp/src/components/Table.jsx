@@ -21,7 +21,7 @@ function Table({ data }) {
                   {item.cluster_name}
                 </span>
               </td>
-              <td>{item.view_count.toLocaleString()}</td>
+              <td>{(item.view_count || -1).toLocaleString()}</td>
               <td>
                 <a href={item.video_url} target="_blank" rel="noopener noreferrer">
                   Watch
