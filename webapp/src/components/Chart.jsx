@@ -11,7 +11,7 @@ const CustomTooltip = ({ active, payload }) => {
         <p><strong>{data.video_title}</strong></p>
         <p>Channel: {data.channel_name}</p>
         <p>Cluster: {data.cluster_name}</p>
-        <p>Views: {data.view_count.toLocaleString()}</p>
+        <p>Views: {(data.view_count || 0).toLocaleString()}</p>
       </div>
     );
   }
