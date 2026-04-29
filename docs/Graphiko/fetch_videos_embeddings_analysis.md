@@ -37,3 +37,21 @@ The CSV contains:
   - `embedding_reduced_01` ... `embedding_reduced_20`
 
 If fewer than 20 PCA components are possible (very small sample), remaining reduced columns are included and filled with `NaN` to preserve a stable 20-column embedding schema.
+
+## Clustered 2D JSON export for web applications
+
+Notebook: `src/Graphiko/category_quantization.ipynb`
+
+After per-channel clustering, the notebook produces a web-consumable JSON file that:
+
+- uses the original video rows,
+- replaces the 20D embedding with a 2D embedding (`embedding_2d`), and
+- includes per-video cluster assignments (`cluster_id`, `cluster_name`).
+
+Output path:
+
+- `/content/drive/MyDrive/Graphiko/exports/video_embeddings_clustered/latest/business_cluster_video_embeddings_clustered_2d.json`
+
+Suggested web-app integration path alias (stable pointer):
+
+- `Graphiko/exports/video_embeddings_clustered/latest/business_cluster_video_embeddings_clustered_2d.json`
