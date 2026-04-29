@@ -45,8 +45,22 @@ Notebook: `src/Graphiko/category_quantization.ipynb`
 After per-channel clustering, the notebook produces a web-consumable JSON file that:
 
 - uses the original video rows,
-- replaces the 20D embedding with a 2D embedding (`embedding_2d`), and
-- includes per-video cluster assignments (`cluster_id`, `cluster_name`).
+- replaces the 20D embedding with a 2D embedding (`embedding_2d`),
+- includes per-video cluster assignments (`cluster_id`, `cluster_name`), and
+- carries video-level identifiers/engagement metadata required by the web app, including view counts.
+
+JSON schema per record (stable contract):
+
+- `channel_name` (string)
+- `video_title` (string)
+- `video_url` (string)
+- `video_id` (string)
+- `channel_id` (string)
+- `view_count` (number, snake_case canonical)
+- `viewCount` (number, camelCase alias for existing web-app schema compatibility)
+- `cluster_id` (number)
+- `cluster_name` (string)
+- `embedding_2d` (`[x, y]`, number array length 2)
 
 Output path:
 
