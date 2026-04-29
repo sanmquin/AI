@@ -87,7 +87,7 @@ function ClusterStats({ data }) {
                     <ul style={{ listStyleType: 'none', margin: 0, padding: 0 }}>
                       {Object.entries(cluster.distances).map(([otherName, dist]) => (
                         <li key={otherName}>
-                          <span className="tag is-light mr-1">{otherName}</span>
+                          <span className="tag mr-1">{otherName}</span>
                           {dist.toFixed(4)}
                         </li>
                       ))}
