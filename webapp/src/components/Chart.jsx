@@ -1,3 +1,4 @@
+import { useState, useMemo } from 'react';
 import { ScatterChart, Scatter, XAxis, YAxis, Tooltip, ResponsiveContainer, Legend } from 'recharts';
 
 // Simple color palette for clusters
@@ -6,6 +7,15 @@ const COLORS = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042', '#8884d8', '#82ca9d'
 const CustomTooltip = ({ active, payload }) => {
   if (active && payload && payload.length) {
     const data = payload[0].payload;
+    if (data.isCenter) {
+      return (
+        <div className="box" style={{ padding: '10px' }}>
+          <p><strong>Cluster: {data.cluster_name}</strong></p>
+          <p>Videos: {data.video_count}</p>
+          <p>Avg Views: {Math.round(data.avg_views).toLocaleString()}</p>
+        </div>
+      );
+    }
     return (
       <div className="box" style={{ padding: '10px' }}>
         <p><strong>{data.video_title}</strong></p>
@@ -19,39 +29,91 @@ const CustomTooltip = ({ active, payload }) => {
 };
 
 function Chart({ data }) {
-  // Format data for Recharts (extract x,y from embedding_2d)
-  const chartData = data.map(item => ({
-    ...item,
-    x: item.embedding_2d[0],
-    y: item.embedding_2d[1],
-  }));
+  const [showCenters, setShowCenters] = useState(false);
+
+  // Format data for Recharts (extract x,y from embedding_2d or compute cluster centers)
+  const chartData = useMemo(() => {
+    if (!showCenters) {
+      return data.map(item => ({
+        ...item,
+        x: item.embedding_2d[0],
+        y: item.embedding_2d[1],
+      }));
+    }
+
+    // Group by cluster
+    const clusters = {};
+    data.forEach(item => {
+      const clusterName = item.cluster_name;
+      if (!clusters[clusterName]) {
+        clusters[clusterName] = {
+          cluster_name: clusterName,
+          sumX: 0,
+          sumY: 0,
+          totalViews: 0,
+          count: 0,
+        };
+      }
+
+      const views = typeof item.view_count === 'number' ? item.view_count : (typeof item.viewCount === 'number' ? item.viewCount : 0);
+      clusters[clusterName].totalViews += views;
+      clusters[clusterName].count += 1;
+
+      if (item.embedding_2d && item.embedding_2d.length >= 2) {
+        clusters[clusterName].sumX += item.embedding_2d[0];
+        clusters[clusterName].sumY += item.embedding_2d[1];
+      }
+    });
+
+    return Object.values(clusters).map(c => ({
+      isCenter: true,
+      cluster_name: c.cluster_name,
+      x: c.count > 0 ? c.sumX / c.count : 0,
+      y: c.count > 0 ? c.sumY / c.count : 0,
+      video_count: c.count,
+      avg_views: c.count > 0 ? c.totalViews / c.count : 0,
+    }));
+  }, [data, showCenters]);
 
   // Find unique clusters to map colors and legends
   const uniqueClusters = Array.from(new Set(chartData.map(item => item.cluster_name)));
 
   return (
-    <div style={{ width: '100%', height: 400 }}>
-      <ResponsiveContainer>
-        <ScatterChart margin={{ top: 20, right: 20, bottom: 20, left: 20 }}>
-          <XAxis type="number" dataKey="x" name="PCA 1" />
-          <YAxis type="number" dataKey="y" name="PCA 2" />
-          <Tooltip content={<CustomTooltip />} cursor={{ strokeDasharray: '3 3' }} />
-          <Legend />
+    <div>
+      <div className="field mb-4">
+        <label className="checkbox">
+          <input
+            type="checkbox"
+            checked={showCenters}
+            onChange={(e) => setShowCenters(e.target.checked)}
+            className="mr-2"
+          />
+          Show Cluster Centers Only
+        </label>
+      </div>
+      <div style={{ width: '100%', height: 400 }}>
+        <ResponsiveContainer>
+          <ScatterChart margin={{ top: 20, right: 20, bottom: 20, left: 20 }}>
+            <XAxis type="number" dataKey="x" name="PCA 1" />
+            <YAxis type="number" dataKey="y" name="PCA 2" />
+            <Tooltip content={<CustomTooltip />} cursor={{ strokeDasharray: '3 3' }} />
+            <Legend />
 
-          {uniqueClusters.map((clusterName, index) => {
-            const clusterData = chartData.filter(item => item.cluster_name === clusterName);
-            return (
-              <Scatter
-                key={clusterName}
-                name={clusterName}
-                data={clusterData}
-                fill={COLORS[index % COLORS.length]}
-              >
-              </Scatter>
-            );
-          })}
-        </ScatterChart>
-      </ResponsiveContainer>
+            {uniqueClusters.map((clusterName, index) => {
+              const clusterData = chartData.filter(item => item.cluster_name === clusterName);
+              return (
+                <Scatter
+                  key={clusterName}
+                  name={clusterName}
+                  data={clusterData}
+                  fill={COLORS[index % COLORS.length]}
+                >
+                </Scatter>
+              );
+            })}
+          </ScatterChart>
+        </ResponsiveContainer>
+      </div>
     </div>
   );
 }
