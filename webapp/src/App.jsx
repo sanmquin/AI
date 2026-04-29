@@ -3,6 +3,7 @@ import 'bulma/css/bulma.min.css';
 import ChannelSelector from './components/ChannelSelector';
 import Chart from './components/Chart';
 import Table from './components/Table';
+import ClusterStats from './components/ClusterStats';
 
 function App() {
   const [data, setData] = useState([]);
@@ -36,7 +37,7 @@ function App() {
 
   // Filter data based on selected channel
   const filteredData = useMemo(() => {
-    if (!selectedChannel) return data;
+    if (!selectedChannel) return [];
     return data.filter(item => item.channel_name === selectedChannel);
   }, [data, selectedChannel]);
 
@@ -68,6 +69,8 @@ function App() {
           </div>
         </div>
       </div>
+
+      <ClusterStats data={filteredData} />
 
       <div className="box">
         <h2 className="subtitle">Video List</h2>
