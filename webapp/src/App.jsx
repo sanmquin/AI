@@ -12,7 +12,8 @@ function App() {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    fetch('/data.json')
+    // TODO: Both /data.json and /clusters.json can be used interchangeably here.
+    fetch('/clusters.json')
       .then(response => {
         if (!response.ok) {
           throw new Error('Failed to load data');
