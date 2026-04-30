@@ -25,6 +25,9 @@ function ClusterStats({ data }) {
       if (item.embedding_2d && item.embedding_2d.length >= 2) {
         clusters[clusterName].sumX += item.embedding_2d[0];
         clusters[clusterName].sumY += item.embedding_2d[1];
+      } else if (item.x !== undefined && item.y !== undefined) {
+        clusters[clusterName].sumX += item.x;
+        clusters[clusterName].sumY += item.y;
       }
     });
 
