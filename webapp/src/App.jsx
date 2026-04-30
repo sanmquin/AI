@@ -10,25 +10,40 @@ function App() {
   const [selectedChannel, setSelectedChannel] = useState('');
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [dataSource, setDataSource] = useState('clusters.json');
 
   useEffect(() => {
-    // TODO: Allow switching between clusters.json and data.json interchangeably
-    fetch('/clusters.json')
+    let isMounted = true;
+
+    fetch(`/${dataSource}`)
       .then(response => {
         if (!response.ok) {
-          throw new Error('Failed to load data');
+          throw new Error(`Failed to load data from ${dataSource}`);
         }
         return response.json();
       })
       .then(jsonData => {
-        setData(jsonData);
-        setLoading(false);
+        if (isMounted) {
+          setData(jsonData);
+          setLoading(false);
+        }
       })
       .catch(err => {
-        setError(err.message);
-        setLoading(false);
+        if (isMounted) {
+          setError(err.message);
+          setLoading(false);
+        }
       });
-  }, []);
+
+    return () => {
+      isMounted = false;
+    };
+  }, [dataSource]);
+
+  const handleDataSourceChange = (newSource) => {
+    setLoading(true);
+    setDataSource(newSource);
+  };
 
   // Extract unique channels
   const channels = useMemo(() => {
@@ -55,6 +70,34 @@ function App() {
       <h1 className="title">Video & Cluster Visualization</h1>
 
       <div className="box">
+        <div className="field mb-4">
+          <label className="label">Data Source</label>
+          <div className="control">
+            <label className="radio">
+              <input
+                type="radio"
+                name="dataSource"
+                value="clusters.json"
+                checked={dataSource === 'clusters.json'}
+                onChange={() => handleDataSourceChange('clusters.json')}
+                className="mr-2"
+              />
+              clusters.json
+            </label>
+            <label className="radio">
+              <input
+                type="radio"
+                name="dataSource"
+                value="data.json"
+                checked={dataSource === 'data.json'}
+                onChange={() => handleDataSourceChange('data.json')}
+                className="mr-2"
+              />
+              data.json
+            </label>
+          </div>
+        </div>
+
         <ChannelSelector
           channels={channels}
           selectedChannel={selectedChannel}
