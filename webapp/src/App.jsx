@@ -5,26 +5,59 @@ import Chart from './components/Chart';
 import Table from './components/Table';
 import ClusterStats from './components/ClusterStats';
 
+const normalizeClusterData = (clustersJson, channelsJson) => {
+  const clusteredVideos = clustersJson?.artifacts?.videos_clustered;
+  const channelProjection = channelsJson?.artifacts?.channel_projection_2d || [];
+
+  if (!Array.isArray(clusteredVideos)) {
+    throw new Error('Invalid clusters.json format: expected artifacts.videos_clustered array');
+  }
+
+  const projectionByChannel = new Map(
+    channelProjection
+      .filter(item => item?.channel_name)
+      .map(item => [item.channel_name, item])
+  );
+
+  return clusteredVideos.map(item => {
+    const projection = projectionByChannel.get(item.channel_name);
+    return {
+      ...item,
+      video_title: item.video_title || item.video_id,
+      video_url: item.video_url || `https://www.youtube.com/watch?v=${item.video_id}`,
+      x: typeof item.x === 'number' ? item.x : projection?.x,
+      y: typeof item.y === 'number' ? item.y : projection?.y,
+    };
+  });
+};
+
 function App() {
   const [data, setData] = useState([]);
   const [selectedChannel, setSelectedChannel] = useState('');
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  const [dataSource, setDataSource] = useState('clusters.json');
 
   useEffect(() => {
     let isMounted = true;
 
-    fetch(`/${dataSource}`)
-      .then(response => {
+    Promise.all([
+      fetch('/clusters.json').then(response => {
         if (!response.ok) {
-          throw new Error(`Failed to load data from ${dataSource}`);
+          throw new Error('Failed to load clusters.json');
+        }
+        return response.json();
+      }),
+      fetch('/channels.json').then(response => {
+        if (!response.ok) {
+          throw new Error('Failed to load channels.json');
         }
         return response.json();
       })
-      .then(jsonData => {
+    ])
+      .then(([clustersJson, channelsJson]) => {
+        const normalizedData = normalizeClusterData(clustersJson, channelsJson);
         if (isMounted) {
-          setData(jsonData);
+          setData(normalizedData);
           setLoading(false);
         }
       })
@@ -38,12 +71,7 @@ function App() {
     return () => {
       isMounted = false;
     };
-  }, [dataSource]);
-
-  const handleDataSourceChange = (newSource) => {
-    setLoading(true);
-    setDataSource(newSource);
-  };
+  }, []);
 
   // Extract unique channels
   const channels = useMemo(() => {
@@ -70,34 +98,6 @@ function App() {
       <h1 className="title">Video & Cluster Visualization</h1>
 
       <div className="box">
-        <div className="field mb-4">
-          <label className="label">Data Source</label>
-          <div className="control">
-            <label className="radio">
-              <input
-                type="radio"
-                name="dataSource"
-                value="clusters.json"
-                checked={dataSource === 'clusters.json'}
-                onChange={() => handleDataSourceChange('clusters.json')}
-                className="mr-2"
-              />
-              clusters.json
-            </label>
-            <label className="radio">
-              <input
-                type="radio"
-                name="dataSource"
-                value="data.json"
-                checked={dataSource === 'data.json'}
-                onChange={() => handleDataSourceChange('data.json')}
-                className="mr-2"
-              />
-              data.json
-            </label>
-          </div>
-        </div>
-
         <ChannelSelector
           channels={channels}
           selectedChannel={selectedChannel}
