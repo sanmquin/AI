@@ -104,7 +104,7 @@ function Table({ data }) {
           </thead>
           <tbody>
             {processedData.map((item, index) => (
-              <tr key={`${item.video_url}-${index}`}>
+              <tr key={`${item.video_id}-${index}`}>
                 <td>{item.video_title}</td>
                 <td>{item.channel_name}</td>
                 <td>
@@ -114,7 +114,7 @@ function Table({ data }) {
                 </td>
                 <td>{(item.view_count || -1).toLocaleString()}</td>
                 <td>
-                  <a href={item.video_url} target="_blank" rel="noopener noreferrer">
+                  <a href={`https://www.youtube.com/watch?v=${item.video_id}`} target="_blank" rel="noopener noreferrer">
                     Watch
                   </a>
                 </td>
