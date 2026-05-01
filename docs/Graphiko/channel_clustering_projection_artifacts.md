@@ -1,105 +1,60 @@
 # Channel Clustering and Graph Projection Artifacts
 
-This document defines the artifact contract used by the web app for:
+Web-app contract (no notebook inspection required).
 
-- channel-level clustering outputs,
-- channel-level semantic graph projection outputs.
-
-The goal is that app developers can integrate without opening notebooks.
-
-## 1) Channel clustering artifacts
+## 1) Channel clustering bundle
 
 Source notebook: `src/Graphiko/2.Channel-Clustering.ipynb`
 
-Output root:
+Output file (single export):
 
-- `/content/drive/MyDrive/Graphiko/exports/video_embeddings_clustered/optimized/`
+- `/content/drive/MyDrive/Graphiko/exports/video_embeddings_clustered/optimized/business_cluster_video_embeddings_channel_optimized_bundle.json`
 
-Files:
+Top-level object:
 
-1. `business_cluster_video_embeddings_channel_optimized_reduced.json`
-   - Array of video-level rows.
-   - Includes per-video assignment and reduced embedding fields used downstream.
-   - Key fields consumed by app/data pipelines:
-     - `channel_name: string`
-     - `video_id: string`
-     - `cluster_id: number`
-     - `cluster_name: string`
-     - `best_k_for_channel: number`
-     - `best_adj_r2_for_channel: number`
-     - `embedding_20d: number[20]`
-     - `x: number`
-     - `y: number`
+- `schema_version: "1.0.0"`
+- `artifacts.videos_clustered: object[]`
+- `artifacts.channel_metrics: object[]`
+- `artifacts.channel_centroids: object[]`
+- `interfaces: object`
+- `comparability_note: string`
 
-2. `channel_optimal_clustering_metrics.json`
-   - Array, one record per channel.
-   - Interface:
-     - `channel_name: string`
-     - `n_videos: number`
-     - `best_k: number | null`
-     - `best_adj_r2: number | null`
-     - `eligible: boolean`
-     - `note?: string`
+Key interfaces:
 
-3. `channel_cluster_centroids.json`
-   - Array, one record per channel.
-   - Interface:
-     - `channel_name: string`
-     - `centroid_20d: number[20]`
-     - `centroid_2d_x: number`
-     - `centroid_2d_y: number`
+- `artifacts.videos_clustered[]`: `channel_name`, `video_id`, `cluster_id`, `cluster_name`, `best_k_for_channel`, `best_adj_r2_for_channel`, `embedding_20d:number[20]`, `x`, `y`.
+- `artifacts.channel_metrics[]`: `channel_name`, `n_videos`, `best_k`, `best_adj_r2`, `eligible`, optional `note`.
+- `artifacts.channel_centroids[]`: `channel_name`, `centroid_20d:number[20]`, `centroid_2d_x`, `centroid_2d_y`.
 
-### 2D meaning for clustering outputs
+2D comparability note:
 
-- `centroid_2d_x` / `centroid_2d_y` are means of each channel's reduced video points (`x`, `y`) from the clustered video export.
-- They are useful for visualization within the same run and same 2D basis.
-- They are **not guaranteed cross-run comparable** unless the exact same upstream reduction setup/data ordering is preserved.
+- `centroid_2d_x/y` are means of per-video reduced coordinates from the same run/basis.
+- Compare channels within the same run; cross-run comparability is not guaranteed unless upstream reduction inputs/settings are identical.
 
-## 2) Graph projection artifacts
+## 2) Graph projection bundle
 
 Source notebook: `src/Graphiko/3.Graph-Projection.ipynb`
 
-Output root:
+Output file (single export):
 
-- `/content/drive/MyDrive/Graphiko/analysis/graph_projection/latest/`
+- `/content/drive/MyDrive/Graphiko/analysis/graph_projection/latest/channel_graph_projection_bundle.json`
 
-Files:
+Top-level object:
 
-1. `channel_centroids_20d.json`
-   - Array, one record per channel.
-   - Interface:
-     - `channel_id: string | number`
-     - `channel_name: string`
-     - `centroid_20d: number[20]`
+- `schema_version: "1.0.0"`
+- `artifacts.channel_centroids_20d: object[]`
+- `artifacts.channel_adjacency_relative_distance: object`
+- `artifacts.channel_projection_2d: object[]`
+- `interfaces: object`
+- `run_summary: object`
 
-2. `channel_adjacency_relative_distance.json`
-   - Object with aligned arrays/matrix.
-   - Interface:
-     - `channel_ids: (string | number)[]`
-     - `channel_names: string[]`
-     - `distance_matrix_row_normalized: number[n_channels][n_channels]`
-   - Alignment rule:
-     - row `i`, col `j` corresponds to `channel_ids[i] -> channel_ids[j]`.
+Key interfaces:
 
-3. `channel_projection_2d.json`
-   - Array, one record per channel.
-   - Interface:
-     - `channel_id: string | number`
-     - `channel_name: string`
-     - `x: number`
-     - `y: number`
+- `artifacts.channel_centroids_20d[]`: `channel_id`, `channel_name`, `centroid_20d:number[20]`.
+- `artifacts.channel_adjacency_relative_distance`: `channel_ids[]`, `channel_names[]`, `distance_matrix_row_normalized:number[n][n]` with row/column alignment by index.
+- `artifacts.channel_projection_2d[]`: `channel_id`, `channel_name`, `x`, `y`.
 
-4. `run_summary.json`
-   - Provenance and export metadata.
+2D comparability note:
 
-### How graph 2D is computed and comparability
-
-- The notebook computes pairwise Euclidean distances between channel 20D centroids.
-- It then runs **metric MDS** (`dissimilarity='precomputed'`) once on the full channel distance matrix.
-- Therefore, `x,y` in `channel_projection_2d.json` are globally comparable **across channels within the same run**.
-- Cross-run comparisons are not guaranteed unless channel set, centroid inputs, and MDS configuration stay identical.
-
-## App integration recommendation
-
-- Prefer reading these exact `latest/` JSON files directly.
-- Treat `run_summary.json` as the provenance contract and show its method note in tooltips/metadata panels.
+- Coordinates are generated by one metric MDS fit on the full centroid-distance matrix.
+- Distances are meaningful across channels within a run.
+- Cross-run comparisons are only valid if channel set, centroid inputs, and MDS settings are unchanged.
