@@ -7,24 +7,39 @@ import ClusterStats from './components/ClusterStats';
 
 function App() {
   const [data, setData] = useState([]);
+  const [channelsList, setChannelsList] = useState([]);
   const [selectedChannel, setSelectedChannel] = useState('');
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  const [dataSource, setDataSource] = useState('clusters.json');
 
   useEffect(() => {
     let isMounted = true;
 
-    fetch(`/${dataSource}`)
-      .then(response => {
-        if (!response.ok) {
-          throw new Error(`Failed to load data from ${dataSource}`);
-        }
-        return response.json();
+    Promise.all([
+      fetch('/clusters.json').then(res => {
+        if (!res.ok) throw new Error('Failed to load clusters.json');
+        return res.json();
+      }),
+      fetch('/channels.json').then(res => {
+        if (!res.ok) throw new Error('Failed to load channels.json');
+        return res.json();
       })
-      .then(jsonData => {
+    ])
+      .then(([clustersData, channelsData]) => {
         if (isMounted) {
-          setData(jsonData);
+          const videos = clustersData?.artifacts?.videos_clustered || [];
+          setData(videos);
+
+          const centroids = channelsData?.artifacts?.channel_centroids_20d || [];
+          const extractedChannels = centroids.map(c => c.channel_name);
+          // Fallback if channels.json is somehow empty but videos exist
+          if (extractedChannels.length === 0 && videos.length > 0) {
+             const channelSet = new Set(videos.map(item => item.channel_name));
+             setChannelsList(Array.from(channelSet));
+          } else {
+             setChannelsList(extractedChannels);
+          }
+
           setLoading(false);
         }
       })
@@ -38,18 +53,9 @@ function App() {
     return () => {
       isMounted = false;
     };
-  }, [dataSource]);
+  }, []);
 
-  const handleDataSourceChange = (newSource) => {
-    setLoading(true);
-    setDataSource(newSource);
-  };
-
-  // Extract unique channels
-  const channels = useMemo(() => {
-    const channelSet = new Set(data.map(item => item.channel_name));
-    return Array.from(channelSet);
-  }, [data]);
+  const channels = useMemo(() => channelsList, [channelsList]);
 
   // Filter data based on selected channel
   const filteredData = useMemo(() => {
@@ -70,34 +76,6 @@ function App() {
       <h1 className="title">Video & Cluster Visualization</h1>
 
       <div className="box">
-        <div className="field mb-4">
-          <label className="label">Data Source</label>
-          <div className="control">
-            <label className="radio">
-              <input
-                type="radio"
-                name="dataSource"
-                value="clusters.json"
-                checked={dataSource === 'clusters.json'}
-                onChange={() => handleDataSourceChange('clusters.json')}
-                className="mr-2"
-              />
-              clusters.json
-            </label>
-            <label className="radio">
-              <input
-                type="radio"
-                name="dataSource"
-                value="data.json"
-                checked={dataSource === 'data.json'}
-                onChange={() => handleDataSourceChange('data.json')}
-                className="mr-2"
-              />
-              data.json
-            </label>
-          </div>
-        </div>
-
         <ChannelSelector
           channels={channels}
           selectedChannel={selectedChannel}
