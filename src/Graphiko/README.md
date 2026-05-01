@@ -152,3 +152,5 @@ Derived from the subscription overlap graph using:
 - `src/Graphiko/residual_disagreement_analysis.ipynb` consumes similarity outputs and decomposes disagreement at pair, node, and meso levels under `/content/drive/MyDrive/Graphiko/analysis/residual_disagreement/`.
 
 See `docs/Graphiko/similarity_output_artifacts.md` for the artifact contract and path-level documentation.
+
+- See `docs/Graphiko/channel_clustering_projection_artifacts.md` for web-app-facing JSON contracts for channel clustering and graph projection exports.
