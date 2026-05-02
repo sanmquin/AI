@@ -123,7 +123,7 @@ function App() {
         <>
           <div className="box">
             <h2 className="subtitle">Channels Overview (2D Projection)</h2>
-            <ChannelsChart data={channelProjections} />
+            <ChannelsChart data={channelProjections} videos={data} />
           </div>
           <div className="box">
             <h2 className="subtitle">Channel Cluster Performance</h2>
