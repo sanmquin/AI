@@ -12,7 +12,7 @@ const CustomTooltip = ({ active, payload }) => {
   return null;
 };
 
-function ChannelsChart({ data, onSelectChannel }) {
+function ChannelsChart({ data }) {
   if (!data || data.length === 0) return null;
 
   return (
@@ -26,12 +26,6 @@ function ChannelsChart({ data, onSelectChannel }) {
             name="Channels"
             data={data}
             fill="#8884d8"
-            onClick={(e) => {
-              if (e && e.channel_name) {
-                onSelectChannel(e.channel_name);
-              }
-            }}
-            style={{ cursor: 'pointer' }}
           />
         </ScatterChart>
       </ResponsiveContainer>
