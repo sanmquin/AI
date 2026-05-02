@@ -105,14 +105,9 @@ function App() {
     <div className="container p-4">
       <nav className="navbar mb-4" role="navigation" aria-label="main navigation">
         <div className="navbar-brand">
-          <button
-            type="button"
-            className="button is-white p-0"
-            onClick={handleHomeClick}
-            aria-label="Reset selected channel and go to channels overview"
-          >
-            <h1 className="title is-4 mb-0">Video & Cluster Visualization</h1>
-          </button>
+          <a className="title is-4 mb-0 navbar-item" onClick={handleHomeClick}>
+            Video & Cluster Visualization
+          </a>
         </div>
       </nav>
 
