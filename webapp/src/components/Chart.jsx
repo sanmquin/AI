@@ -30,18 +30,9 @@ const CustomTooltip = ({ active, payload }) => {
 
 function Chart({ data }) {
   const [showCenters, setShowCenters] = useState(false);
+  const [showEngagement, setShowEngagement] = useState(false);
 
-  // Format data for Recharts (extract x,y from embedding_2d or compute cluster centers)
-  const chartData = useMemo(() => {
-    if (!showCenters) {
-      return data.map(item => ({
-        ...item,
-        x: item.embedding_2d && item.embedding_2d.length >= 2 ? item.embedding_2d[0] : item.x,
-        y: item.embedding_2d && item.embedding_2d.length >= 2 ? item.embedding_2d[1] : item.y,
-      }));
-    }
-
-    // Group by cluster
+  const clusterStats = useMemo(() => {
     const clusters = {};
     data.forEach(item => {
       const clusterName = item.cluster_name;
@@ -76,15 +67,38 @@ function Chart({ data }) {
       video_count: c.count,
       avg_views: c.count > 0 ? c.totalViews / c.count : 0,
     }));
-  }, [data, showCenters]);
+  }, [data]);
+
+  // Format data for Recharts (extract x,y from embedding_2d or compute cluster centers)
+  const chartData = useMemo(() => {
+    if (showCenters) {
+      return clusterStats;
+    }
+
+    return data.map(item => ({
+      ...item,
+      x: item.embedding_2d && item.embedding_2d.length >= 2 ? item.embedding_2d[0] : item.x,
+      y: item.embedding_2d && item.embedding_2d.length >= 2 ? item.embedding_2d[1] : item.y,
+    }));
+  }, [data, showCenters, clusterStats]);
 
   // Find unique clusters to map colors and legends
   const uniqueClusters = Array.from(new Set(chartData.map(item => item.cluster_name)));
 
+  // Calculate engagement scale
+  const { minAvg, maxAvg } = useMemo(() => {
+    if (!showEngagement || clusterStats.length === 0) return { minAvg: 0, maxAvg: 0 };
+    const averages = clusterStats.map(c => c.avg_views);
+    return {
+      minAvg: Math.min(...averages),
+      maxAvg: Math.max(...averages)
+    };
+  }, [clusterStats, showEngagement]);
+
   return (
     <div>
       <div className="field mb-4">
-        <label className="checkbox">
+        <label className="checkbox mr-4">
           <input
             type="checkbox"
             checked={showCenters}
@@ -92,6 +106,15 @@ function Chart({ data }) {
             className="mr-2"
           />
           Show Cluster Centers Only
+        </label>
+        <label className="checkbox">
+          <input
+            type="checkbox"
+            checked={showEngagement}
+            onChange={(e) => setShowEngagement(e.target.checked)}
+            className="mr-2"
+          />
+          Show Engagement
         </label>
       </div>
       <div style={{ width: '100%', height: 400 }}>
@@ -104,12 +127,34 @@ function Chart({ data }) {
 
             {uniqueClusters.map((clusterName, index) => {
               const clusterData = chartData.filter(item => item.cluster_name === clusterName);
+
+              let fillData = COLORS[index % COLORS.length];
+              let displayName = clusterName;
+
+              if (showEngagement) {
+                const stat = clusterStats.find(c => c.cluster_name === clusterName);
+                if (stat) {
+                  const avg = stat.avg_views;
+                  let ratio = 0;
+                  if (maxAvg > minAvg) {
+                    ratio = (avg - minAvg) / (maxAvg - minAvg);
+                  }
+
+                  const r = Math.round(255 * (1 - ratio));
+                  const g = Math.round(255 * ratio);
+                  const b = 0;
+                  fillData = `rgb(${r}, ${g}, ${b})`;
+
+                  displayName = `${Math.round(avg).toLocaleString()} Avg Views`;
+                }
+              }
+
               return (
                 <Scatter
                   key={clusterName}
-                  name={clusterName}
+                  name={displayName}
                   data={clusterData}
-                  fill={COLORS[index % COLORS.length]}
+                  fill={fillData}
                 >
                 </Scatter>
               );

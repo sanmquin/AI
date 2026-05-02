@@ -113,11 +113,11 @@ function App() {
         <>
           <div className="box">
             <h2 className="subtitle">Channels Overview (2D Projection)</h2>
-            <ChannelsChart data={channelProjections} onSelectChannel={setSelectedChannel} />
+            <ChannelsChart data={channelProjections} />
           </div>
           <div className="box">
             <h2 className="subtitle">Channel Cluster Performance</h2>
-            <ChannelStatsTable data={channelStats} />
+            <ChannelStatsTable data={channelStats} onSelectChannel={setSelectedChannel} />
           </div>
         </>
       ) : (
