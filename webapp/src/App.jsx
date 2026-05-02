@@ -4,10 +4,13 @@ import ChannelSelector from './components/ChannelSelector';
 import Chart from './components/Chart';
 import Table from './components/Table';
 import ClusterStats from './components/ClusterStats';
+import ChannelsChart from './components/ChannelsChart';
+import ChannelStatsTable from './components/ChannelStatsTable';
 
 function App() {
   const [data, setData] = useState([]);
   const [channelsList, setChannelsList] = useState([]);
+  const [channelProjections, setChannelProjections] = useState([]);
   const [selectedChannel, setSelectedChannel] = useState('');
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -40,6 +43,9 @@ function App() {
              setChannelsList(extractedChannels);
           }
 
+          const projections = channelsData?.artifacts?.channel_projection_2d || [];
+          setChannelProjections(projections);
+
           setLoading(false);
         }
       })
@@ -63,6 +69,26 @@ function App() {
     return data.filter(item => item.channel_name === selectedChannel);
   }, [data, selectedChannel]);
 
+  const channelStats = useMemo(() => {
+    const statsMap = new Map();
+    data.forEach(item => {
+      if (!statsMap.has(item.channel_name)) {
+        statsMap.set(item.channel_name, {
+          channel_name: item.channel_name,
+          best_k_for_channel: item.best_k_for_channel,
+          best_adj_r2_for_channel: item.best_adj_r2_for_channel
+        });
+      }
+    });
+    const statsArray = Array.from(statsMap.values());
+    statsArray.sort((a, b) => {
+      const aVal = a.best_adj_r2_for_channel ?? -Infinity;
+      const bVal = b.best_adj_r2_for_channel ?? -Infinity;
+      return bVal - aVal;
+    });
+    return statsArray;
+  }, [data]);
+
   if (loading) {
     return <div className="container p-4"><p>Loading data...</p></div>;
   }
@@ -83,21 +109,36 @@ function App() {
         />
       </div>
 
-      <div className="columns">
-        <div className="column is-full">
+      {!selectedChannel ? (
+        <>
           <div className="box">
-            <h2 className="subtitle">Cluster Visualization (2D Embeddings)</h2>
-            <Chart data={filteredData} />
+            <h2 className="subtitle">Channels Overview (2D Projection)</h2>
+            <ChannelsChart data={channelProjections} onSelectChannel={setSelectedChannel} />
           </div>
-        </div>
-      </div>
+          <div className="box">
+            <h2 className="subtitle">Channel Cluster Performance</h2>
+            <ChannelStatsTable data={channelStats} />
+          </div>
+        </>
+      ) : (
+        <>
+          <div className="columns">
+            <div className="column is-full">
+              <div className="box">
+                <h2 className="subtitle">Cluster Visualization (2D Embeddings)</h2>
+                <Chart data={filteredData} />
+              </div>
+            </div>
+          </div>
 
-      <ClusterStats data={filteredData} />
+          <ClusterStats data={filteredData} />
 
-      <div className="box">
-        <h2 className="subtitle">Video List</h2>
-        <Table data={filteredData} />
-      </div>
+          <div className="box">
+            <h2 className="subtitle">Video List</h2>
+            <Table data={filteredData} />
+          </div>
+        </>
+      )}
     </div>
   );
 }
