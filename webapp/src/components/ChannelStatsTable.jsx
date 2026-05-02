@@ -1,4 +1,4 @@
-function ChannelStatsTable({ data }) {
+function ChannelStatsTable({ data, onSelectChannel }) {
   if (!data || data.length === 0) return null;
 
   return (
@@ -14,7 +14,15 @@ function ChannelStatsTable({ data }) {
         <tbody>
           {data.map((stat, index) => (
             <tr key={index}>
-              <td><strong>{stat.channel_name}</strong></td>
+              <td>
+                <button
+                  type="button"
+                  className="button is-text p-0 has-text-weight-semibold"
+                  onClick={() => onSelectChannel?.(stat.channel_name)}
+                >
+                  {stat.channel_name}
+                </button>
+              </td>
               <td>{stat.best_k_for_channel}</td>
               <td>{stat.best_adj_r2_for_channel !== undefined ? stat.best_adj_r2_for_channel.toFixed(4) : 'N/A'}</td>
             </tr>
