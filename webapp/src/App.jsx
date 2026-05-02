@@ -97,9 +97,19 @@ function App() {
     return <div className="container p-4"><div className="notification is-danger">{error}</div></div>;
   }
 
+  const handleHomeClick = () => {
+    setSelectedChannel('');
+  };
+
   return (
     <div className="container p-4">
-      <h1 className="title">Video & Cluster Visualization</h1>
+      <nav className="navbar mb-4" role="navigation" aria-label="main navigation">
+        <div className="navbar-brand">
+          <a className="title is-4 mb-0 navbar-item" onClick={handleHomeClick}>
+            Video & Cluster Visualization
+          </a>
+        </div>
+      </nav>
 
       <div className="box">
         <ChannelSelector
