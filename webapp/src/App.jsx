@@ -11,7 +11,7 @@ function App() {
   const [data, setData] = useState([]);
   const [channelsList, setChannelsList] = useState([]);
   const [channelProjections, setChannelProjections] = useState([]);
-  const [selectedChannel, setSelectedChannel] = useState('');
+  const [selectedChannels, setSelectedChannels] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
@@ -63,11 +63,11 @@ function App() {
 
   const channels = useMemo(() => channelsList, [channelsList]);
 
-  // Filter data based on selected channel
+  // Filter data based on selected channels
   const filteredData = useMemo(() => {
-    if (!selectedChannel) return [];
-    return data.filter(item => item.channel_name === selectedChannel);
-  }, [data, selectedChannel]);
+    if (!selectedChannels || selectedChannels.length === 0) return [];
+    return data.filter(item => selectedChannels.includes(item.channel_name));
+  }, [data, selectedChannels]);
 
   const channelStats = useMemo(() => {
     const statsMap = new Map();
@@ -98,7 +98,11 @@ function App() {
   }
 
   const handleHomeClick = () => {
-    setSelectedChannel('');
+    setSelectedChannels([]);
+  };
+
+  const handleSelectChannelFromTable = (channel) => {
+    setSelectedChannels([channel]);
   };
 
   return (
@@ -114,22 +118,25 @@ function App() {
       <div className="box">
         <ChannelSelector
           channels={channels}
-          selectedChannel={selectedChannel}
-          onSelectChannel={setSelectedChannel}
+          selectedChannels={selectedChannels}
+          onSelectChannels={setSelectedChannels}
         />
       </div>
 
-      {!selectedChannel ? (
-        <>
-          <div className="box">
-            <h2 className="subtitle">Channels Overview (2D Projection)</h2>
-            <ChannelsChart data={channelProjections} videos={data} />
-          </div>
-          <div className="box">
-            <h2 className="subtitle">Channel Cluster Performance</h2>
-            <ChannelStatsTable data={channelStats} onSelectChannel={setSelectedChannel} />
-          </div>
-        </>
+      <div className="box">
+        <h2 className="subtitle">Channels Overview (2D Projection)</h2>
+        <ChannelsChart
+          data={channelProjections}
+          videos={data}
+          selectedChannels={selectedChannels}
+        />
+      </div>
+
+      {!selectedChannels || selectedChannels.length === 0 ? (
+        <div className="box">
+          <h2 className="subtitle">Channel Cluster Performance</h2>
+          <ChannelStatsTable data={channelStats} onSelectChannel={handleSelectChannelFromTable} />
+        </div>
       ) : (
         <>
           <div className="columns">

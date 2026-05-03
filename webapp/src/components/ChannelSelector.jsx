@@ -1,14 +1,20 @@
-function ChannelSelector({ channels, selectedChannel, onSelectChannel }) {
+function ChannelSelector({ channels, selectedChannels, onSelectChannels }) {
+  const handleChange = (e) => {
+    const options = Array.from(e.target.selectedOptions, option => option.value);
+    onSelectChannels(options);
+  };
+
   return (
     <div className="field">
-      <label className="label">Select Channel</label>
+      <label className="label">Select Channels</label>
       <div className="control">
-        <div className="select is-fullwidth">
+        <div className="select is-multiple is-fullwidth">
           <select
-            value={selectedChannel}
-            onChange={(e) => onSelectChannel(e.target.value)}
+            multiple
+            size={Math.min(5, channels.length || 1)}
+            value={selectedChannels}
+            onChange={handleChange}
           >
-            <option value="" disabled>Select a channel...</option>
             {channels.map((channel) => (
               <option key={channel} value={channel}>
                 {channel}
@@ -16,6 +22,7 @@ function ChannelSelector({ channels, selectedChannel, onSelectChannel }) {
             ))}
           </select>
         </div>
+        <p className="help">Hold Ctrl/Cmd to select multiple. Expanding channels displays their respective cluster centers colored by relative engagement (blue to red).</p>
       </div>
     </div>
   );
