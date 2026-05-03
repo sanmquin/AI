@@ -1,4 +1,4 @@
-import { useState, useMemo } from 'react';
+import { useMemo } from 'react';
 import { ScatterChart, Scatter, XAxis, YAxis, Tooltip, ResponsiveContainer } from 'recharts';
 
 const CustomTooltip = ({ active, payload }) => {
@@ -13,8 +13,14 @@ const CustomTooltip = ({ active, payload }) => {
   return null;
 };
 
-function ChannelsChart({ data, videos }) {
-  const [showCenters, setShowCenters] = useState(false);
+const engagementColor = (normalizedValue) => {
+  const clamped = Math.max(0, Math.min(1, normalizedValue));
+  const red = Math.round(255 * clamped);
+  const green = Math.round(255 * (1 - clamped));
+  return `rgb(${red}, ${green}, 0)`;
+};
+
+function ChannelsChart({ data, videos, showCenters, setShowCenters, selectedChannels }) {
 
   const centersData = useMemo(() => {
     if (!videos || videos.length === 0) return [];
@@ -40,6 +46,55 @@ function ChannelsChart({ data, videos }) {
   }, [videos]);
 
   const displayData = showCenters ? centersData : data;
+
+  const channelClusterPoints = useMemo(() => {
+    if (!showCenters || !Array.isArray(selectedChannels) || selectedChannels.length === 0) {
+      return [];
+    }
+
+    return selectedChannels.flatMap((channelName) => {
+      const channelVideos = videos.filter(v => v.channel_name === channelName);
+      if (channelVideos.length === 0) return [];
+
+      const clusterMap = new Map();
+      channelVideos.forEach((video) => {
+        if (!clusterMap.has(video.cluster_id)) {
+          clusterMap.set(video.cluster_id, {
+            channel_name: channelName,
+            cluster_id: video.cluster_id,
+            sumX: 0,
+            sumY: 0,
+            engagement: 0,
+            count: 0,
+          });
+        }
+
+        const cluster = clusterMap.get(video.cluster_id);
+        cluster.sumX += video.x ?? (video.embedding_2d && video.embedding_2d[0]) ?? 0;
+        cluster.sumY += video.y ?? (video.embedding_2d && video.embedding_2d[1]) ?? 0;
+        cluster.engagement += video.view_count ?? 0;
+        cluster.count += 1;
+      });
+
+      const clusters = Array.from(clusterMap.values()).map(cluster => ({
+        ...cluster,
+        x: cluster.sumX / cluster.count,
+        y: cluster.sumY / cluster.count,
+        engagementAvg: cluster.engagement / cluster.count,
+      }));
+
+      const minEngagement = Math.min(...clusters.map(c => c.engagementAvg));
+      const maxEngagement = Math.max(...clusters.map(c => c.engagementAvg));
+      const engagementRange = maxEngagement - minEngagement;
+
+      return clusters.map(cluster => ({
+        ...cluster,
+        engagementNormalized: engagementRange > 0
+          ? (cluster.engagementAvg - minEngagement) / engagementRange
+          : 0.5,
+      }));
+    });
+  }, [showCenters, selectedChannels, videos]);
 
   if (!data || data.length === 0) return null;
 
@@ -67,7 +122,24 @@ function ChannelsChart({ data, videos }) {
             <Scatter
               name="Channels"
               data={displayData}
-              fill="#8884d8"
+              fill={showCenters ? '#ffffff' : '#8884d8'}
+            />
+            <Scatter
+              name="Clusters"
+              data={channelClusterPoints}
+              shape={(props) => {
+                const { cx, cy, payload } = props;
+                return (
+                  <circle
+                    cx={cx}
+                    cy={cy}
+                    r={4}
+                    fill={engagementColor(payload.engagementNormalized)}
+                    stroke="#111"
+                    strokeWidth={0.5}
+                  />
+                );
+              }}
             />
           </ScatterChart>
         </ResponsiveContainer>

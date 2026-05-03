@@ -12,6 +12,8 @@ function App() {
   const [channelsList, setChannelsList] = useState([]);
   const [channelProjections, setChannelProjections] = useState([]);
   const [selectedChannel, setSelectedChannel] = useState('');
+  const [showComputedCenters, setShowComputedCenters] = useState(false);
+  const [selectedCenterChannels, setSelectedCenterChannels] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
@@ -114,8 +116,9 @@ function App() {
       <div className="box">
         <ChannelSelector
           channels={channels}
-          selectedChannel={selectedChannel}
-          onSelectChannel={setSelectedChannel}
+          selectedChannel={showComputedCenters ? selectedCenterChannels : selectedChannel}
+          onSelectChannel={showComputedCenters ? setSelectedCenterChannels : setSelectedChannel}
+          isMultiSelect={showComputedCenters}
         />
       </div>
 
@@ -123,7 +126,13 @@ function App() {
         <>
           <div className="box">
             <h2 className="subtitle">Channels Overview (2D Projection)</h2>
-            <ChannelsChart data={channelProjections} videos={data} />
+            <ChannelsChart
+              data={channelProjections}
+              videos={data}
+              showCenters={showComputedCenters}
+              setShowCenters={setShowComputedCenters}
+              selectedChannels={selectedCenterChannels}
+            />
           </div>
           <div className="box">
             <h2 className="subtitle">Channel Cluster Performance</h2>
