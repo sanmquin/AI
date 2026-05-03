@@ -96,7 +96,10 @@ function Chart({ data }) {
         maxViews: Math.max(...averages)
       };
     } else {
-      const views = chartData.map(item => typeof item.view_count === 'number' ? item.view_count : (typeof item.viewCount === 'number' ? item.viewCount : 0));
+      const views = chartData.map(item => {
+        const rawViews = typeof item.view_count === 'number' ? item.view_count : (typeof item.viewCount === 'number' ? item.viewCount : 0);
+        return Math.log(Math.max(1, rawViews));
+      });
       return {
         minViews: Math.min(...views),
         maxViews: Math.max(...views)
@@ -132,7 +135,7 @@ function Chart({ data }) {
             <XAxis type="number" dataKey="x" name="PCA 1" />
             <YAxis type="number" dataKey="y" name="PCA 2" />
             <Tooltip content={<CustomTooltip />} cursor={{ strokeDasharray: '3 3' }} />
-            {!showEngagement && <Legend />}
+            {!(showEngagement && !showCenters) && <Legend />}
 
             {uniqueClusters.map((clusterName, index) => {
               const clusterData = chartData.filter(item => item.cluster_name === clusterName);
@@ -168,10 +171,11 @@ function Chart({ data }) {
                   fill={fillData}
                 >
                   {showEngagement && !showCenters && clusterData.map((entry, index) => {
-                    const views = typeof entry.view_count === 'number' ? entry.view_count : (typeof entry.viewCount === 'number' ? entry.viewCount : 0);
+                    const rawViews = typeof entry.view_count === 'number' ? entry.view_count : (typeof entry.viewCount === 'number' ? entry.viewCount : 0);
+                    const logViews = Math.log(Math.max(1, rawViews));
                     let ratio = 0;
                     if (maxViews > minViews) {
-                      ratio = (views - minViews) / (maxViews - minViews);
+                      ratio = (logViews - minViews) / (maxViews - minViews);
                     }
                     const r = Math.round(255 * (1 - ratio));
                     const g = Math.round(255 * ratio);
