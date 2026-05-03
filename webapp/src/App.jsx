@@ -12,6 +12,8 @@ function App() {
   const [channelsList, setChannelsList] = useState([]);
   const [channelProjections, setChannelProjections] = useState([]);
   const [selectedChannel, setSelectedChannel] = useState('');
+  const [selectedChannelsMulti, setSelectedChannelsMulti] = useState([]);
+  const [showCenters, setShowCenters] = useState(false);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
@@ -99,6 +101,7 @@ function App() {
 
   const handleHomeClick = () => {
     setSelectedChannel('');
+    setSelectedChannelsMulti([]);
   };
 
   return (
@@ -114,21 +117,30 @@ function App() {
       <div className="box">
         <ChannelSelector
           channels={channels}
-          selectedChannel={selectedChannel}
-          onSelectChannel={setSelectedChannel}
+          selectedChannel={showCenters ? selectedChannelsMulti : selectedChannel}
+          onSelectChannel={showCenters ? setSelectedChannelsMulti : setSelectedChannel}
+          isMulti={showCenters}
         />
       </div>
 
-      {!selectedChannel ? (
+      {!selectedChannel || showCenters ? (
         <>
           <div className="box">
             <h2 className="subtitle">Channels Overview (2D Projection)</h2>
-            <ChannelsChart data={channelProjections} videos={data} />
+            <ChannelsChart
+              data={channelProjections}
+              videos={data}
+              showCenters={showCenters}
+              setShowCenters={setShowCenters}
+              selectedChannels={selectedChannelsMulti}
+            />
           </div>
-          <div className="box">
-            <h2 className="subtitle">Channel Cluster Performance</h2>
-            <ChannelStatsTable data={channelStats} onSelectChannel={setSelectedChannel} />
-          </div>
+          {!showCenters && (
+            <div className="box">
+              <h2 className="subtitle">Channel Cluster Performance</h2>
+              <ChannelStatsTable data={channelStats} onSelectChannel={setSelectedChannel} />
+            </div>
+          )}
         </>
       ) : (
         <>
