@@ -85,9 +85,22 @@ function Chart({ data, selectedChannel, engagementCenters = [] }) {
       return null;
     }
 
+    const rawX = center.engagement_center_20d[0];
+    const rawY = center.engagement_center_20d[1];
+    const distance = Math.sqrt(rawX * rawX + rawY * rawY);
+
+    let x = rawX;
+    let y = rawY;
+
+    if (distance > 1) {
+      const scale = 1 / distance;
+      x = rawX * scale;
+      y = rawY * scale;
+    }
+
     return {
-      x: center.engagement_center_20d[0],
-      y: center.engagement_center_20d[1],
+      x,
+      y,
       isEngagementCenter: true,
       channel_name: selectedChannel,
     };
