@@ -92,8 +92,9 @@ function Chart({ data, selectedChannel, engagementCenters = [] }) {
     let x = rawX;
     let y = rawY;
 
-    if (distance > 1) {
-      const scale = 1 / distance;
+		const maxDistance = 0.5
+    if (distance > maxDistance) {
+      const scale = maxDistance / distance;
       x = rawX * scale;
       y = rawY * scale;
     }
