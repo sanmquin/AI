@@ -6,6 +6,7 @@ import Table from './components/Table';
 import ClusterStats from './components/ClusterStats';
 import ChannelsChart from './components/ChannelsChart';
 import ChannelStatsTable from './components/ChannelStatsTable';
+import EngagementMetricsTable from './components/EngagementMetricsTable';
 
 function App() {
   const [data, setData] = useState([]);
@@ -147,6 +148,11 @@ function App() {
           <div className="box">
             <h2 className="subtitle">Channel Cluster Performance</h2>
             <ChannelStatsTable data={channelStats} onSelectChannel={setSelectedChannel} />
+          </div>
+
+          <div className="box">
+            <h2 className="subtitle">Engagement Metrics Overview</h2>
+            <EngagementMetricsTable data={engagementCenters} />
           </div>
         </>
       ) : (
