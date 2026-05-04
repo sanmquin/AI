@@ -7,6 +7,14 @@ const COLORS = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042', '#8884d8', '#82ca9d'
 const CustomTooltip = ({ active, payload }) => {
   if (active && payload && payload.length) {
     const data = payload[0].payload;
+    if (data.isEngagementCenter) {
+      return (
+        <div className="box" style={{ padding: '10px' }}>
+          <p><strong>Engagement Center</strong></p>
+          <p>Channel: {data.channel_name}</p>
+        </div>
+      );
+    }
     if (data.isCenter) {
       return (
         <div className="box" style={{ padding: '10px' }}>
@@ -28,7 +36,7 @@ const CustomTooltip = ({ active, payload }) => {
   return null;
 };
 
-function Chart({ data }) {
+function Chart({ data, selectedChannel, engagementCenters = [] }) {
   const [showCenters, setShowCenters] = useState(false);
   const [showEngagement, setShowEngagement] = useState(false);
 
@@ -68,6 +76,22 @@ function Chart({ data }) {
       avg_views: c.count > 0 ? c.totalViews / c.count : 0,
     }));
   }, [data]);
+
+  const engagementCenterPoint = useMemo(() => {
+    if (!showEngagement || !selectedChannel) return null;
+
+    const center = engagementCenters.find((item) => item.channel_name === selectedChannel);
+    if (!center || !Array.isArray(center.engagement_center_20d) || center.engagement_center_20d.length < 2) {
+      return null;
+    }
+
+    return {
+      x: center.engagement_center_20d[0],
+      y: center.engagement_center_20d[1],
+      isEngagementCenter: true,
+      channel_name: selectedChannel,
+    };
+  }, [showEngagement, selectedChannel, engagementCenters]);
 
   // Format data for Recharts (extract x,y from embedding_2d or compute cluster centers)
   const chartData = useMemo(() => {
@@ -185,6 +209,16 @@ function Chart({ data }) {
                 </Scatter>
               );
             })}
+
+            {showEngagement && engagementCenterPoint && (
+              <Scatter
+                name="Engagement Center"
+                data={[engagementCenterPoint]}
+                fill="#ffffff"
+              >
+                <Cell fill="#ffffff" stroke="#000000" strokeWidth={1} />
+              </Scatter>
+            )}
           </ScatterChart>
         </ResponsiveContainer>
       </div>
