@@ -1,5 +1,5 @@
 import { useState, useMemo } from 'react';
-import { ScatterChart, Scatter, XAxis, YAxis, Tooltip, ResponsiveContainer, Legend } from 'recharts';
+import { ScatterChart, Scatter, XAxis, YAxis, Tooltip, ResponsiveContainer, Legend, Cell } from 'recharts';
 
 // Simple color palette for clusters
 const COLORS = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042', '#8884d8', '#82ca9d'];
@@ -86,14 +86,26 @@ function Chart({ data }) {
   const uniqueClusters = Array.from(new Set(chartData.map(item => item.cluster_name)));
 
   // Calculate engagement scale
-  const { minAvg, maxAvg } = useMemo(() => {
-    if (!showEngagement || clusterStats.length === 0) return { minAvg: 0, maxAvg: 0 };
-    const averages = clusterStats.map(c => c.avg_views);
-    return {
-      minAvg: Math.min(...averages),
-      maxAvg: Math.max(...averages)
-    };
-  }, [clusterStats, showEngagement]);
+  const { minViews, maxViews } = useMemo(() => {
+    if (!showEngagement || chartData.length === 0) return { minViews: 0, maxViews: 0 };
+
+    if (showCenters) {
+      const averages = clusterStats.map(c => c.avg_views);
+      return {
+        minViews: Math.min(...averages),
+        maxViews: Math.max(...averages)
+      };
+    } else {
+      const views = chartData.map(item => {
+        const rawViews = typeof item.view_count === 'number' ? item.view_count : (typeof item.viewCount === 'number' ? item.viewCount : 0);
+        return Math.log(Math.max(1, rawViews));
+      });
+      return {
+        minViews: Math.min(...views),
+        maxViews: Math.max(...views)
+      };
+    }
+  }, [chartData, clusterStats, showEngagement, showCenters]);
 
   return (
     <div>
@@ -123,7 +135,7 @@ function Chart({ data }) {
             <XAxis type="number" dataKey="x" name="PCA 1" />
             <YAxis type="number" dataKey="y" name="PCA 2" />
             <Tooltip content={<CustomTooltip />} cursor={{ strokeDasharray: '3 3' }} />
-            <Legend />
+            {!(showEngagement && !showCenters) && <Legend />}
 
             {uniqueClusters.map((clusterName, index) => {
               const clusterData = chartData.filter(item => item.cluster_name === clusterName);
@@ -131,13 +143,13 @@ function Chart({ data }) {
               let fillData = COLORS[index % COLORS.length];
               let displayName = clusterName;
 
-              if (showEngagement) {
+              if (showEngagement && showCenters) {
                 const stat = clusterStats.find(c => c.cluster_name === clusterName);
                 if (stat) {
                   const avg = stat.avg_views;
                   let ratio = 0;
-                  if (maxAvg > minAvg) {
-                    ratio = (avg - minAvg) / (maxAvg - minAvg);
+                  if (maxViews > minViews) {
+                    ratio = (avg - minViews) / (maxViews - minViews);
                   }
 
                   const r = Math.round(255 * (1 - ratio));
@@ -147,6 +159,8 @@ function Chart({ data }) {
 
                   displayName = `${Math.round(avg).toLocaleString()} Avg Views`;
                 }
+              } else if (showEngagement && !showCenters) {
+                displayName = "Views";
               }
 
               return (
@@ -156,6 +170,18 @@ function Chart({ data }) {
                   data={clusterData}
                   fill={fillData}
                 >
+                  {showEngagement && !showCenters && clusterData.map((entry, index) => {
+                    const rawViews = typeof entry.view_count === 'number' ? entry.view_count : (typeof entry.viewCount === 'number' ? entry.viewCount : 0);
+                    const logViews = Math.log(Math.max(1, rawViews));
+                    let ratio = 0;
+                    if (maxViews > minViews) {
+                      ratio = (logViews - minViews) / (maxViews - minViews);
+                    }
+                    const r = Math.round(255 * (1 - ratio));
+                    const g = Math.round(255 * ratio);
+                    const b = 0;
+                    return <Cell key={`cell-${index}`} fill={`rgb(${r}, ${g}, ${b})`} />;
+                  })}
                 </Scatter>
               );
             })}

@@ -12,6 +12,8 @@ function App() {
   const [channelsList, setChannelsList] = useState([]);
   const [channelProjections, setChannelProjections] = useState([]);
   const [selectedChannel, setSelectedChannel] = useState('');
+  const [selectedChannelsMulti, setSelectedChannelsMulti] = useState([]);
+  const [showCenters, setShowCenters] = useState(false);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
@@ -97,24 +99,43 @@ function App() {
     return <div className="container p-4"><div className="notification is-danger">{error}</div></div>;
   }
 
+  const handleHomeClick = () => {
+    setSelectedChannel('');
+    setSelectedChannelsMulti([]);
+  };
+
   return (
     <div className="container p-4">
-      <h1 className="title">Video & Cluster Visualization</h1>
+      <nav className="navbar mb-4" role="navigation" aria-label="main navigation">
+        <div className="navbar-brand">
+          <a className="title is-4 mb-0 navbar-item" onClick={handleHomeClick}>
+            Video & Cluster Visualization
+          </a>
+        </div>
+      </nav>
 
       <div className="box">
         <ChannelSelector
           channels={channels}
-          selectedChannel={selectedChannel}
-          onSelectChannel={setSelectedChannel}
+          selectedChannel={showCenters ? selectedChannelsMulti : selectedChannel}
+          onSelectChannel={showCenters ? setSelectedChannelsMulti : setSelectedChannel}
+          isMulti={showCenters}
         />
       </div>
 
-      {!selectedChannel ? (
+      {!selectedChannel || showCenters ? (
         <>
           <div className="box">
             <h2 className="subtitle">Channels Overview (2D Projection)</h2>
-            <ChannelsChart data={channelProjections} />
+            <ChannelsChart
+              data={channelProjections}
+              videos={data}
+              showCenters={showCenters}
+              setShowCenters={setShowCenters}
+              selectedChannels={selectedChannelsMulti}
+            />
           </div>
+
           <div className="box">
             <h2 className="subtitle">Channel Cluster Performance</h2>
             <ChannelStatsTable data={channelStats} onSelectChannel={setSelectedChannel} />
