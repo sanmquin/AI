@@ -135,12 +135,11 @@ function App() {
               selectedChannels={selectedChannelsMulti}
             />
           </div>
-          {!showCenters && (
-            <div className="box">
-              <h2 className="subtitle">Channel Cluster Performance</h2>
-              <ChannelStatsTable data={channelStats} onSelectChannel={setSelectedChannel} />
-            </div>
-          )}
+
+          <div className="box">
+            <h2 className="subtitle">Channel Cluster Performance</h2>
+            <ChannelStatsTable data={channelStats} onSelectChannel={setSelectedChannel} />
+          </div>
         </>
       ) : (
         <>
