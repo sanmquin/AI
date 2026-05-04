@@ -18,6 +18,7 @@ function App() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [engagementCenters, setEngagementCenters] = useState([]);
+  const [engagementMetrics, setEngagementMetrics] = useState([]);
 
   useEffect(() => {
     let isMounted = true;
@@ -56,6 +57,9 @@ function App() {
 
           const centers = engagementData?.artifacts?.channel_engagement_centers || [];
           setEngagementCenters(centers);
+
+          const metrics = engagementData?.artifacts?.channel_engagement_metrics || [];
+          setEngagementMetrics(metrics);
 
           setLoading(false);
         }
@@ -152,7 +156,7 @@ function App() {
 
           <div className="box">
             <h2 className="subtitle">Engagement Metrics Overview</h2>
-            <EngagementMetricsTable data={engagementCenters} />
+            <EngagementMetricsTable data={engagementMetrics} />
           </div>
         </>
       ) : (

@@ -1,73 +1,67 @@
 import { useMemo, useState } from 'react';
 
-const METRIC_COLUMNS = [
-  {
-    key: 'mean',
-    label: 'Average Engagement Signal',
-    tooltip: 'Mean value across the 20-dimensional engagement center for each channel. Higher values indicate an overall positive engagement tendency.'
+const METRIC_CONFIG = {
+  predictability_r2: {
+    label: 'Predictability (Adj. R²)',
+    description:
+      'Adjusted R² from a per-channel regression predicting engagement using distance-to-optimal-center. Higher values mean semantic position explains more engagement variance.'
   },
-  {
-    key: 'meanAbs',
-    label: 'Engagement Intensity',
-    tooltip: 'Average absolute value across dimensions. This reflects how strongly a channel deviates from neutral engagement regardless of direction.'
+  distance_coef: {
+    label: 'Distance Coefficient',
+    description:
+      'Regression coefficient on distance to the channel\'s optimal engagement center. More negative values indicate engagement drops faster as content moves away from that center.'
   },
-  {
-    key: 'stdDev',
-    label: 'Engagement Variability',
-    tooltip: 'Standard deviation of engagement-center dimensions. Higher values indicate less consistent engagement behavior across dimensions.'
+  p_value: {
+    label: 'Distance p-value',
+    description:
+      'Statistical significance for the distance coefficient. Smaller values indicate stronger evidence that distance-to-optimal-center is associated with engagement.'
   },
-  {
-    key: 'maxVal',
-    label: 'Strongest Positive Dimension',
-    tooltip: 'Largest positive value in the engagement center. This captures the single most dominant positive engagement dimension.'
+  gradient_magnitude: {
+    label: 'Gradient Magnitude',
+    description:
+      'Length (norm) of the 20D semantic gradient vector for the channel. Larger values indicate a steeper engagement surface in embedding space.'
   },
-  {
-    key: 'minVal',
-    label: 'Strongest Negative Dimension',
-    tooltip: 'Lowest (most negative) value in the engagement center. This captures the strongest negative engagement dimension.'
+  normality_shapiro_w: {
+    label: 'Normality (Shapiro-W)',
+    description:
+      'Shapiro-W statistic for normality of projection values used in gradient analysis. Values closer to 1 suggest a distribution closer to normal.'
+  },
+  gradient_magnitude_normalized: {
+    label: 'Normalized Gradient Magnitude',
+    description:
+      'Min-max normalized gradient magnitude on a [0, 1] scale, enabling easier cross-channel comparison of engagement-surface steepness.'
   }
-];
+};
 
-function computeMetrics(vector) {
-  if (!Array.isArray(vector) || vector.length === 0) {
-    return null;
-  }
-
-  const mean = vector.reduce((acc, n) => acc + n, 0) / vector.length;
-  const meanAbs = vector.reduce((acc, n) => acc + Math.abs(n), 0) / vector.length;
-  const variance = vector.reduce((acc, n) => acc + (n - mean) ** 2, 0) / vector.length;
-  const stdDev = Math.sqrt(variance);
-  const maxVal = Math.max(...vector);
-  const minVal = Math.min(...vector);
-
-  return { mean, meanAbs, stdDev, maxVal, minVal };
-}
+const METRIC_KEYS = Object.keys(METRIC_CONFIG);
 
 function EngagementMetricsTable({ data }) {
-  const [sortConfig, setSortConfig] = useState({ key: 'meanAbs', direction: 'desc' });
+  const [sortConfig, setSortConfig] = useState({ key: 'predictability_r2', direction: 'desc' });
+  const [selectedMetric, setSelectedMetric] = useState('predictability_r2');
 
   const rows = useMemo(() => {
     const mapped = (data || [])
-      .map((item) => {
-        const metrics = computeMetrics(item.engagement_center_20d);
-        if (!metrics) return null;
-
-        return {
-          channel_name: item.channel_name,
-          ...metrics
-        };
-      })
-      .filter(Boolean);
+      .filter((item) => item?.channel_name)
+      .map((item) => ({
+        channel_name: item.channel_name,
+        n_videos: item.n_videos,
+        ...Object.fromEntries(METRIC_KEYS.map((key) => [key, item[key]]))
+      }));
 
     const { key, direction } = sortConfig;
     const order = direction === 'asc' ? 1 : -1;
 
     return mapped.sort((a, b) => {
-      if (key === 'channel_name') {
-        return a.channel_name.localeCompare(b.channel_name) * order;
-      }
+      if (key === 'channel_name') return a.channel_name.localeCompare(b.channel_name) * order;
 
-      return (a[key] - b[key]) * order;
+      const aVal = a[key];
+      const bVal = b[key];
+
+      if (aVal == null && bVal == null) return 0;
+      if (aVal == null) return 1;
+      if (bVal == null) return -1;
+
+      return (aVal - bVal) * order;
     });
   }, [data, sortConfig]);
 
@@ -76,49 +70,73 @@ function EngagementMetricsTable({ data }) {
       if (current.key === key) {
         return { key, direction: current.direction === 'asc' ? 'desc' : 'asc' };
       }
-
       return { key, direction: key === 'channel_name' ? 'asc' : 'desc' };
     });
+  };
+
+  const formatValue = (key, value) => {
+    if (value == null || Number.isNaN(value)) return 'N/A';
+    if (key === 'p_value') return Number(value).toExponential(2);
+    return Number(value).toFixed(4);
   };
 
   if (!rows.length) return null;
 
   return (
-    <div className="table-container">
-      <table className="table is-fullwidth is-striped is-hoverable is-bordered is-narrow">
-        <thead>
-          <tr>
-            <th>
-              <button type="button" className="button is-ghost p-0" onClick={() => onSort('channel_name')}>
-                Channel
-              </button>
-            </th>
-            {METRIC_COLUMNS.map((column) => (
-              <th key={column.key}>
-                <button
-                  type="button"
-                  className="button is-ghost p-0"
-                  onClick={() => onSort(column.key)}
-                  title={column.tooltip}
-                >
-                  {column.label}
+    <>
+      <div className="field mb-3">
+        <label className="label mb-2">Selected metric context</label>
+        <div className="control">
+          <div className="select is-small">
+            <select value={selectedMetric} onChange={(event) => setSelectedMetric(event.target.value)}>
+              {METRIC_KEYS.map((key) => (
+                <option key={key} value={key}>
+                  {METRIC_CONFIG[key].label}
+                </option>
+              ))}
+            </select>
+          </div>
+        </div>
+        <p className="is-size-7 mt-2">{METRIC_CONFIG[selectedMetric].description}</p>
+      </div>
+
+      <div className="table-container">
+        <table className="table is-fullwidth is-striped is-hoverable is-bordered is-narrow">
+          <thead>
+            <tr>
+              <th>
+                <button type="button" className="button is-ghost p-0" onClick={() => onSort('channel_name')}>
+                  Channel
                 </button>
               </th>
-            ))}
-          </tr>
-        </thead>
-        <tbody>
-          {rows.map((row) => (
-            <tr key={row.channel_name}>
-              <td className="has-text-weight-semibold">{row.channel_name}</td>
-              {METRIC_COLUMNS.map((column) => (
-                <td key={column.key}>{row[column.key].toFixed(4)}</td>
+              <th>
+                <button type="button" className="button is-ghost p-0" onClick={() => onSort('n_videos')}>
+                  Videos
+                </button>
+              </th>
+              {METRIC_KEYS.map((metricKey) => (
+                <th key={metricKey}>
+                  <button type="button" className="button is-ghost p-0" onClick={() => onSort(metricKey)}>
+                    {METRIC_CONFIG[metricKey].label}
+                  </button>
+                </th>
               ))}
             </tr>
-          ))}
-        </tbody>
-      </table>
-    </div>
+          </thead>
+          <tbody>
+            {rows.map((row) => (
+              <tr key={row.channel_name}>
+                <td className="has-text-weight-semibold">{row.channel_name}</td>
+                <td>{row.n_videos ?? 'N/A'}</td>
+                {METRIC_KEYS.map((metricKey) => (
+                  <td key={metricKey}>{formatValue(metricKey, row[metricKey])}</td>
+                ))}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </>
   );
 }
 
