@@ -11,6 +11,7 @@ function App() {
   const [data, setData] = useState([]);
   const [channelsList, setChannelsList] = useState([]);
   const [channelProjections, setChannelProjections] = useState([]);
+  const [engagementData, setEngagementData] = useState(null);
   const [selectedChannel, setSelectedChannel] = useState('');
   const [selectedChannelsMulti, setSelectedChannelsMulti] = useState([]);
   const [showCenters, setShowCenters] = useState(false);
@@ -28,9 +29,12 @@ function App() {
       fetch('/channels.json').then(res => {
         if (!res.ok) throw new Error('Failed to load channels.json');
         return res.json();
-      })
+      }),
+      fetch('/engagement.json')
+        .then(res => (res.ok ? res.json() : null))
+        .catch(() => null)
     ])
-      .then(([clustersData, channelsData]) => {
+      .then(([clustersData, channelsData, engagement]) => {
         if (isMounted) {
           const videos = clustersData?.artifacts?.videos_clustered || [];
           setData(videos);
@@ -47,6 +51,7 @@ function App() {
 
           const projections = channelsData?.artifacts?.channel_projection_2d || [];
           setChannelProjections(projections);
+          setEngagementData(engagement);
 
           setLoading(false);
         }
@@ -147,7 +152,11 @@ function App() {
             <div className="column is-full">
               <div className="box">
                 <h2 className="subtitle">Cluster Visualization (2D Embeddings)</h2>
-                <Chart data={filteredData} />
+                <Chart
+                  data={filteredData}
+                  selectedChannel={selectedChannel}
+                  engagementData={engagementData}
+                />
               </div>
             </div>
           </div>

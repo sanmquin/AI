@@ -28,7 +28,7 @@ const CustomTooltip = ({ active, payload }) => {
   return null;
 };
 
-function Chart({ data }) {
+function Chart({ data, selectedChannel, engagementData }) {
   const [showCenters, setShowCenters] = useState(false);
   const [showEngagement, setShowEngagement] = useState(false);
 
@@ -84,6 +84,34 @@ function Chart({ data }) {
 
   // Find unique clusters to map colors and legends
   const uniqueClusters = Array.from(new Set(chartData.map(item => item.cluster_name)));
+
+  const engagementCenter = useMemo(() => {
+    if (!showEngagement || !engagementData || !selectedChannel) return null;
+
+    const artifacts = engagementData.artifacts || {};
+    const candidates = [
+      artifacts.channel_engagement_centers,
+      artifacts.engagement_centers,
+      engagementData.channel_engagement_centers,
+      engagementData.engagement_centers,
+    ].find(Array.isArray);
+
+    if (!candidates) return null;
+
+    const center = candidates.find((item) => item.channel_name === selectedChannel);
+    if (!center) return null;
+
+    const x = center.x ?? center.center_x;
+    const y = center.y ?? center.center_y;
+    if (typeof x !== 'number' || typeof y !== 'number') return null;
+
+    return {
+      channel_name: selectedChannel,
+      x,
+      y,
+      label: 'Engagement Center',
+    };
+  }, [engagementData, selectedChannel, showEngagement]);
 
   // Calculate engagement scale
   const { minViews, maxViews } = useMemo(() => {
@@ -185,6 +213,12 @@ function Chart({ data }) {
                 </Scatter>
               );
             })}
+
+            {showEngagement && engagementCenter && (
+              <Scatter name="Engagement Center" data={[engagementCenter]}>
+                <Cell fill="#ffffff" stroke="#000000" strokeWidth={1} />
+              </Scatter>
+            )}
           </ScatterChart>
         </ResponsiveContainer>
       </div>
