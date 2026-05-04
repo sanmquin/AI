@@ -1,5 +1,5 @@
 import { useMemo } from 'react';
-import { ScatterChart, Scatter, XAxis, YAxis, Tooltip, ResponsiveContainer, Cell } from 'recharts';
+import { ScatterChart, Scatter, XAxis, YAxis, Tooltip, ResponsiveContainer, Cell, ReferenceLine } from 'recharts';
 
 const CustomTooltip = ({ active, payload }) => {
   if (active && payload && payload.length) {
@@ -22,9 +22,9 @@ const CustomTooltip = ({ active, payload }) => {
 };
 
 function ChannelsChart({ data, videos, showCenters, setShowCenters, selectedChannels = [] }) {
-  const chartData = useMemo(() => {
-    if (!showCenters) return data;
-    if (!videos || videos.length === 0) return [];
+  const { chartData, links } = useMemo(() => {
+    if (!showCenters) return { chartData: data, links: [] };
+    if (!videos || videos.length === 0) return { chartData: [], links: [] };
 
     const channelMap = new Map();
     const clusterMap = new Map();
@@ -67,17 +67,21 @@ function ChannelsChart({ data, videos, showCenters, setShowCenters, selectedChan
     });
 
     const resultData = [];
+    const linksData = [];
 
     // Process channels
     channelMap.forEach((stats, channel_name) => {
       const isSelected = selectedChannels.includes(channel_name);
 
+      const cx = stats.sumX / stats.count;
+      const cy = stats.sumY / stats.count;
+
       // Add the channel center
       resultData.push({
         isChannelCenter: true,
         channel_name,
-        x: stats.sumX / stats.count,
-        y: stats.sumY / stats.count,
+        x: cx,
+        y: cy,
         isSelected
       });
 
@@ -99,12 +103,25 @@ function ChannelsChart({ data, videos, showCenters, setShowCenters, selectedChan
           const g = Math.round(255 * ratio);
           const b = 0;
 
+          const clx = c.sumX / c.count;
+          const cly = c.sumY / c.count;
+
+          linksData.push({
+            channel_name: c.channel_name,
+            cluster_name: c.cluster_name,
+            x1: cx,
+            y1: cy,
+            x2: clx,
+            y2: cly,
+            color: `rgb(${r}, ${g}, ${b})`
+          });
+
           resultData.push({
             isClusterCenter: true,
             channel_name: c.channel_name,
             cluster_name: c.cluster_name,
-            x: c.sumX / c.count,
-            y: c.sumY / c.count,
+            x: clx,
+            y: cly,
             avg_views: avg,
             color: `rgb(${r}, ${g}, ${b})`
           });
@@ -112,7 +129,7 @@ function ChannelsChart({ data, videos, showCenters, setShowCenters, selectedChan
       }
     });
 
-    return resultData;
+    return { chartData: resultData, links: linksData };
   }, [data, videos, showCenters, selectedChannels]);
 
   if (!chartData || chartData.length === 0) return null;
@@ -138,6 +155,15 @@ function ChannelsChart({ data, videos, showCenters, setShowCenters, selectedChan
             <XAxis type="number" dataKey="x" name="X" hide={true} />
             <YAxis type="number" dataKey="y" name="Y" hide={true} />
             <Tooltip content={<CustomTooltip />} cursor={{ strokeDasharray: '3 3' }} />
+            {showCenters && links && links.map((link, idx) => (
+              <ReferenceLine
+                key={`link-${idx}`}
+                segment={[{ x: link.x1, y: link.y1 }, { x: link.x2, y: link.y2 }]}
+                stroke={link.color || "#ccc"}
+                strokeWidth={1}
+                strokeDasharray="3 3"
+              />
+            ))}
             {showCenters ? (
               <Scatter name="Channels" data={chartData}>
                 {chartData.map((entry, index) => {
