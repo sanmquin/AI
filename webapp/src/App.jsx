@@ -7,6 +7,7 @@ import ClusterStats from './components/ClusterStats';
 import ChannelsChart from './components/ChannelsChart';
 import ChannelStatsTable from './components/ChannelStatsTable';
 import EngagementMetricsTable from './components/EngagementMetricsTable';
+import DimensionChart from './components/DimensionChart';
 
 function App() {
   const [data, setData] = useState([]);
@@ -214,6 +215,12 @@ function App() {
         </>
       ) : (
         <>
+          <DimensionChart
+            data={filteredData}
+            predictions={channelPredictions}
+            dimensionDescriptions={dimensionDescriptions}
+          />
+
           <div className="box">
             <table className="table is-fullwidth is-striped">
               <thead>
