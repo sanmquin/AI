@@ -20,6 +20,7 @@ function App() {
   const [engagementCenters, setEngagementCenters] = useState([]);
   const [engagementMetrics, setEngagementMetrics] = useState([]);
   const [dimensionDescriptions, setDimensionDescriptions] = useState([]);
+  const [predictions, setPredictions] = useState([]);
   const [activeTab, setActiveTab] = useState('overview');
 
   useEffect(() => {
@@ -41,9 +42,13 @@ function App() {
       fetch('/descriptions.json').then(res => {
         if (!res.ok) throw new Error('Failed to load descriptions.json');
         return res.json();
+      }),
+      fetch('/predictions.json').then(res => {
+        if (!res.ok) throw new Error('Failed to load predictions.json');
+        return res.json();
       })
     ])
-      .then(([clustersData, channelsData, engagementData, descriptionsData]) => {
+      .then(([clustersData, channelsData, engagementData, descriptionsData, predictionsData]) => {
         if (isMounted) {
           const videos = clustersData?.artifacts?.videos_clustered || [];
           setData(videos);
@@ -70,6 +75,9 @@ function App() {
           const descriptions = descriptionsData?.artifacts?.dimension_interpretations || [];
           setDimensionDescriptions(descriptions);
 
+          const channelModels = predictionsData?.artifacts?.channel_models || [];
+          setPredictions(channelModels);
+
           setLoading(false);
         }
       })
@@ -92,6 +100,11 @@ function App() {
     if (!selectedChannel) return [];
     return data.filter(item => item.channel_name === selectedChannel);
   }, [data, selectedChannel]);
+
+  const channelPredictions = useMemo(() => {
+    if (!selectedChannel) return [];
+    return predictions.filter(p => p.channel_name === selectedChannel);
+  }, [predictions, selectedChannel]);
 
   const channelStats = useMemo(() => {
     const statsMap = new Map();
@@ -205,15 +218,26 @@ function App() {
             <table className="table is-fullwidth is-striped">
               <thead>
                 <tr>
+                  <th>Dimension</th>
                   <th>Description</th>
+                  <th>Coefficient</th>
                 </tr>
               </thead>
               <tbody>
-                {dimensionDescriptions.map((desc, idx) => (
-                  <tr key={idx}>
-                    <td>{desc}</td>
-                  </tr>
-                ))}
+                {dimensionDescriptions.map((desc, idx) => {
+                  const prediction = channelPredictions.find(p => p.dimension_index === idx);
+                  const coef = prediction ? prediction.coefficient : null;
+                  const coefClass = coef > 0 ? 'has-text-info' : coef < 0 ? 'has-text-danger' : '';
+                  return (
+                    <tr key={idx}>
+                      <td>{idx}</td>
+                      <td>{desc}</td>
+                      <td className={`has-text-right has-text-weight-semibold ${coefClass}`}>
+                        {coef !== null ? coef.toFixed(4) : 'N/A'}
+                      </td>
+                    </tr>
+                  );
+                })}
               </tbody>
             </table>
           </div>
