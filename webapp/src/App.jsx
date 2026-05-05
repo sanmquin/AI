@@ -10,6 +10,7 @@ import EngagementMetricsTable from './components/EngagementMetricsTable';
 import DimensionChart from './components/DimensionChart';
 import DimensionTable from './components/DimensionTable';
 import HighlightVideos from './components/HighlightVideos';
+import CompetitionChart from './components/CompetitionChart';
 
 function App() {
   const [data, setData] = useState([]);
@@ -201,6 +202,9 @@ function App() {
             <li className={activeTab === 'dimensions' ? 'is-active' : ''}>
               <a onClick={() => setActiveTab('dimensions')}>Dimensions</a>
             </li>
+            <li className={activeTab === 'competition' ? 'is-active' : ''}>
+              <a onClick={() => setActiveTab('competition')}>Competition</a>
+            </li>
           </ul>
         </div>
       )}
@@ -245,6 +249,14 @@ function App() {
             <h2 className="subtitle">Video List</h2>
             <Table data={filteredData} />
           </div>
+        </>
+      ) : activeTab === 'competition' ? (
+        <>
+          <CompetitionChart
+            videos={data}
+            channelProjections={channelProjections}
+            selectedChannel={selectedChannel}
+          />
         </>
       ) : (
         <>
