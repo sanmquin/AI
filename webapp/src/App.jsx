@@ -8,6 +8,8 @@ import ChannelsChart from './components/ChannelsChart';
 import ChannelStatsTable from './components/ChannelStatsTable';
 import EngagementMetricsTable from './components/EngagementMetricsTable';
 import DimensionChart from './components/DimensionChart';
+import DimensionTable from './components/DimensionTable';
+import HighlightVideos from './components/HighlightVideos';
 
 function App() {
   const [data, setData] = useState([]);
@@ -23,6 +25,9 @@ function App() {
   const [dimensionDescriptions, setDimensionDescriptions] = useState([]);
   const [predictions, setPredictions] = useState([]);
   const [activeTab, setActiveTab] = useState('overview');
+
+  const [selectedX, setSelectedX] = useState(null);
+  const [selectedY, setSelectedY] = useState(null);
 
   useEffect(() => {
     let isMounted = true;
@@ -127,6 +132,34 @@ function App() {
     return statsArray;
   }, [data]);
 
+  // Calculate default axes for HighlightVideos if they are null
+  const defaultAxes = useMemo(() => {
+      if (channelPredictions && channelPredictions.length > 0) {
+        let minCoef = Infinity;
+        let minIdx = 0;
+        let maxCoef = -Infinity;
+        let maxIdx = 0;
+
+        channelPredictions.forEach((p) => {
+          if (p.coefficient < minCoef) {
+            minCoef = p.coefficient;
+            minIdx = p.dimension_index;
+          }
+          if (p.coefficient > maxCoef) {
+            maxCoef = p.coefficient;
+            maxIdx = p.dimension_index;
+          }
+        });
+
+        return { x: minIdx.toString(), y: maxIdx.toString() };
+      }
+      return { x: '0', y: '1' }; // Fallback
+  }, [channelPredictions]);
+
+  const currentX = selectedX !== null ? selectedX : defaultAxes.x;
+  const currentY = selectedY !== null ? selectedY : defaultAxes.y;
+
+
   if (loading) {
     return <div className="container p-4"><p>Loading data...</p></div>;
   }
@@ -219,35 +252,22 @@ function App() {
             data={filteredData}
             predictions={channelPredictions}
             dimensionDescriptions={dimensionDescriptions}
+            selectedX={selectedX}
+            selectedY={selectedY}
+            onXChange={setSelectedX}
+            onYChange={setSelectedY}
           />
 
-          <div className="box">
-            <table className="table is-fullwidth is-striped">
-              <thead>
-                <tr>
-                  <th>Dimension</th>
-                  <th>Description</th>
-                  <th>Coefficient</th>
-                </tr>
-              </thead>
-              <tbody>
-                {dimensionDescriptions.map((desc, idx) => {
-                  const prediction = channelPredictions.find(p => p.dimension_index === idx);
-                  const coef = prediction ? prediction.coefficient : null;
-                  const coefClass = coef > 0 ? 'has-text-info' : coef < 0 ? 'has-text-danger' : '';
-                  return (
-                    <tr key={idx}>
-                      <td>{idx}</td>
-                      <td>{desc}</td>
-                      <td className={`has-text-right has-text-weight-semibold ${coefClass}`}>
-                        {coef !== null ? coef.toFixed(4) : 'N/A'}
-                      </td>
-                    </tr>
-                  );
-                })}
-              </tbody>
-            </table>
-          </div>
+          <HighlightVideos
+            data={filteredData}
+            selectedX={currentX}
+            selectedY={currentY}
+          />
+
+          <DimensionTable
+            descriptions={dimensionDescriptions}
+            predictions={channelPredictions}
+          />
         </>
       )}
     </div>
