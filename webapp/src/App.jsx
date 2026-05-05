@@ -19,6 +19,8 @@ function App() {
   const [error, setError] = useState(null);
   const [engagementCenters, setEngagementCenters] = useState([]);
   const [engagementMetrics, setEngagementMetrics] = useState([]);
+  const [dimensionDescriptions, setDimensionDescriptions] = useState([]);
+  const [activeTab, setActiveTab] = useState('overview');
 
   useEffect(() => {
     let isMounted = true;
@@ -35,9 +37,13 @@ function App() {
       fetch('/engagement.json').then(res => {
         if (!res.ok) throw new Error('Failed to load engagement.json');
         return res.json();
+      }),
+      fetch('/descriptions.json').then(res => {
+        if (!res.ok) throw new Error('Failed to load descriptions.json');
+        return res.json();
       })
     ])
-      .then(([clustersData, channelsData, engagementData]) => {
+      .then(([clustersData, channelsData, engagementData, descriptionsData]) => {
         if (isMounted) {
           const videos = clustersData?.artifacts?.videos_clustered || [];
           setData(videos);
@@ -60,6 +66,9 @@ function App() {
 
           const metrics = engagementData?.artifacts?.channel_engagement_metrics || [];
           setEngagementMetrics(metrics);
+
+          const descriptions = descriptionsData?.artifacts?.dimension_interpretations || [];
+          setDimensionDescriptions(descriptions);
 
           setLoading(false);
         }
@@ -136,6 +145,19 @@ function App() {
         />
       </div>
 
+      {selectedChannel && !showCenters && (
+        <div className="tabs is-boxed">
+          <ul>
+            <li className={activeTab === 'overview' ? 'is-active' : ''}>
+              <a onClick={() => setActiveTab('overview')}>Overview</a>
+            </li>
+            <li className={activeTab === 'dimensions' ? 'is-active' : ''}>
+              <a onClick={() => setActiveTab('dimensions')}>Dimensions</a>
+            </li>
+          </ul>
+        </div>
+      )}
+
       {!selectedChannel || showCenters ? (
         <>
           <div className="box">
@@ -159,7 +181,7 @@ function App() {
             <EngagementMetricsTable data={engagementMetrics} />
           </div>
         </>
-      ) : (
+      ) : activeTab === 'overview' ? (
         <>
           <div className="columns">
             <div className="column is-full">
@@ -175,6 +197,25 @@ function App() {
           <div className="box">
             <h2 className="subtitle">Video List</h2>
             <Table data={filteredData} />
+          </div>
+        </>
+      ) : (
+        <>
+          <div className="box">
+            <table className="table is-fullwidth is-striped">
+              <thead>
+                <tr>
+                  <th>Description</th>
+                </tr>
+              </thead>
+              <tbody>
+                {dimensionDescriptions.map((desc, idx) => (
+                  <tr key={idx}>
+                    <td>{desc}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
           </div>
         </>
       )}
