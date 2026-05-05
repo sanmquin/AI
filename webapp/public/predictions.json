@@ -1,0 +1,5609 @@
+{
+  "schema_version": "1.0.0",
+  "artifacts": {
+    "global_model": [
+      {
+        "channel_name": "Global",
+        "dimension": "embedding_reduced_09",
+        "dimension_index": 8,
+        "coefficient": 6.672310987356817,
+        "intercept": 10.768766621921351,
+        "p_value": 1.7050666884978894e-17,
+        "is_significant": true,
+        "r2_adj": 0.24086146320294488
+      },
+      {
+        "channel_name": "Global",
+        "dimension": "embedding_reduced_18",
+        "dimension_index": 17,
+        "coefficient": 4.545629797489905,
+        "intercept": 10.768766621921351,
+        "p_value": 1.7347996707432637e-05,
+        "is_significant": true,
+        "r2_adj": 0.24086146320294488
+      },
+      {
+        "channel_name": "Global",
+        "dimension": "embedding_reduced_05",
+        "dimension_index": 4,
+        "coefficient": 3.290301171113947,
+        "intercept": 10.768766621921351,
+        "p_value": 8.084007200404097e-08,
+        "is_significant": true,
+        "r2_adj": 0.24086146320294488
+      },
+      {
+        "channel_name": "Global",
+        "dimension": "embedding_reduced_20",
+        "dimension_index": 19,
+        "coefficient": 2.876848561306589,
+        "intercept": 10.768766621921351,
+        "p_value": 0.008970437726931764,
+        "is_significant": true,
+        "r2_adj": 0.24086146320294488
+      },
+      {
+        "channel_name": "Global",
+        "dimension": "embedding_reduced_12",
+        "dimension_index": 11,
+        "coefficient": 1.766423881799074,
+        "intercept": 10.768766621921351,
+        "p_value": 0.04488415316842124,
+        "is_significant": true,
+        "r2_adj": 0.24086146320294488
+      },
+      {
+        "channel_name": "Global",
+        "dimension": "embedding_reduced_01",
+        "dimension_index": 0,
+        "coefficient": 1.6275151072247598,
+        "intercept": 10.768766621921351,
+        "p_value": 1.4715390740179347e-05,
+        "is_significant": true,
+        "r2_adj": 0.24086146320294488
+      },
+      {
+        "channel_name": "Global",
+        "dimension": "embedding_reduced_06",
+        "dimension_index": 5,
+        "coefficient": 1.5750094472687193,
+        "intercept": 10.768766621921351,
+        "p_value": 0.011543527321194532,
+        "is_significant": true,
+        "r2_adj": 0.24086146320294488
+      },
+      {
+        "channel_name": "Global",
+        "dimension": "embedding_reduced_13",
+        "dimension_index": 12,
+        "coefficient": 1.3077048339178425,
+        "intercept": 10.768766621921351,
+        "p_value": 0.1526427275695972,
+        "is_significant": false,
+        "r2_adj": 0.24086146320294488
+      },
+      {
+        "channel_name": "Global",
+        "dimension": "embedding_reduced_08",
+        "dimension_index": 7,
+        "coefficient": 0.9683401372988452,
+        "intercept": 10.768766621921351,
+        "p_value": 0.1758510596484215,
+        "is_significant": false,
+        "r2_adj": 0.24086146320294488
+      },
+      {
+        "channel_name": "Global",
+        "dimension": "embedding_reduced_07",
+        "dimension_index": 6,
+        "coefficient": -0.28225301845206174,
+        "intercept": 10.768766621921351,
+        "p_value": 0.6610364506147489,
+        "is_significant": false,
+        "r2_adj": 0.24086146320294488
+      },
+      {
+        "channel_name": "Global",
+        "dimension": "embedding_reduced_11",
+        "dimension_index": 10,
+        "coefficient": -0.6491493254796261,
+        "intercept": 10.768766621921351,
+        "p_value": 0.43951400408170826,
+        "is_significant": false,
+        "r2_adj": 0.24086146320294488
+      },
+      {
+        "channel_name": "Global",
+        "dimension": "embedding_reduced_04",
+        "dimension_index": 3,
+        "coefficient": -1.3662955001732986,
+        "intercept": 10.768766621921351,
+        "p_value": 0.02254726189057646,
+        "is_significant": true,
+        "r2_adj": 0.24086146320294488
+      },
+      {
+        "channel_name": "Global",
+        "dimension": "embedding_reduced_02",
+        "dimension_index": 1,
+        "coefficient": -2.5141354482936054,
+        "intercept": 10.768766621921351,
+        "p_value": 2.553149845298267e-06,
+        "is_significant": true,
+        "r2_adj": 0.24086146320294488
+      },
+      {
+        "channel_name": "Global",
+        "dimension": "embedding_reduced_19",
+        "dimension_index": 18,
+        "coefficient": -3.1878895848625426,
+        "intercept": 10.768766621921351,
+        "p_value": 0.0026252241634811637,
+        "is_significant": true,
+        "r2_adj": 0.24086146320294488
+      },
+      {
+        "channel_name": "Global",
+        "dimension": "embedding_reduced_10",
+        "dimension_index": 9,
+        "coefficient": -3.2676929036048934,
+        "intercept": 10.768766621921351,
+        "p_value": 6.628506159751145e-05,
+        "is_significant": true,
+        "r2_adj": 0.24086146320294488
+      },
+      {
+        "channel_name": "Global",
+        "dimension": "embedding_reduced_15",
+        "dimension_index": 14,
+        "coefficient": -3.5930143945424353,
+        "intercept": 10.768766621921351,
+        "p_value": 0.00021665803846634884,
+        "is_significant": true,
+        "r2_adj": 0.24086146320294488
+      },
+      {
+        "channel_name": "Global",
+        "dimension": "embedding_reduced_14",
+        "dimension_index": 13,
+        "coefficient": -3.7106372444315214,
+        "intercept": 10.768766621921351,
+        "p_value": 7.274744058047888e-05,
+        "is_significant": true,
+        "r2_adj": 0.24086146320294488
+      },
+      {
+        "channel_name": "Global",
+        "dimension": "embedding_reduced_16",
+        "dimension_index": 15,
+        "coefficient": -5.5413646770203915,
+        "intercept": 10.768766621921351,
+        "p_value": 3.007709362932034e-08,
+        "is_significant": true,
+        "r2_adj": 0.24086146320294488
+      },
+      {
+        "channel_name": "Global",
+        "dimension": "embedding_reduced_17",
+        "dimension_index": 16,
+        "coefficient": -5.874615271071384,
+        "intercept": 10.768766621921351,
+        "p_value": 9.462713867545567e-09,
+        "is_significant": true,
+        "r2_adj": 0.24086146320294488
+      },
+      {
+        "channel_name": "Global",
+        "dimension": "embedding_reduced_03",
+        "dimension_index": 2,
+        "coefficient": -6.49161498322584,
+        "intercept": 10.768766621921351,
+        "p_value": 4.718625716842076e-30,
+        "is_significant": true,
+        "r2_adj": 0.24086146320294488
+      }
+    ],
+    "channel_models": [
+      {
+        "channel_name": "20VC with Harry Stebbings",
+        "dimension": "embedding_reduced_01",
+        "dimension_index": 0,
+        "coefficient": -3.0765369297903007,
+        "intercept": 8.812607083093056,
+        "p_value": 0.23076555660015013,
+        "is_significant": false,
+        "r2_adj": 0.4541406215811935
+      },
+      {
+        "channel_name": "20VC with Harry Stebbings",
+        "dimension": "embedding_reduced_02",
+        "dimension_index": 1,
+        "coefficient": 1.946800780286722,
+        "intercept": 8.812607083093056,
+        "p_value": 0.3282477683927465,
+        "is_significant": false,
+        "r2_adj": 0.4541406215811935
+      },
+      {
+        "channel_name": "20VC with Harry Stebbings",
+        "dimension": "embedding_reduced_03",
+        "dimension_index": 2,
+        "coefficient": -2.662833626063037,
+        "intercept": 8.812607083093056,
+        "p_value": 0.39448214078034016,
+        "is_significant": false,
+        "r2_adj": 0.4541406215811935
+      },
+      {
+        "channel_name": "20VC with Harry Stebbings",
+        "dimension": "embedding_reduced_04",
+        "dimension_index": 3,
+        "coefficient": -4.819638034639151,
+        "intercept": 8.812607083093056,
+        "p_value": 0.025395177391035924,
+        "is_significant": true,
+        "r2_adj": 0.4541406215811935
+      },
+      {
+        "channel_name": "20VC with Harry Stebbings",
+        "dimension": "embedding_reduced_05",
+        "dimension_index": 4,
+        "coefficient": -1.4260292661887553,
+        "intercept": 8.812607083093056,
+        "p_value": 0.4821925425197625,
+        "is_significant": false,
+        "r2_adj": 0.4541406215811935
+      },
+      {
+        "channel_name": "20VC with Harry Stebbings",
+        "dimension": "embedding_reduced_06",
+        "dimension_index": 5,
+        "coefficient": 4.964450907329199,
+        "intercept": 8.812607083093056,
+        "p_value": 0.051445289405301596,
+        "is_significant": false,
+        "r2_adj": 0.4541406215811935
+      },
+      {
+        "channel_name": "20VC with Harry Stebbings",
+        "dimension": "embedding_reduced_07",
+        "dimension_index": 6,
+        "coefficient": 4.644809502206742,
+        "intercept": 8.812607083093056,
+        "p_value": 0.03174158493583306,
+        "is_significant": true,
+        "r2_adj": 0.4541406215811935
+      },
+      {
+        "channel_name": "20VC with Harry Stebbings",
+        "dimension": "embedding_reduced_08",
+        "dimension_index": 7,
+        "coefficient": 2.4616888937350256,
+        "intercept": 8.812607083093056,
+        "p_value": 0.3120966922914436,
+        "is_significant": false,
+        "r2_adj": 0.4541406215811935
+      },
+      {
+        "channel_name": "20VC with Harry Stebbings",
+        "dimension": "embedding_reduced_09",
+        "dimension_index": 8,
+        "coefficient": -3.533716594417715,
+        "intercept": 8.812607083093056,
+        "p_value": 0.21789032133678893,
+        "is_significant": false,
+        "r2_adj": 0.4541406215811935
+      },
+      {
+        "channel_name": "20VC with Harry Stebbings",
+        "dimension": "embedding_reduced_10",
+        "dimension_index": 9,
+        "coefficient": 1.087765041894968,
+        "intercept": 8.812607083093056,
+        "p_value": 0.6563499904515642,
+        "is_significant": false,
+        "r2_adj": 0.4541406215811935
+      },
+      {
+        "channel_name": "20VC with Harry Stebbings",
+        "dimension": "embedding_reduced_11",
+        "dimension_index": 10,
+        "coefficient": 0.6616645042008447,
+        "intercept": 8.812607083093056,
+        "p_value": 0.8614194935789998,
+        "is_significant": false,
+        "r2_adj": 0.4541406215811935
+      },
+      {
+        "channel_name": "20VC with Harry Stebbings",
+        "dimension": "embedding_reduced_12",
+        "dimension_index": 11,
+        "coefficient": 6.585019331180261,
+        "intercept": 8.812607083093056,
+        "p_value": 0.016846381231357524,
+        "is_significant": true,
+        "r2_adj": 0.4541406215811935
+      },
+      {
+        "channel_name": "20VC with Harry Stebbings",
+        "dimension": "embedding_reduced_13",
+        "dimension_index": 12,
+        "coefficient": 3.3087270311848545,
+        "intercept": 8.812607083093056,
+        "p_value": 0.3032980001241011,
+        "is_significant": false,
+        "r2_adj": 0.4541406215811935
+      },
+      {
+        "channel_name": "20VC with Harry Stebbings",
+        "dimension": "embedding_reduced_14",
+        "dimension_index": 13,
+        "coefficient": 4.106107823619768,
+        "intercept": 8.812607083093056,
+        "p_value": 0.1399177591269325,
+        "is_significant": false,
+        "r2_adj": 0.4541406215811935
+      },
+      {
+        "channel_name": "20VC with Harry Stebbings",
+        "dimension": "embedding_reduced_15",
+        "dimension_index": 14,
+        "coefficient": 6.185463242961265,
+        "intercept": 8.812607083093056,
+        "p_value": 0.054490379364852494,
+        "is_significant": false,
+        "r2_adj": 0.4541406215811935
+      },
+      {
+        "channel_name": "20VC with Harry Stebbings",
+        "dimension": "embedding_reduced_16",
+        "dimension_index": 15,
+        "coefficient": -5.824884482183448,
+        "intercept": 8.812607083093056,
+        "p_value": 0.02502237480788294,
+        "is_significant": true,
+        "r2_adj": 0.4541406215811935
+      },
+      {
+        "channel_name": "20VC with Harry Stebbings",
+        "dimension": "embedding_reduced_17",
+        "dimension_index": 16,
+        "coefficient": 2.814899702051137,
+        "intercept": 8.812607083093056,
+        "p_value": 0.4345762905619597,
+        "is_significant": false,
+        "r2_adj": 0.4541406215811935
+      },
+      {
+        "channel_name": "20VC with Harry Stebbings",
+        "dimension": "embedding_reduced_18",
+        "dimension_index": 17,
+        "coefficient": 3.1991634870942676,
+        "intercept": 8.812607083093056,
+        "p_value": 0.4520978558642531,
+        "is_significant": false,
+        "r2_adj": 0.4541406215811935
+      },
+      {
+        "channel_name": "20VC with Harry Stebbings",
+        "dimension": "embedding_reduced_19",
+        "dimension_index": 18,
+        "coefficient": -4.676918669275723,
+        "intercept": 8.812607083093056,
+        "p_value": 0.2375364577170068,
+        "is_significant": false,
+        "r2_adj": 0.4541406215811935
+      },
+      {
+        "channel_name": "20VC with Harry Stebbings",
+        "dimension": "embedding_reduced_20",
+        "dimension_index": 19,
+        "coefficient": 6.02164842497673,
+        "intercept": 8.812607083093056,
+        "p_value": 0.042430943443610245,
+        "is_significant": true,
+        "r2_adj": 0.4541406215811935
+      },
+      {
+        "channel_name": "ARK Invest",
+        "dimension": "embedding_reduced_01",
+        "dimension_index": 0,
+        "coefficient": 2.2312235416172097,
+        "intercept": 8.38316703414434,
+        "p_value": 0.6120680085238193,
+        "is_significant": false,
+        "r2_adj": 0.42779677789216963
+      },
+      {
+        "channel_name": "ARK Invest",
+        "dimension": "embedding_reduced_02",
+        "dimension_index": 1,
+        "coefficient": 4.595838573927264,
+        "intercept": 8.38316703414434,
+        "p_value": 0.33578392214756103,
+        "is_significant": false,
+        "r2_adj": 0.42779677789216963
+      },
+      {
+        "channel_name": "ARK Invest",
+        "dimension": "embedding_reduced_03",
+        "dimension_index": 2,
+        "coefficient": 4.126355481768889,
+        "intercept": 8.38316703414434,
+        "p_value": 0.5641149471430774,
+        "is_significant": false,
+        "r2_adj": 0.42779677789216963
+      },
+      {
+        "channel_name": "ARK Invest",
+        "dimension": "embedding_reduced_04",
+        "dimension_index": 3,
+        "coefficient": -3.128803061097855,
+        "intercept": 8.38316703414434,
+        "p_value": 0.5964086853905216,
+        "is_significant": false,
+        "r2_adj": 0.42779677789216963
+      },
+      {
+        "channel_name": "ARK Invest",
+        "dimension": "embedding_reduced_05",
+        "dimension_index": 4,
+        "coefficient": 11.915379705425682,
+        "intercept": 8.38316703414434,
+        "p_value": 0.03311088251666102,
+        "is_significant": true,
+        "r2_adj": 0.42779677789216963
+      },
+      {
+        "channel_name": "ARK Invest",
+        "dimension": "embedding_reduced_06",
+        "dimension_index": 5,
+        "coefficient": 16.817294430067395,
+        "intercept": 8.38316703414434,
+        "p_value": 0.032431436252435795,
+        "is_significant": true,
+        "r2_adj": 0.42779677789216963
+      },
+      {
+        "channel_name": "ARK Invest",
+        "dimension": "embedding_reduced_07",
+        "dimension_index": 6,
+        "coefficient": -12.004614609039013,
+        "intercept": 8.38316703414434,
+        "p_value": 0.046689327548273686,
+        "is_significant": true,
+        "r2_adj": 0.42779677789216963
+      },
+      {
+        "channel_name": "ARK Invest",
+        "dimension": "embedding_reduced_08",
+        "dimension_index": 7,
+        "coefficient": 11.65893673586168,
+        "intercept": 8.38316703414434,
+        "p_value": 0.1438989452721985,
+        "is_significant": false,
+        "r2_adj": 0.42779677789216963
+      },
+      {
+        "channel_name": "ARK Invest",
+        "dimension": "embedding_reduced_09",
+        "dimension_index": 8,
+        "coefficient": -1.0146262321060622,
+        "intercept": 8.38316703414434,
+        "p_value": 0.8786796569703758,
+        "is_significant": false,
+        "r2_adj": 0.42779677789216963
+      },
+      {
+        "channel_name": "ARK Invest",
+        "dimension": "embedding_reduced_10",
+        "dimension_index": 9,
+        "coefficient": -12.607223019983836,
+        "intercept": 8.38316703414434,
+        "p_value": 0.09525425184111438,
+        "is_significant": false,
+        "r2_adj": 0.42779677789216963
+      },
+      {
+        "channel_name": "ARK Invest",
+        "dimension": "embedding_reduced_11",
+        "dimension_index": 10,
+        "coefficient": -9.516863904542227,
+        "intercept": 8.38316703414434,
+        "p_value": 0.08349769020531471,
+        "is_significant": false,
+        "r2_adj": 0.42779677789216963
+      },
+      {
+        "channel_name": "ARK Invest",
+        "dimension": "embedding_reduced_12",
+        "dimension_index": 11,
+        "coefficient": 16.198810505408765,
+        "intercept": 8.38316703414434,
+        "p_value": 0.016096153384529802,
+        "is_significant": true,
+        "r2_adj": 0.42779677789216963
+      },
+      {
+        "channel_name": "ARK Invest",
+        "dimension": "embedding_reduced_13",
+        "dimension_index": 12,
+        "coefficient": 3.2459863656881325,
+        "intercept": 8.38316703414434,
+        "p_value": 0.6228540969999472,
+        "is_significant": false,
+        "r2_adj": 0.42779677789216963
+      },
+      {
+        "channel_name": "ARK Invest",
+        "dimension": "embedding_reduced_14",
+        "dimension_index": 13,
+        "coefficient": 26.93447272718661,
+        "intercept": 8.38316703414434,
+        "p_value": 0.002187712436621525,
+        "is_significant": true,
+        "r2_adj": 0.42779677789216963
+      },
+      {
+        "channel_name": "ARK Invest",
+        "dimension": "embedding_reduced_15",
+        "dimension_index": 14,
+        "coefficient": -13.286946522092551,
+        "intercept": 8.38316703414434,
+        "p_value": 0.05022832489945364,
+        "is_significant": false,
+        "r2_adj": 0.42779677789216963
+      },
+      {
+        "channel_name": "ARK Invest",
+        "dimension": "embedding_reduced_16",
+        "dimension_index": 15,
+        "coefficient": 2.3064820347247417,
+        "intercept": 8.38316703414434,
+        "p_value": 0.8254587539870242,
+        "is_significant": false,
+        "r2_adj": 0.42779677789216963
+      },
+      {
+        "channel_name": "ARK Invest",
+        "dimension": "embedding_reduced_17",
+        "dimension_index": 16,
+        "coefficient": -11.366999996657796,
+        "intercept": 8.38316703414434,
+        "p_value": 0.06959223436156353,
+        "is_significant": false,
+        "r2_adj": 0.42779677789216963
+      },
+      {
+        "channel_name": "ARK Invest",
+        "dimension": "embedding_reduced_18",
+        "dimension_index": 17,
+        "coefficient": 11.711537283935643,
+        "intercept": 8.38316703414434,
+        "p_value": 0.15679180623597955,
+        "is_significant": false,
+        "r2_adj": 0.42779677789216963
+      },
+      {
+        "channel_name": "ARK Invest",
+        "dimension": "embedding_reduced_19",
+        "dimension_index": 18,
+        "coefficient": -4.705944638524192,
+        "intercept": 8.38316703414434,
+        "p_value": 0.6060373310027789,
+        "is_significant": false,
+        "r2_adj": 0.42779677789216963
+      },
+      {
+        "channel_name": "ARK Invest",
+        "dimension": "embedding_reduced_20",
+        "dimension_index": 19,
+        "coefficient": -9.127995970557727,
+        "intercept": 8.38316703414434,
+        "p_value": 0.30128243495122375,
+        "is_significant": false,
+        "r2_adj": 0.42779677789216963
+      },
+      {
+        "channel_name": "Alex Hormozi",
+        "dimension": "embedding_reduced_01",
+        "dimension_index": 0,
+        "coefficient": -0.030816412629175893,
+        "intercept": 12.185362060748666,
+        "p_value": 0.9932836322308541,
+        "is_significant": false,
+        "r2_adj": 0.1878069490808807
+      },
+      {
+        "channel_name": "Alex Hormozi",
+        "dimension": "embedding_reduced_02",
+        "dimension_index": 1,
+        "coefficient": -3.2046624970232607,
+        "intercept": 12.185362060748666,
+        "p_value": 0.3444091368802955,
+        "is_significant": false,
+        "r2_adj": 0.1878069490808807
+      },
+      {
+        "channel_name": "Alex Hormozi",
+        "dimension": "embedding_reduced_03",
+        "dimension_index": 2,
+        "coefficient": -0.8487472521387831,
+        "intercept": 12.185362060748666,
+        "p_value": 0.8019554277821465,
+        "is_significant": false,
+        "r2_adj": 0.1878069490808807
+      },
+      {
+        "channel_name": "Alex Hormozi",
+        "dimension": "embedding_reduced_04",
+        "dimension_index": 3,
+        "coefficient": -1.9409894995637158,
+        "intercept": 12.185362060748666,
+        "p_value": 0.6627249678452066,
+        "is_significant": false,
+        "r2_adj": 0.1878069490808807
+      },
+      {
+        "channel_name": "Alex Hormozi",
+        "dimension": "embedding_reduced_05",
+        "dimension_index": 4,
+        "coefficient": -0.023557668230864692,
+        "intercept": 12.185362060748666,
+        "p_value": 0.9948732198793788,
+        "is_significant": false,
+        "r2_adj": 0.1878069490808807
+      },
+      {
+        "channel_name": "Alex Hormozi",
+        "dimension": "embedding_reduced_06",
+        "dimension_index": 5,
+        "coefficient": -0.9191606050681251,
+        "intercept": 12.185362060748666,
+        "p_value": 0.8650703111485485,
+        "is_significant": false,
+        "r2_adj": 0.1878069490808807
+      },
+      {
+        "channel_name": "Alex Hormozi",
+        "dimension": "embedding_reduced_07",
+        "dimension_index": 6,
+        "coefficient": 1.5054271506493677,
+        "intercept": 12.185362060748666,
+        "p_value": 0.7251309002957382,
+        "is_significant": false,
+        "r2_adj": 0.1878069490808807
+      },
+      {
+        "channel_name": "Alex Hormozi",
+        "dimension": "embedding_reduced_08",
+        "dimension_index": 7,
+        "coefficient": 8.456881170725111,
+        "intercept": 12.185362060748666,
+        "p_value": 0.07162311694729119,
+        "is_significant": false,
+        "r2_adj": 0.1878069490808807
+      },
+      {
+        "channel_name": "Alex Hormozi",
+        "dimension": "embedding_reduced_09",
+        "dimension_index": 8,
+        "coefficient": -1.8570241546464104,
+        "intercept": 12.185362060748666,
+        "p_value": 0.5870006793772928,
+        "is_significant": false,
+        "r2_adj": 0.1878069490808807
+      },
+      {
+        "channel_name": "Alex Hormozi",
+        "dimension": "embedding_reduced_10",
+        "dimension_index": 9,
+        "coefficient": -4.3458989507893255,
+        "intercept": 12.185362060748666,
+        "p_value": 0.21277603249554258,
+        "is_significant": false,
+        "r2_adj": 0.1878069490808807
+      },
+      {
+        "channel_name": "Alex Hormozi",
+        "dimension": "embedding_reduced_11",
+        "dimension_index": 10,
+        "coefficient": -3.1476346836393567,
+        "intercept": 12.185362060748666,
+        "p_value": 0.600627413906222,
+        "is_significant": false,
+        "r2_adj": 0.1878069490808807
+      },
+      {
+        "channel_name": "Alex Hormozi",
+        "dimension": "embedding_reduced_12",
+        "dimension_index": 11,
+        "coefficient": 4.765040535952799,
+        "intercept": 12.185362060748666,
+        "p_value": 0.45247920012084564,
+        "is_significant": false,
+        "r2_adj": 0.1878069490808807
+      },
+      {
+        "channel_name": "Alex Hormozi",
+        "dimension": "embedding_reduced_13",
+        "dimension_index": 12,
+        "coefficient": 1.151917969015548,
+        "intercept": 12.185362060748666,
+        "p_value": 0.7841811968776958,
+        "is_significant": false,
+        "r2_adj": 0.1878069490808807
+      },
+      {
+        "channel_name": "Alex Hormozi",
+        "dimension": "embedding_reduced_14",
+        "dimension_index": 13,
+        "coefficient": 1.2393107804115786,
+        "intercept": 12.185362060748666,
+        "p_value": 0.8573326846829171,
+        "is_significant": false,
+        "r2_adj": 0.1878069490808807
+      },
+      {
+        "channel_name": "Alex Hormozi",
+        "dimension": "embedding_reduced_15",
+        "dimension_index": 14,
+        "coefficient": 2.044780609639208,
+        "intercept": 12.185362060748666,
+        "p_value": 0.7243545907957907,
+        "is_significant": false,
+        "r2_adj": 0.1878069490808807
+      },
+      {
+        "channel_name": "Alex Hormozi",
+        "dimension": "embedding_reduced_16",
+        "dimension_index": 15,
+        "coefficient": 6.298776235178693,
+        "intercept": 12.185362060748666,
+        "p_value": 0.20349906884431537,
+        "is_significant": false,
+        "r2_adj": 0.1878069490808807
+      },
+      {
+        "channel_name": "Alex Hormozi",
+        "dimension": "embedding_reduced_17",
+        "dimension_index": 16,
+        "coefficient": -9.568299821263643,
+        "intercept": 12.185362060748666,
+        "p_value": 0.20148994067760023,
+        "is_significant": false,
+        "r2_adj": 0.1878069490808807
+      },
+      {
+        "channel_name": "Alex Hormozi",
+        "dimension": "embedding_reduced_18",
+        "dimension_index": 17,
+        "coefficient": 1.5367433751184478,
+        "intercept": 12.185362060748666,
+        "p_value": 0.6933650363423955,
+        "is_significant": false,
+        "r2_adj": 0.1878069490808807
+      },
+      {
+        "channel_name": "Alex Hormozi",
+        "dimension": "embedding_reduced_19",
+        "dimension_index": 18,
+        "coefficient": 5.766783004693977,
+        "intercept": 12.185362060748666,
+        "p_value": 0.14387245159680145,
+        "is_significant": false,
+        "r2_adj": 0.1878069490808807
+      },
+      {
+        "channel_name": "Alex Hormozi",
+        "dimension": "embedding_reduced_20",
+        "dimension_index": 19,
+        "coefficient": 4.307015519735586,
+        "intercept": 12.185362060748666,
+        "p_value": 0.46605678238595805,
+        "is_significant": false,
+        "r2_adj": 0.1878069490808807
+      },
+      {
+        "channel_name": "All-In Podcast",
+        "dimension": "embedding_reduced_01",
+        "dimension_index": 0,
+        "coefficient": 0.08486583370739886,
+        "intercept": 12.31819017217638,
+        "p_value": 0.9612398844779907,
+        "is_significant": false,
+        "r2_adj": 0.42698426801951406
+      },
+      {
+        "channel_name": "All-In Podcast",
+        "dimension": "embedding_reduced_02",
+        "dimension_index": 1,
+        "coefficient": 5.14128903295523,
+        "intercept": 12.31819017217638,
+        "p_value": 0.0953562705843726,
+        "is_significant": false,
+        "r2_adj": 0.42698426801951406
+      },
+      {
+        "channel_name": "All-In Podcast",
+        "dimension": "embedding_reduced_03",
+        "dimension_index": 2,
+        "coefficient": 4.316789129887859,
+        "intercept": 12.31819017217638,
+        "p_value": 0.0947785336506126,
+        "is_significant": false,
+        "r2_adj": 0.42698426801951406
+      },
+      {
+        "channel_name": "All-In Podcast",
+        "dimension": "embedding_reduced_04",
+        "dimension_index": 3,
+        "coefficient": -4.387370975508801,
+        "intercept": 12.31819017217638,
+        "p_value": 0.09549254034739034,
+        "is_significant": false,
+        "r2_adj": 0.42698426801951406
+      },
+      {
+        "channel_name": "All-In Podcast",
+        "dimension": "embedding_reduced_05",
+        "dimension_index": 4,
+        "coefficient": -2.1434268065600115,
+        "intercept": 12.31819017217638,
+        "p_value": 0.3929357862170535,
+        "is_significant": false,
+        "r2_adj": 0.42698426801951406
+      },
+      {
+        "channel_name": "All-In Podcast",
+        "dimension": "embedding_reduced_06",
+        "dimension_index": 5,
+        "coefficient": 11.214376407990162,
+        "intercept": 12.31819017217638,
+        "p_value": 0.00043598649644735726,
+        "is_significant": true,
+        "r2_adj": 0.42698426801951406
+      },
+      {
+        "channel_name": "All-In Podcast",
+        "dimension": "embedding_reduced_07",
+        "dimension_index": 6,
+        "coefficient": -0.5265772819032688,
+        "intercept": 12.31819017217638,
+        "p_value": 0.8185140131960441,
+        "is_significant": false,
+        "r2_adj": 0.42698426801951406
+      },
+      {
+        "channel_name": "All-In Podcast",
+        "dimension": "embedding_reduced_08",
+        "dimension_index": 7,
+        "coefficient": -2.4314770322322485,
+        "intercept": 12.31819017217638,
+        "p_value": 0.2822779850273246,
+        "is_significant": false,
+        "r2_adj": 0.42698426801951406
+      },
+      {
+        "channel_name": "All-In Podcast",
+        "dimension": "embedding_reduced_09",
+        "dimension_index": 8,
+        "coefficient": 3.9712056895426366,
+        "intercept": 12.31819017217638,
+        "p_value": 0.1076627828559532,
+        "is_significant": false,
+        "r2_adj": 0.42698426801951406
+      },
+      {
+        "channel_name": "All-In Podcast",
+        "dimension": "embedding_reduced_10",
+        "dimension_index": 9,
+        "coefficient": -0.7755050806997368,
+        "intercept": 12.31819017217638,
+        "p_value": 0.7686755078221285,
+        "is_significant": false,
+        "r2_adj": 0.42698426801951406
+      },
+      {
+        "channel_name": "All-In Podcast",
+        "dimension": "embedding_reduced_11",
+        "dimension_index": 10,
+        "coefficient": -3.648251741643735,
+        "intercept": 12.31819017217638,
+        "p_value": 0.30735190955858016,
+        "is_significant": false,
+        "r2_adj": 0.42698426801951406
+      },
+      {
+        "channel_name": "All-In Podcast",
+        "dimension": "embedding_reduced_12",
+        "dimension_index": 11,
+        "coefficient": -6.228268381019827,
+        "intercept": 12.31819017217638,
+        "p_value": 0.12434568664563991,
+        "is_significant": false,
+        "r2_adj": 0.42698426801951406
+      },
+      {
+        "channel_name": "All-In Podcast",
+        "dimension": "embedding_reduced_13",
+        "dimension_index": 12,
+        "coefficient": -0.25123070542428083,
+        "intercept": 12.31819017217638,
+        "p_value": 0.9438289551176231,
+        "is_significant": false,
+        "r2_adj": 0.42698426801951406
+      },
+      {
+        "channel_name": "All-In Podcast",
+        "dimension": "embedding_reduced_14",
+        "dimension_index": 13,
+        "coefficient": -4.715708382104749,
+        "intercept": 12.31819017217638,
+        "p_value": 0.2408483950976808,
+        "is_significant": false,
+        "r2_adj": 0.42698426801951406
+      },
+      {
+        "channel_name": "All-In Podcast",
+        "dimension": "embedding_reduced_15",
+        "dimension_index": 14,
+        "coefficient": 6.279341738268599,
+        "intercept": 12.31819017217638,
+        "p_value": 0.06225245160334975,
+        "is_significant": false,
+        "r2_adj": 0.42698426801951406
+      },
+      {
+        "channel_name": "All-In Podcast",
+        "dimension": "embedding_reduced_16",
+        "dimension_index": 15,
+        "coefficient": -2.105027656107609,
+        "intercept": 12.31819017217638,
+        "p_value": 0.5435209656334906,
+        "is_significant": false,
+        "r2_adj": 0.42698426801951406
+      },
+      {
+        "channel_name": "All-In Podcast",
+        "dimension": "embedding_reduced_17",
+        "dimension_index": 16,
+        "coefficient": 5.2002296889900474,
+        "intercept": 12.31819017217638,
+        "p_value": 0.1387086172362419,
+        "is_significant": false,
+        "r2_adj": 0.42698426801951406
+      },
+      {
+        "channel_name": "All-In Podcast",
+        "dimension": "embedding_reduced_18",
+        "dimension_index": 17,
+        "coefficient": 7.7055305043418505,
+        "intercept": 12.31819017217638,
+        "p_value": 0.11205429568618268,
+        "is_significant": false,
+        "r2_adj": 0.42698426801951406
+      },
+      {
+        "channel_name": "All-In Podcast",
+        "dimension": "embedding_reduced_19",
+        "dimension_index": 18,
+        "coefficient": 0.13631574116179657,
+        "intercept": 12.31819017217638,
+        "p_value": 0.9770016369768975,
+        "is_significant": false,
+        "r2_adj": 0.42698426801951406
+      },
+      {
+        "channel_name": "All-In Podcast",
+        "dimension": "embedding_reduced_20",
+        "dimension_index": 19,
+        "coefficient": 1.915596665118076,
+        "intercept": 12.31819017217638,
+        "p_value": 0.6008101731518662,
+        "is_significant": false,
+        "r2_adj": 0.42698426801951406
+      },
+      {
+        "channel_name": "Anthony Pompliano",
+        "dimension": "embedding_reduced_01",
+        "dimension_index": 0,
+        "coefficient": 1.0655207902921153,
+        "intercept": 10.47660207389756,
+        "p_value": 0.6778905403893398,
+        "is_significant": false,
+        "r2_adj": 0.1792373475609227
+      },
+      {
+        "channel_name": "Anthony Pompliano",
+        "dimension": "embedding_reduced_02",
+        "dimension_index": 1,
+        "coefficient": 2.5356875607277694,
+        "intercept": 10.47660207389756,
+        "p_value": 0.37623442867494206,
+        "is_significant": false,
+        "r2_adj": 0.1792373475609227
+      },
+      {
+        "channel_name": "Anthony Pompliano",
+        "dimension": "embedding_reduced_03",
+        "dimension_index": 2,
+        "coefficient": -0.10597201111559862,
+        "intercept": 10.47660207389756,
+        "p_value": 0.9716531930753425,
+        "is_significant": false,
+        "r2_adj": 0.1792373475609227
+      },
+      {
+        "channel_name": "Anthony Pompliano",
+        "dimension": "embedding_reduced_04",
+        "dimension_index": 3,
+        "coefficient": 6.697777272932366,
+        "intercept": 10.47660207389756,
+        "p_value": 0.057246850124586475,
+        "is_significant": false,
+        "r2_adj": 0.1792373475609227
+      },
+      {
+        "channel_name": "Anthony Pompliano",
+        "dimension": "embedding_reduced_05",
+        "dimension_index": 4,
+        "coefficient": 3.7999311257054433,
+        "intercept": 10.47660207389756,
+        "p_value": 0.2418170605190969,
+        "is_significant": false,
+        "r2_adj": 0.1792373475609227
+      },
+      {
+        "channel_name": "Anthony Pompliano",
+        "dimension": "embedding_reduced_06",
+        "dimension_index": 5,
+        "coefficient": -1.3895662216543379,
+        "intercept": 10.47660207389756,
+        "p_value": 0.688357840075347,
+        "is_significant": false,
+        "r2_adj": 0.1792373475609227
+      },
+      {
+        "channel_name": "Anthony Pompliano",
+        "dimension": "embedding_reduced_07",
+        "dimension_index": 6,
+        "coefficient": 1.7910490528268976,
+        "intercept": 10.47660207389756,
+        "p_value": 0.5359648917523665,
+        "is_significant": false,
+        "r2_adj": 0.1792373475609227
+      },
+      {
+        "channel_name": "Anthony Pompliano",
+        "dimension": "embedding_reduced_08",
+        "dimension_index": 7,
+        "coefficient": 7.460754261743471,
+        "intercept": 10.47660207389756,
+        "p_value": 0.039420900358070284,
+        "is_significant": true,
+        "r2_adj": 0.1792373475609227
+      },
+      {
+        "channel_name": "Anthony Pompliano",
+        "dimension": "embedding_reduced_09",
+        "dimension_index": 8,
+        "coefficient": -4.614969980678492,
+        "intercept": 10.47660207389756,
+        "p_value": 0.25590188778644735,
+        "is_significant": false,
+        "r2_adj": 0.1792373475609227
+      },
+      {
+        "channel_name": "Anthony Pompliano",
+        "dimension": "embedding_reduced_10",
+        "dimension_index": 9,
+        "coefficient": -6.555024692627644,
+        "intercept": 10.47660207389756,
+        "p_value": 0.05216988037770773,
+        "is_significant": false,
+        "r2_adj": 0.1792373475609227
+      },
+      {
+        "channel_name": "Anthony Pompliano",
+        "dimension": "embedding_reduced_11",
+        "dimension_index": 10,
+        "coefficient": -4.483841297592657,
+        "intercept": 10.47660207389756,
+        "p_value": 0.22111971881056638,
+        "is_significant": false,
+        "r2_adj": 0.1792373475609227
+      },
+      {
+        "channel_name": "Anthony Pompliano",
+        "dimension": "embedding_reduced_12",
+        "dimension_index": 11,
+        "coefficient": 3.781890997701463,
+        "intercept": 10.47660207389756,
+        "p_value": 0.3091289142756119,
+        "is_significant": false,
+        "r2_adj": 0.1792373475609227
+      },
+      {
+        "channel_name": "Anthony Pompliano",
+        "dimension": "embedding_reduced_13",
+        "dimension_index": 12,
+        "coefficient": 5.290704362057235,
+        "intercept": 10.47660207389756,
+        "p_value": 0.10682633792445988,
+        "is_significant": false,
+        "r2_adj": 0.1792373475609227
+      },
+      {
+        "channel_name": "Anthony Pompliano",
+        "dimension": "embedding_reduced_14",
+        "dimension_index": 13,
+        "coefficient": -6.663053619037804,
+        "intercept": 10.47660207389756,
+        "p_value": 0.23354673386392472,
+        "is_significant": false,
+        "r2_adj": 0.1792373475609227
+      },
+      {
+        "channel_name": "Anthony Pompliano",
+        "dimension": "embedding_reduced_15",
+        "dimension_index": 14,
+        "coefficient": -4.408235568704956,
+        "intercept": 10.47660207389756,
+        "p_value": 0.46179178290594736,
+        "is_significant": false,
+        "r2_adj": 0.1792373475609227
+      },
+      {
+        "channel_name": "Anthony Pompliano",
+        "dimension": "embedding_reduced_16",
+        "dimension_index": 15,
+        "coefficient": 3.096888864646065,
+        "intercept": 10.47660207389756,
+        "p_value": 0.36241222226449954,
+        "is_significant": false,
+        "r2_adj": 0.1792373475609227
+      },
+      {
+        "channel_name": "Anthony Pompliano",
+        "dimension": "embedding_reduced_17",
+        "dimension_index": 16,
+        "coefficient": -4.473231500740944,
+        "intercept": 10.47660207389756,
+        "p_value": 0.2964322874755441,
+        "is_significant": false,
+        "r2_adj": 0.1792373475609227
+      },
+      {
+        "channel_name": "Anthony Pompliano",
+        "dimension": "embedding_reduced_18",
+        "dimension_index": 17,
+        "coefficient": -3.8680024799588857,
+        "intercept": 10.47660207389756,
+        "p_value": 0.4203921464736975,
+        "is_significant": false,
+        "r2_adj": 0.1792373475609227
+      },
+      {
+        "channel_name": "Anthony Pompliano",
+        "dimension": "embedding_reduced_19",
+        "dimension_index": 18,
+        "coefficient": -4.602901736155289,
+        "intercept": 10.47660207389756,
+        "p_value": 0.28998341309699066,
+        "is_significant": false,
+        "r2_adj": 0.1792373475609227
+      },
+      {
+        "channel_name": "Anthony Pompliano",
+        "dimension": "embedding_reduced_20",
+        "dimension_index": 19,
+        "coefficient": 2.1919905531916277,
+        "intercept": 10.47660207389756,
+        "p_value": 0.565555529843885,
+        "is_significant": false,
+        "r2_adj": 0.1792373475609227
+      },
+      {
+        "channel_name": "Asianometry",
+        "dimension": "embedding_reduced_01",
+        "dimension_index": 0,
+        "coefficient": -6.210016096793083,
+        "intercept": 12.953937599373477,
+        "p_value": 0.07741538795113473,
+        "is_significant": false,
+        "r2_adj": 0.32591860499448944
+      },
+      {
+        "channel_name": "Asianometry",
+        "dimension": "embedding_reduced_02",
+        "dimension_index": 1,
+        "coefficient": -0.7971912887073414,
+        "intercept": 12.953937599373477,
+        "p_value": 0.7107321658066776,
+        "is_significant": false,
+        "r2_adj": 0.32591860499448944
+      },
+      {
+        "channel_name": "Asianometry",
+        "dimension": "embedding_reduced_03",
+        "dimension_index": 2,
+        "coefficient": -5.191238625288034,
+        "intercept": 12.953937599373477,
+        "p_value": 0.01918279921206467,
+        "is_significant": true,
+        "r2_adj": 0.32591860499448944
+      },
+      {
+        "channel_name": "Asianometry",
+        "dimension": "embedding_reduced_04",
+        "dimension_index": 3,
+        "coefficient": 1.9712285554164466,
+        "intercept": 12.953937599373477,
+        "p_value": 0.3735254027504744,
+        "is_significant": false,
+        "r2_adj": 0.32591860499448944
+      },
+      {
+        "channel_name": "Asianometry",
+        "dimension": "embedding_reduced_05",
+        "dimension_index": 4,
+        "coefficient": 4.955797091274855,
+        "intercept": 12.953937599373477,
+        "p_value": 0.14372132705188623,
+        "is_significant": false,
+        "r2_adj": 0.32591860499448944
+      },
+      {
+        "channel_name": "Asianometry",
+        "dimension": "embedding_reduced_06",
+        "dimension_index": 5,
+        "coefficient": -1.2703803844812853,
+        "intercept": 12.953937599373477,
+        "p_value": 0.5739189545748296,
+        "is_significant": false,
+        "r2_adj": 0.32591860499448944
+      },
+      {
+        "channel_name": "Asianometry",
+        "dimension": "embedding_reduced_07",
+        "dimension_index": 6,
+        "coefficient": -3.0426828680312656,
+        "intercept": 12.953937599373477,
+        "p_value": 0.20328928992262535,
+        "is_significant": false,
+        "r2_adj": 0.32591860499448944
+      },
+      {
+        "channel_name": "Asianometry",
+        "dimension": "embedding_reduced_08",
+        "dimension_index": 7,
+        "coefficient": 1.1558300665106795,
+        "intercept": 12.953937599373477,
+        "p_value": 0.6927248529596131,
+        "is_significant": false,
+        "r2_adj": 0.32591860499448944
+      },
+      {
+        "channel_name": "Asianometry",
+        "dimension": "embedding_reduced_09",
+        "dimension_index": 8,
+        "coefficient": 5.46149953168619,
+        "intercept": 12.953937599373477,
+        "p_value": 0.10336940767321133,
+        "is_significant": false,
+        "r2_adj": 0.32591860499448944
+      },
+      {
+        "channel_name": "Asianometry",
+        "dimension": "embedding_reduced_10",
+        "dimension_index": 9,
+        "coefficient": 0.06115877377507095,
+        "intercept": 12.953937599373477,
+        "p_value": 0.9790086688196457,
+        "is_significant": false,
+        "r2_adj": 0.32591860499448944
+      },
+      {
+        "channel_name": "Asianometry",
+        "dimension": "embedding_reduced_11",
+        "dimension_index": 10,
+        "coefficient": -7.784474808489861,
+        "intercept": 12.953937599373477,
+        "p_value": 0.016491183073407013,
+        "is_significant": true,
+        "r2_adj": 0.32591860499448944
+      },
+      {
+        "channel_name": "Asianometry",
+        "dimension": "embedding_reduced_12",
+        "dimension_index": 11,
+        "coefficient": -0.16962895032363967,
+        "intercept": 12.953937599373477,
+        "p_value": 0.9605273095625404,
+        "is_significant": false,
+        "r2_adj": 0.32591860499448944
+      },
+      {
+        "channel_name": "Asianometry",
+        "dimension": "embedding_reduced_13",
+        "dimension_index": 12,
+        "coefficient": 1.8016705303466862,
+        "intercept": 12.953937599373477,
+        "p_value": 0.4160642836460876,
+        "is_significant": false,
+        "r2_adj": 0.32591860499448944
+      },
+      {
+        "channel_name": "Asianometry",
+        "dimension": "embedding_reduced_14",
+        "dimension_index": 13,
+        "coefficient": 2.311812007404092,
+        "intercept": 12.953937599373477,
+        "p_value": 0.4302819462297067,
+        "is_significant": false,
+        "r2_adj": 0.32591860499448944
+      },
+      {
+        "channel_name": "Asianometry",
+        "dimension": "embedding_reduced_15",
+        "dimension_index": 14,
+        "coefficient": 3.21284445211486,
+        "intercept": 12.953937599373477,
+        "p_value": 0.39826284917145116,
+        "is_significant": false,
+        "r2_adj": 0.32591860499448944
+      },
+      {
+        "channel_name": "Asianometry",
+        "dimension": "embedding_reduced_16",
+        "dimension_index": 15,
+        "coefficient": -0.7369505428497254,
+        "intercept": 12.953937599373477,
+        "p_value": 0.8166882935301093,
+        "is_significant": false,
+        "r2_adj": 0.32591860499448944
+      },
+      {
+        "channel_name": "Asianometry",
+        "dimension": "embedding_reduced_17",
+        "dimension_index": 16,
+        "coefficient": 1.5330501455275733,
+        "intercept": 12.953937599373477,
+        "p_value": 0.6294542379482921,
+        "is_significant": false,
+        "r2_adj": 0.32591860499448944
+      },
+      {
+        "channel_name": "Asianometry",
+        "dimension": "embedding_reduced_18",
+        "dimension_index": 17,
+        "coefficient": -3.046571684166363,
+        "intercept": 12.953937599373477,
+        "p_value": 0.37335882657437225,
+        "is_significant": false,
+        "r2_adj": 0.32591860499448944
+      },
+      {
+        "channel_name": "Asianometry",
+        "dimension": "embedding_reduced_19",
+        "dimension_index": 18,
+        "coefficient": 3.297048977532108,
+        "intercept": 12.953937599373477,
+        "p_value": 0.3285484985384489,
+        "is_significant": false,
+        "r2_adj": 0.32591860499448944
+      },
+      {
+        "channel_name": "Asianometry",
+        "dimension": "embedding_reduced_20",
+        "dimension_index": 19,
+        "coefficient": 6.907352330208809,
+        "intercept": 12.953937599373477,
+        "p_value": 0.06215784509584585,
+        "is_significant": false,
+        "r2_adj": 0.32591860499448944
+      },
+      {
+        "channel_name": "Bg2 Pod",
+        "dimension": "embedding_reduced_01",
+        "dimension_index": 0,
+        "coefficient": -15.88347819852143,
+        "intercept": 9.169208915257435,
+        "p_value": 0.0026090007755832376,
+        "is_significant": true,
+        "r2_adj": 0.6391924041993124
+      },
+      {
+        "channel_name": "Bg2 Pod",
+        "dimension": "embedding_reduced_02",
+        "dimension_index": 1,
+        "coefficient": 10.140795641951918,
+        "intercept": 9.169208915257435,
+        "p_value": 0.0030170420642842526,
+        "is_significant": true,
+        "r2_adj": 0.6391924041993124
+      },
+      {
+        "channel_name": "Bg2 Pod",
+        "dimension": "embedding_reduced_03",
+        "dimension_index": 2,
+        "coefficient": 1.2695179486089643,
+        "intercept": 9.169208915257435,
+        "p_value": 0.7058830338172839,
+        "is_significant": false,
+        "r2_adj": 0.6391924041993124
+      },
+      {
+        "channel_name": "Bg2 Pod",
+        "dimension": "embedding_reduced_04",
+        "dimension_index": 3,
+        "coefficient": 1.3406391418186985,
+        "intercept": 9.169208915257435,
+        "p_value": 0.6763351050836233,
+        "is_significant": false,
+        "r2_adj": 0.6391924041993124
+      },
+      {
+        "channel_name": "Bg2 Pod",
+        "dimension": "embedding_reduced_05",
+        "dimension_index": 4,
+        "coefficient": -0.17139833730399445,
+        "intercept": 9.169208915257435,
+        "p_value": 0.9570685557952571,
+        "is_significant": false,
+        "r2_adj": 0.6391924041993124
+      },
+      {
+        "channel_name": "Bg2 Pod",
+        "dimension": "embedding_reduced_06",
+        "dimension_index": 5,
+        "coefficient": -5.322594851553106,
+        "intercept": 9.169208915257435,
+        "p_value": 0.12612738279787905,
+        "is_significant": false,
+        "r2_adj": 0.6391924041993124
+      },
+      {
+        "channel_name": "Bg2 Pod",
+        "dimension": "embedding_reduced_07",
+        "dimension_index": 6,
+        "coefficient": 1.3027184166495545,
+        "intercept": 9.169208915257435,
+        "p_value": 0.7523400112031505,
+        "is_significant": false,
+        "r2_adj": 0.6391924041993124
+      },
+      {
+        "channel_name": "Bg2 Pod",
+        "dimension": "embedding_reduced_08",
+        "dimension_index": 7,
+        "coefficient": -2.858462213220399,
+        "intercept": 9.169208915257435,
+        "p_value": 0.4482655156793711,
+        "is_significant": false,
+        "r2_adj": 0.6391924041993124
+      },
+      {
+        "channel_name": "Bg2 Pod",
+        "dimension": "embedding_reduced_09",
+        "dimension_index": 8,
+        "coefficient": 0.49085812126355677,
+        "intercept": 9.169208915257435,
+        "p_value": 0.9303139251436432,
+        "is_significant": false,
+        "r2_adj": 0.6391924041993124
+      },
+      {
+        "channel_name": "Bg2 Pod",
+        "dimension": "embedding_reduced_10",
+        "dimension_index": 9,
+        "coefficient": 6.102947038987928,
+        "intercept": 9.169208915257435,
+        "p_value": 0.13621649270204267,
+        "is_significant": false,
+        "r2_adj": 0.6391924041993124
+      },
+      {
+        "channel_name": "Bg2 Pod",
+        "dimension": "embedding_reduced_11",
+        "dimension_index": 10,
+        "coefficient": -0.712873486848494,
+        "intercept": 9.169208915257435,
+        "p_value": 0.8023495574193544,
+        "is_significant": false,
+        "r2_adj": 0.6391924041993124
+      },
+      {
+        "channel_name": "Bg2 Pod",
+        "dimension": "embedding_reduced_12",
+        "dimension_index": 11,
+        "coefficient": 0.8024084019740485,
+        "intercept": 9.169208915257435,
+        "p_value": 0.8438002106461842,
+        "is_significant": false,
+        "r2_adj": 0.6391924041993124
+      },
+      {
+        "channel_name": "Bg2 Pod",
+        "dimension": "embedding_reduced_13",
+        "dimension_index": 12,
+        "coefficient": 10.192162216595044,
+        "intercept": 9.169208915257435,
+        "p_value": 0.029442415878145542,
+        "is_significant": true,
+        "r2_adj": 0.6391924041993124
+      },
+      {
+        "channel_name": "Bg2 Pod",
+        "dimension": "embedding_reduced_14",
+        "dimension_index": 13,
+        "coefficient": -0.3729894252087682,
+        "intercept": 9.169208915257435,
+        "p_value": 0.9168904949206712,
+        "is_significant": false,
+        "r2_adj": 0.6391924041993124
+      },
+      {
+        "channel_name": "Bg2 Pod",
+        "dimension": "embedding_reduced_15",
+        "dimension_index": 14,
+        "coefficient": 8.364063129292543,
+        "intercept": 9.169208915257435,
+        "p_value": 0.07137271405077834,
+        "is_significant": false,
+        "r2_adj": 0.6391924041993124
+      },
+      {
+        "channel_name": "Bg2 Pod",
+        "dimension": "embedding_reduced_16",
+        "dimension_index": 15,
+        "coefficient": -6.650050040506493,
+        "intercept": 9.169208915257435,
+        "p_value": 0.24662799993983453,
+        "is_significant": false,
+        "r2_adj": 0.6391924041993124
+      },
+      {
+        "channel_name": "Bg2 Pod",
+        "dimension": "embedding_reduced_17",
+        "dimension_index": 16,
+        "coefficient": -8.597760889379487,
+        "intercept": 9.169208915257435,
+        "p_value": 0.11818661104411858,
+        "is_significant": false,
+        "r2_adj": 0.6391924041993124
+      },
+      {
+        "channel_name": "Bg2 Pod",
+        "dimension": "embedding_reduced_18",
+        "dimension_index": 17,
+        "coefficient": -2.962679155828269,
+        "intercept": 9.169208915257435,
+        "p_value": 0.5290184984734649,
+        "is_significant": false,
+        "r2_adj": 0.6391924041993124
+      },
+      {
+        "channel_name": "Bg2 Pod",
+        "dimension": "embedding_reduced_19",
+        "dimension_index": 18,
+        "coefficient": 9.16473753493845,
+        "intercept": 9.169208915257435,
+        "p_value": 0.056730290056599804,
+        "is_significant": false,
+        "r2_adj": 0.6391924041993124
+      },
+      {
+        "channel_name": "Bg2 Pod",
+        "dimension": "embedding_reduced_20",
+        "dimension_index": 19,
+        "coefficient": -9.09236359928109,
+        "intercept": 9.169208915257435,
+        "p_value": 0.03754411546990708,
+        "is_significant": true,
+        "r2_adj": 0.6391924041993124
+      },
+      {
+        "channel_name": "Bloomberg Originals",
+        "dimension": "embedding_reduced_01",
+        "dimension_index": 0,
+        "coefficient": 2.7054416907657783,
+        "intercept": 13.255250649413544,
+        "p_value": 0.39246135369671886,
+        "is_significant": false,
+        "r2_adj": 0.08705433218797465
+      },
+      {
+        "channel_name": "Bloomberg Originals",
+        "dimension": "embedding_reduced_02",
+        "dimension_index": 1,
+        "coefficient": -8.475378040265912,
+        "intercept": 13.255250649413544,
+        "p_value": 0.028584383926375332,
+        "is_significant": true,
+        "r2_adj": 0.08705433218797465
+      },
+      {
+        "channel_name": "Bloomberg Originals",
+        "dimension": "embedding_reduced_03",
+        "dimension_index": 2,
+        "coefficient": -3.7525532597736433,
+        "intercept": 13.255250649413544,
+        "p_value": 0.41594456201937147,
+        "is_significant": false,
+        "r2_adj": 0.08705433218797465
+      },
+      {
+        "channel_name": "Bloomberg Originals",
+        "dimension": "embedding_reduced_04",
+        "dimension_index": 3,
+        "coefficient": 8.041175862344721,
+        "intercept": 13.255250649413544,
+        "p_value": 0.05814968440069637,
+        "is_significant": false,
+        "r2_adj": 0.08705433218797465
+      },
+      {
+        "channel_name": "Bloomberg Originals",
+        "dimension": "embedding_reduced_05",
+        "dimension_index": 4,
+        "coefficient": 1.2929185454468841,
+        "intercept": 13.255250649413544,
+        "p_value": 0.7043984290904546,
+        "is_significant": false,
+        "r2_adj": 0.08705433218797465
+      },
+      {
+        "channel_name": "Bloomberg Originals",
+        "dimension": "embedding_reduced_06",
+        "dimension_index": 5,
+        "coefficient": -10.410161201985048,
+        "intercept": 13.255250649413544,
+        "p_value": 0.07089658774630797,
+        "is_significant": false,
+        "r2_adj": 0.08705433218797465
+      },
+      {
+        "channel_name": "Bloomberg Originals",
+        "dimension": "embedding_reduced_07",
+        "dimension_index": 6,
+        "coefficient": 2.5777240419669827,
+        "intercept": 13.255250649413544,
+        "p_value": 0.5158494247820404,
+        "is_significant": false,
+        "r2_adj": 0.08705433218797465
+      },
+      {
+        "channel_name": "Bloomberg Originals",
+        "dimension": "embedding_reduced_08",
+        "dimension_index": 7,
+        "coefficient": 2.7032151474974953,
+        "intercept": 13.255250649413544,
+        "p_value": 0.650951909943776,
+        "is_significant": false,
+        "r2_adj": 0.08705433218797465
+      },
+      {
+        "channel_name": "Bloomberg Originals",
+        "dimension": "embedding_reduced_09",
+        "dimension_index": 8,
+        "coefficient": 4.151374322880129,
+        "intercept": 13.255250649413544,
+        "p_value": 0.3637038853819521,
+        "is_significant": false,
+        "r2_adj": 0.08705433218797465
+      },
+      {
+        "channel_name": "Bloomberg Originals",
+        "dimension": "embedding_reduced_10",
+        "dimension_index": 9,
+        "coefficient": -0.3355569040273192,
+        "intercept": 13.255250649413544,
+        "p_value": 0.9305343639334389,
+        "is_significant": false,
+        "r2_adj": 0.08705433218797465
+      },
+      {
+        "channel_name": "Bloomberg Originals",
+        "dimension": "embedding_reduced_11",
+        "dimension_index": 10,
+        "coefficient": -6.288586616193912,
+        "intercept": 13.255250649413544,
+        "p_value": 0.15793456957949623,
+        "is_significant": false,
+        "r2_adj": 0.08705433218797465
+      },
+      {
+        "channel_name": "Bloomberg Originals",
+        "dimension": "embedding_reduced_12",
+        "dimension_index": 11,
+        "coefficient": -5.0433639947391145,
+        "intercept": 13.255250649413544,
+        "p_value": 0.33840067850169797,
+        "is_significant": false,
+        "r2_adj": 0.08705433218797465
+      },
+      {
+        "channel_name": "Bloomberg Originals",
+        "dimension": "embedding_reduced_13",
+        "dimension_index": 12,
+        "coefficient": -2.9989094312405555,
+        "intercept": 13.255250649413544,
+        "p_value": 0.566845204556405,
+        "is_significant": false,
+        "r2_adj": 0.08705433218797465
+      },
+      {
+        "channel_name": "Bloomberg Originals",
+        "dimension": "embedding_reduced_14",
+        "dimension_index": 13,
+        "coefficient": -9.777642450906285,
+        "intercept": 13.255250649413544,
+        "p_value": 0.047896702467633556,
+        "is_significant": true,
+        "r2_adj": 0.08705433218797465
+      },
+      {
+        "channel_name": "Bloomberg Originals",
+        "dimension": "embedding_reduced_15",
+        "dimension_index": 14,
+        "coefficient": 3.408821687191974,
+        "intercept": 13.255250649413544,
+        "p_value": 0.6343237270398954,
+        "is_significant": false,
+        "r2_adj": 0.08705433218797465
+      },
+      {
+        "channel_name": "Bloomberg Originals",
+        "dimension": "embedding_reduced_16",
+        "dimension_index": 15,
+        "coefficient": -5.659488002680558,
+        "intercept": 13.255250649413544,
+        "p_value": 0.29423340894388317,
+        "is_significant": false,
+        "r2_adj": 0.08705433218797465
+      },
+      {
+        "channel_name": "Bloomberg Originals",
+        "dimension": "embedding_reduced_17",
+        "dimension_index": 16,
+        "coefficient": -1.1462724962550574,
+        "intercept": 13.255250649413544,
+        "p_value": 0.8087655456996812,
+        "is_significant": false,
+        "r2_adj": 0.08705433218797465
+      },
+      {
+        "channel_name": "Bloomberg Originals",
+        "dimension": "embedding_reduced_18",
+        "dimension_index": 17,
+        "coefficient": 12.852707262151535,
+        "intercept": 13.255250649413544,
+        "p_value": 0.16645031027060006,
+        "is_significant": false,
+        "r2_adj": 0.08705433218797465
+      },
+      {
+        "channel_name": "Bloomberg Originals",
+        "dimension": "embedding_reduced_19",
+        "dimension_index": 18,
+        "coefficient": -4.924965895707807,
+        "intercept": 13.255250649413544,
+        "p_value": 0.4674013098363149,
+        "is_significant": false,
+        "r2_adj": 0.08705433218797465
+      },
+      {
+        "channel_name": "Bloomberg Originals",
+        "dimension": "embedding_reduced_20",
+        "dimension_index": 19,
+        "coefficient": -6.427122860106239,
+        "intercept": 13.255250649413544,
+        "p_value": 0.3350485479787375,
+        "is_significant": false,
+        "r2_adj": 0.08705433218797465
+      },
+      {
+        "channel_name": "Dan Martell",
+        "dimension": "embedding_reduced_01",
+        "dimension_index": 0,
+        "coefficient": 12.106954447328341,
+        "intercept": 11.047965456170857,
+        "p_value": 0.00411257978192317,
+        "is_significant": true,
+        "r2_adj": 0.26850757960176186
+      },
+      {
+        "channel_name": "Dan Martell",
+        "dimension": "embedding_reduced_02",
+        "dimension_index": 1,
+        "coefficient": -1.4702940306251282,
+        "intercept": 11.047965456170857,
+        "p_value": 0.7408467489571742,
+        "is_significant": false,
+        "r2_adj": 0.26850757960176186
+      },
+      {
+        "channel_name": "Dan Martell",
+        "dimension": "embedding_reduced_03",
+        "dimension_index": 2,
+        "coefficient": 2.135294065433719,
+        "intercept": 11.047965456170857,
+        "p_value": 0.5043643085733707,
+        "is_significant": false,
+        "r2_adj": 0.26850757960176186
+      },
+      {
+        "channel_name": "Dan Martell",
+        "dimension": "embedding_reduced_04",
+        "dimension_index": 3,
+        "coefficient": 2.4900747873443763,
+        "intercept": 11.047965456170857,
+        "p_value": 0.3791026780176565,
+        "is_significant": false,
+        "r2_adj": 0.26850757960176186
+      },
+      {
+        "channel_name": "Dan Martell",
+        "dimension": "embedding_reduced_05",
+        "dimension_index": 4,
+        "coefficient": -16.82485504972275,
+        "intercept": 11.047965456170857,
+        "p_value": 0.0013637372377162582,
+        "is_significant": true,
+        "r2_adj": 0.26850757960176186
+      },
+      {
+        "channel_name": "Dan Martell",
+        "dimension": "embedding_reduced_06",
+        "dimension_index": 5,
+        "coefficient": -10.913899254734401,
+        "intercept": 11.047965456170857,
+        "p_value": 0.008782737965294845,
+        "is_significant": true,
+        "r2_adj": 0.26850757960176186
+      },
+      {
+        "channel_name": "Dan Martell",
+        "dimension": "embedding_reduced_07",
+        "dimension_index": 6,
+        "coefficient": 4.621290430365306,
+        "intercept": 11.047965456170857,
+        "p_value": 0.09961655038751747,
+        "is_significant": false,
+        "r2_adj": 0.26850757960176186
+      },
+      {
+        "channel_name": "Dan Martell",
+        "dimension": "embedding_reduced_08",
+        "dimension_index": 7,
+        "coefficient": 5.4471756982119,
+        "intercept": 11.047965456170857,
+        "p_value": 0.1767076287649466,
+        "is_significant": false,
+        "r2_adj": 0.26850757960176186
+      },
+      {
+        "channel_name": "Dan Martell",
+        "dimension": "embedding_reduced_09",
+        "dimension_index": 8,
+        "coefficient": 0.4989829360240985,
+        "intercept": 11.047965456170857,
+        "p_value": 0.9169879307653102,
+        "is_significant": false,
+        "r2_adj": 0.26850757960176186
+      },
+      {
+        "channel_name": "Dan Martell",
+        "dimension": "embedding_reduced_10",
+        "dimension_index": 9,
+        "coefficient": -0.39749918444777865,
+        "intercept": 11.047965456170857,
+        "p_value": 0.9039345013047125,
+        "is_significant": false,
+        "r2_adj": 0.26850757960176186
+      },
+      {
+        "channel_name": "Dan Martell",
+        "dimension": "embedding_reduced_11",
+        "dimension_index": 10,
+        "coefficient": -4.470521066468663,
+        "intercept": 11.047965456170857,
+        "p_value": 0.2689896699793869,
+        "is_significant": false,
+        "r2_adj": 0.26850757960176186
+      },
+      {
+        "channel_name": "Dan Martell",
+        "dimension": "embedding_reduced_12",
+        "dimension_index": 11,
+        "coefficient": -6.2432320061449005,
+        "intercept": 11.047965456170857,
+        "p_value": 0.24118948335925933,
+        "is_significant": false,
+        "r2_adj": 0.26850757960176186
+      },
+      {
+        "channel_name": "Dan Martell",
+        "dimension": "embedding_reduced_13",
+        "dimension_index": 12,
+        "coefficient": -3.7187553109963254,
+        "intercept": 11.047965456170857,
+        "p_value": 0.4200214687635585,
+        "is_significant": false,
+        "r2_adj": 0.26850757960176186
+      },
+      {
+        "channel_name": "Dan Martell",
+        "dimension": "embedding_reduced_14",
+        "dimension_index": 13,
+        "coefficient": 18.95406522562945,
+        "intercept": 11.047965456170857,
+        "p_value": 0.0014177809060342455,
+        "is_significant": true,
+        "r2_adj": 0.26850757960176186
+      },
+      {
+        "channel_name": "Dan Martell",
+        "dimension": "embedding_reduced_15",
+        "dimension_index": 14,
+        "coefficient": 14.463784522822836,
+        "intercept": 11.047965456170857,
+        "p_value": 0.018701848660534988,
+        "is_significant": true,
+        "r2_adj": 0.26850757960176186
+      },
+      {
+        "channel_name": "Dan Martell",
+        "dimension": "embedding_reduced_16",
+        "dimension_index": 15,
+        "coefficient": 7.756053906143108,
+        "intercept": 11.047965456170857,
+        "p_value": 0.03204016503953198,
+        "is_significant": true,
+        "r2_adj": 0.26850757960176186
+      },
+      {
+        "channel_name": "Dan Martell",
+        "dimension": "embedding_reduced_17",
+        "dimension_index": 16,
+        "coefficient": 7.059099975613684,
+        "intercept": 11.047965456170857,
+        "p_value": 0.13959073146206716,
+        "is_significant": false,
+        "r2_adj": 0.26850757960176186
+      },
+      {
+        "channel_name": "Dan Martell",
+        "dimension": "embedding_reduced_18",
+        "dimension_index": 17,
+        "coefficient": -1.1992779186835847,
+        "intercept": 11.047965456170857,
+        "p_value": 0.7959439581488769,
+        "is_significant": false,
+        "r2_adj": 0.26850757960176186
+      },
+      {
+        "channel_name": "Dan Martell",
+        "dimension": "embedding_reduced_19",
+        "dimension_index": 18,
+        "coefficient": -5.717949258638695,
+        "intercept": 11.047965456170857,
+        "p_value": 0.04702299927841337,
+        "is_significant": true,
+        "r2_adj": 0.26850757960176186
+      },
+      {
+        "channel_name": "Dan Martell",
+        "dimension": "embedding_reduced_20",
+        "dimension_index": 19,
+        "coefficient": -2.029084511787321,
+        "intercept": 11.047965456170857,
+        "p_value": 0.6370956424948149,
+        "is_significant": false,
+        "r2_adj": 0.26850757960176186
+      },
+      {
+        "channel_name": "Garry Tan",
+        "dimension": "embedding_reduced_01",
+        "dimension_index": 0,
+        "coefficient": 0.1604968867691794,
+        "intercept": 10.267866605427606,
+        "p_value": 0.894252154045134,
+        "is_significant": false,
+        "r2_adj": 0.3341573736210315
+      },
+      {
+        "channel_name": "Garry Tan",
+        "dimension": "embedding_reduced_02",
+        "dimension_index": 1,
+        "coefficient": -7.373532325889437,
+        "intercept": 10.267866605427606,
+        "p_value": 0.003949007021530833,
+        "is_significant": true,
+        "r2_adj": 0.3341573736210315
+      },
+      {
+        "channel_name": "Garry Tan",
+        "dimension": "embedding_reduced_03",
+        "dimension_index": 2,
+        "coefficient": -0.4795049019111213,
+        "intercept": 10.267866605427606,
+        "p_value": 0.8667998714701369,
+        "is_significant": false,
+        "r2_adj": 0.3341573736210315
+      },
+      {
+        "channel_name": "Garry Tan",
+        "dimension": "embedding_reduced_04",
+        "dimension_index": 3,
+        "coefficient": -2.1675590961680413,
+        "intercept": 10.267866605427606,
+        "p_value": 0.2901092197017198,
+        "is_significant": false,
+        "r2_adj": 0.3341573736210315
+      },
+      {
+        "channel_name": "Garry Tan",
+        "dimension": "embedding_reduced_05",
+        "dimension_index": 4,
+        "coefficient": -3.3654739520122963,
+        "intercept": 10.267866605427606,
+        "p_value": 0.06801355032361583,
+        "is_significant": false,
+        "r2_adj": 0.3341573736210315
+      },
+      {
+        "channel_name": "Garry Tan",
+        "dimension": "embedding_reduced_06",
+        "dimension_index": 5,
+        "coefficient": 1.3433829270283422,
+        "intercept": 10.267866605427606,
+        "p_value": 0.5916234034132997,
+        "is_significant": false,
+        "r2_adj": 0.3341573736210315
+      },
+      {
+        "channel_name": "Garry Tan",
+        "dimension": "embedding_reduced_07",
+        "dimension_index": 6,
+        "coefficient": -1.9597005437896966,
+        "intercept": 10.267866605427606,
+        "p_value": 0.3705526622071408,
+        "is_significant": false,
+        "r2_adj": 0.3341573736210315
+      },
+      {
+        "channel_name": "Garry Tan",
+        "dimension": "embedding_reduced_08",
+        "dimension_index": 7,
+        "coefficient": -1.5357110006838788,
+        "intercept": 10.267866605427606,
+        "p_value": 0.5671525337609338,
+        "is_significant": false,
+        "r2_adj": 0.3341573736210315
+      },
+      {
+        "channel_name": "Garry Tan",
+        "dimension": "embedding_reduced_09",
+        "dimension_index": 8,
+        "coefficient": 2.6888931617472966,
+        "intercept": 10.267866605427606,
+        "p_value": 0.31447855340175285,
+        "is_significant": false,
+        "r2_adj": 0.3341573736210315
+      },
+      {
+        "channel_name": "Garry Tan",
+        "dimension": "embedding_reduced_10",
+        "dimension_index": 9,
+        "coefficient": 0.33486498867754666,
+        "intercept": 10.267866605427606,
+        "p_value": 0.9002748332265601,
+        "is_significant": false,
+        "r2_adj": 0.3341573736210315
+      },
+      {
+        "channel_name": "Garry Tan",
+        "dimension": "embedding_reduced_11",
+        "dimension_index": 10,
+        "coefficient": -7.534011241773264,
+        "intercept": 10.267866605427606,
+        "p_value": 0.06837756628024111,
+        "is_significant": false,
+        "r2_adj": 0.3341573736210315
+      },
+      {
+        "channel_name": "Garry Tan",
+        "dimension": "embedding_reduced_12",
+        "dimension_index": 11,
+        "coefficient": 4.18318507945561,
+        "intercept": 10.267866605427606,
+        "p_value": 0.19740950126544682,
+        "is_significant": false,
+        "r2_adj": 0.3341573736210315
+      },
+      {
+        "channel_name": "Garry Tan",
+        "dimension": "embedding_reduced_13",
+        "dimension_index": 12,
+        "coefficient": 2.4090738208507005,
+        "intercept": 10.267866605427606,
+        "p_value": 0.354084306423021,
+        "is_significant": false,
+        "r2_adj": 0.3341573736210315
+      },
+      {
+        "channel_name": "Garry Tan",
+        "dimension": "embedding_reduced_14",
+        "dimension_index": 13,
+        "coefficient": -6.29745183672649,
+        "intercept": 10.267866605427606,
+        "p_value": 0.06987682102260448,
+        "is_significant": false,
+        "r2_adj": 0.3341573736210315
+      },
+      {
+        "channel_name": "Garry Tan",
+        "dimension": "embedding_reduced_15",
+        "dimension_index": 14,
+        "coefficient": -1.0563223227038527,
+        "intercept": 10.267866605427606,
+        "p_value": 0.646631941442509,
+        "is_significant": false,
+        "r2_adj": 0.3341573736210315
+      },
+      {
+        "channel_name": "Garry Tan",
+        "dimension": "embedding_reduced_16",
+        "dimension_index": 15,
+        "coefficient": -0.5577403492607971,
+        "intercept": 10.267866605427606,
+        "p_value": 0.8680592188355856,
+        "is_significant": false,
+        "r2_adj": 0.3341573736210315
+      },
+      {
+        "channel_name": "Garry Tan",
+        "dimension": "embedding_reduced_17",
+        "dimension_index": 16,
+        "coefficient": -0.24777298747073262,
+        "intercept": 10.267866605427606,
+        "p_value": 0.9222882910227799,
+        "is_significant": false,
+        "r2_adj": 0.3341573736210315
+      },
+      {
+        "channel_name": "Garry Tan",
+        "dimension": "embedding_reduced_18",
+        "dimension_index": 17,
+        "coefficient": 4.203564842775019,
+        "intercept": 10.267866605427606,
+        "p_value": 0.37893825743050147,
+        "is_significant": false,
+        "r2_adj": 0.3341573736210315
+      },
+      {
+        "channel_name": "Garry Tan",
+        "dimension": "embedding_reduced_19",
+        "dimension_index": 18,
+        "coefficient": 3.6350958944130394,
+        "intercept": 10.267866605427606,
+        "p_value": 0.30707109675445826,
+        "is_significant": false,
+        "r2_adj": 0.3341573736210315
+      },
+      {
+        "channel_name": "Garry Tan",
+        "dimension": "embedding_reduced_20",
+        "dimension_index": 19,
+        "coefficient": 4.41023534580388,
+        "intercept": 10.267866605427606,
+        "p_value": 0.14786744586291334,
+        "is_significant": false,
+        "r2_adj": 0.3341573736210315
+      },
+      {
+        "channel_name": "Greg Isenberg",
+        "dimension": "embedding_reduced_01",
+        "dimension_index": 0,
+        "coefficient": -2.1176839345984346,
+        "intercept": 12.004401644270354,
+        "p_value": 0.43831568340924687,
+        "is_significant": false,
+        "r2_adj": 0.3659305663285849
+      },
+      {
+        "channel_name": "Greg Isenberg",
+        "dimension": "embedding_reduced_02",
+        "dimension_index": 1,
+        "coefficient": 4.718289157339402,
+        "intercept": 12.004401644270354,
+        "p_value": 0.06117804279944456,
+        "is_significant": false,
+        "r2_adj": 0.3659305663285849
+      },
+      {
+        "channel_name": "Greg Isenberg",
+        "dimension": "embedding_reduced_03",
+        "dimension_index": 2,
+        "coefficient": 3.407206286204935,
+        "intercept": 12.004401644270354,
+        "p_value": 0.22452146173664708,
+        "is_significant": false,
+        "r2_adj": 0.3659305663285849
+      },
+      {
+        "channel_name": "Greg Isenberg",
+        "dimension": "embedding_reduced_04",
+        "dimension_index": 3,
+        "coefficient": 0.46733591372227784,
+        "intercept": 12.004401644270354,
+        "p_value": 0.867570693889625,
+        "is_significant": false,
+        "r2_adj": 0.3659305663285849
+      },
+      {
+        "channel_name": "Greg Isenberg",
+        "dimension": "embedding_reduced_05",
+        "dimension_index": 4,
+        "coefficient": 9.84579011170212,
+        "intercept": 12.004401644270354,
+        "p_value": 0.014882562997354971,
+        "is_significant": true,
+        "r2_adj": 0.3659305663285849
+      },
+      {
+        "channel_name": "Greg Isenberg",
+        "dimension": "embedding_reduced_06",
+        "dimension_index": 5,
+        "coefficient": -2.7758933796366367,
+        "intercept": 12.004401644270354,
+        "p_value": 0.37842426639701754,
+        "is_significant": false,
+        "r2_adj": 0.3659305663285849
+      },
+      {
+        "channel_name": "Greg Isenberg",
+        "dimension": "embedding_reduced_07",
+        "dimension_index": 6,
+        "coefficient": -2.7142657917899946,
+        "intercept": 12.004401644270354,
+        "p_value": 0.17157586133592248,
+        "is_significant": false,
+        "r2_adj": 0.3659305663285849
+      },
+      {
+        "channel_name": "Greg Isenberg",
+        "dimension": "embedding_reduced_08",
+        "dimension_index": 7,
+        "coefficient": 2.6385322773494853,
+        "intercept": 12.004401644270354,
+        "p_value": 0.3853807756375869,
+        "is_significant": false,
+        "r2_adj": 0.3659305663285849
+      },
+      {
+        "channel_name": "Greg Isenberg",
+        "dimension": "embedding_reduced_09",
+        "dimension_index": 8,
+        "coefficient": -11.493442312190279,
+        "intercept": 12.004401644270354,
+        "p_value": 0.0006043178920785825,
+        "is_significant": true,
+        "r2_adj": 0.3659305663285849
+      },
+      {
+        "channel_name": "Greg Isenberg",
+        "dimension": "embedding_reduced_10",
+        "dimension_index": 9,
+        "coefficient": 5.5004549236528675,
+        "intercept": 12.004401644270354,
+        "p_value": 0.10942771219124726,
+        "is_significant": false,
+        "r2_adj": 0.3659305663285849
+      },
+      {
+        "channel_name": "Greg Isenberg",
+        "dimension": "embedding_reduced_11",
+        "dimension_index": 10,
+        "coefficient": 0.5940059199181817,
+        "intercept": 12.004401644270354,
+        "p_value": 0.904512541967075,
+        "is_significant": false,
+        "r2_adj": 0.3659305663285849
+      },
+      {
+        "channel_name": "Greg Isenberg",
+        "dimension": "embedding_reduced_12",
+        "dimension_index": 11,
+        "coefficient": -2.6983998162847866,
+        "intercept": 12.004401644270354,
+        "p_value": 0.3771140391265425,
+        "is_significant": false,
+        "r2_adj": 0.3659305663285849
+      },
+      {
+        "channel_name": "Greg Isenberg",
+        "dimension": "embedding_reduced_13",
+        "dimension_index": 12,
+        "coefficient": -4.767633897051104,
+        "intercept": 12.004401644270354,
+        "p_value": 0.05252811708257464,
+        "is_significant": false,
+        "r2_adj": 0.3659305663285849
+      },
+      {
+        "channel_name": "Greg Isenberg",
+        "dimension": "embedding_reduced_14",
+        "dimension_index": 13,
+        "coefficient": -5.936351669750881,
+        "intercept": 12.004401644270354,
+        "p_value": 0.18585571039313897,
+        "is_significant": false,
+        "r2_adj": 0.3659305663285849
+      },
+      {
+        "channel_name": "Greg Isenberg",
+        "dimension": "embedding_reduced_15",
+        "dimension_index": 14,
+        "coefficient": 3.000032397846869,
+        "intercept": 12.004401644270354,
+        "p_value": 0.280976947928679,
+        "is_significant": false,
+        "r2_adj": 0.3659305663285849
+      },
+      {
+        "channel_name": "Greg Isenberg",
+        "dimension": "embedding_reduced_16",
+        "dimension_index": 15,
+        "coefficient": -1.6881923746099723,
+        "intercept": 12.004401644270354,
+        "p_value": 0.6760906608110928,
+        "is_significant": false,
+        "r2_adj": 0.3659305663285849
+      },
+      {
+        "channel_name": "Greg Isenberg",
+        "dimension": "embedding_reduced_17",
+        "dimension_index": 16,
+        "coefficient": 3.9390798060623293,
+        "intercept": 12.004401644270354,
+        "p_value": 0.31841937011229504,
+        "is_significant": false,
+        "r2_adj": 0.3659305663285849
+      },
+      {
+        "channel_name": "Greg Isenberg",
+        "dimension": "embedding_reduced_18",
+        "dimension_index": 17,
+        "coefficient": -3.099079300908787,
+        "intercept": 12.004401644270354,
+        "p_value": 0.36319614846091364,
+        "is_significant": false,
+        "r2_adj": 0.3659305663285849
+      },
+      {
+        "channel_name": "Greg Isenberg",
+        "dimension": "embedding_reduced_19",
+        "dimension_index": 18,
+        "coefficient": 9.743457381679562,
+        "intercept": 12.004401644270354,
+        "p_value": 0.0035642239820334338,
+        "is_significant": true,
+        "r2_adj": 0.3659305663285849
+      },
+      {
+        "channel_name": "Greg Isenberg",
+        "dimension": "embedding_reduced_20",
+        "dimension_index": 19,
+        "coefficient": -4.8079730574171275,
+        "intercept": 12.004401644270354,
+        "p_value": 0.213642033793596,
+        "is_significant": false,
+        "r2_adj": 0.3659305663285849
+      },
+      {
+        "channel_name": "Joe Lonsdale",
+        "dimension": "embedding_reduced_01",
+        "dimension_index": 0,
+        "coefficient": -6.21235175982609,
+        "intercept": 8.142779790100713,
+        "p_value": 0.25335367232615935,
+        "is_significant": false,
+        "r2_adj": 0.2602682631301131
+      },
+      {
+        "channel_name": "Joe Lonsdale",
+        "dimension": "embedding_reduced_02",
+        "dimension_index": 1,
+        "coefficient": 8.052342410068924,
+        "intercept": 8.142779790100713,
+        "p_value": 0.05132709041213006,
+        "is_significant": false,
+        "r2_adj": 0.2602682631301131
+      },
+      {
+        "channel_name": "Joe Lonsdale",
+        "dimension": "embedding_reduced_03",
+        "dimension_index": 2,
+        "coefficient": 7.539248196348979,
+        "intercept": 8.142779790100713,
+        "p_value": 0.17395728502530747,
+        "is_significant": false,
+        "r2_adj": 0.2602682631301131
+      },
+      {
+        "channel_name": "Joe Lonsdale",
+        "dimension": "embedding_reduced_04",
+        "dimension_index": 3,
+        "coefficient": -6.922594666615912,
+        "intercept": 8.142779790100713,
+        "p_value": 0.09598984784105725,
+        "is_significant": false,
+        "r2_adj": 0.2602682631301131
+      },
+      {
+        "channel_name": "Joe Lonsdale",
+        "dimension": "embedding_reduced_05",
+        "dimension_index": 4,
+        "coefficient": 0.2657338377499596,
+        "intercept": 8.142779790100713,
+        "p_value": 0.9678465054794421,
+        "is_significant": false,
+        "r2_adj": 0.2602682631301131
+      },
+      {
+        "channel_name": "Joe Lonsdale",
+        "dimension": "embedding_reduced_06",
+        "dimension_index": 5,
+        "coefficient": 4.167191457501574,
+        "intercept": 8.142779790100713,
+        "p_value": 0.4883150740535961,
+        "is_significant": false,
+        "r2_adj": 0.2602682631301131
+      },
+      {
+        "channel_name": "Joe Lonsdale",
+        "dimension": "embedding_reduced_07",
+        "dimension_index": 6,
+        "coefficient": -8.641958459174385,
+        "intercept": 8.142779790100713,
+        "p_value": 0.08984517256150908,
+        "is_significant": false,
+        "r2_adj": 0.2602682631301131
+      },
+      {
+        "channel_name": "Joe Lonsdale",
+        "dimension": "embedding_reduced_08",
+        "dimension_index": 7,
+        "coefficient": 1.7160033767466718,
+        "intercept": 8.142779790100713,
+        "p_value": 0.7876002001800906,
+        "is_significant": false,
+        "r2_adj": 0.2602682631301131
+      },
+      {
+        "channel_name": "Joe Lonsdale",
+        "dimension": "embedding_reduced_09",
+        "dimension_index": 8,
+        "coefficient": -3.7182202708445904,
+        "intercept": 8.142779790100713,
+        "p_value": 0.466179536266898,
+        "is_significant": false,
+        "r2_adj": 0.2602682631301131
+      },
+      {
+        "channel_name": "Joe Lonsdale",
+        "dimension": "embedding_reduced_10",
+        "dimension_index": 9,
+        "coefficient": -6.835775230536547,
+        "intercept": 8.142779790100713,
+        "p_value": 0.310173579664322,
+        "is_significant": false,
+        "r2_adj": 0.2602682631301131
+      },
+      {
+        "channel_name": "Joe Lonsdale",
+        "dimension": "embedding_reduced_11",
+        "dimension_index": 10,
+        "coefficient": -5.426021924462399,
+        "intercept": 8.142779790100713,
+        "p_value": 0.4424395828164813,
+        "is_significant": false,
+        "r2_adj": 0.2602682631301131
+      },
+      {
+        "channel_name": "Joe Lonsdale",
+        "dimension": "embedding_reduced_12",
+        "dimension_index": 11,
+        "coefficient": 10.632212653059586,
+        "intercept": 8.142779790100713,
+        "p_value": 0.09017162126125797,
+        "is_significant": false,
+        "r2_adj": 0.2602682631301131
+      },
+      {
+        "channel_name": "Joe Lonsdale",
+        "dimension": "embedding_reduced_13",
+        "dimension_index": 12,
+        "coefficient": 8.472735045014712,
+        "intercept": 8.142779790100713,
+        "p_value": 0.14946280881470336,
+        "is_significant": false,
+        "r2_adj": 0.2602682631301131
+      },
+      {
+        "channel_name": "Joe Lonsdale",
+        "dimension": "embedding_reduced_14",
+        "dimension_index": 13,
+        "coefficient": -28.00975765355242,
+        "intercept": 8.142779790100713,
+        "p_value": 0.006474289472832696,
+        "is_significant": true,
+        "r2_adj": 0.2602682631301131
+      },
+      {
+        "channel_name": "Joe Lonsdale",
+        "dimension": "embedding_reduced_15",
+        "dimension_index": 14,
+        "coefficient": -8.362463999108476,
+        "intercept": 8.142779790100713,
+        "p_value": 0.15952152478837994,
+        "is_significant": false,
+        "r2_adj": 0.2602682631301131
+      },
+      {
+        "channel_name": "Joe Lonsdale",
+        "dimension": "embedding_reduced_16",
+        "dimension_index": 15,
+        "coefficient": 2.4942985038819625,
+        "intercept": 8.142779790100713,
+        "p_value": 0.721375537305293,
+        "is_significant": false,
+        "r2_adj": 0.2602682631301131
+      },
+      {
+        "channel_name": "Joe Lonsdale",
+        "dimension": "embedding_reduced_17",
+        "dimension_index": 16,
+        "coefficient": 9.691233582914574,
+        "intercept": 8.142779790100713,
+        "p_value": 0.1188584659286239,
+        "is_significant": false,
+        "r2_adj": 0.2602682631301131
+      },
+      {
+        "channel_name": "Joe Lonsdale",
+        "dimension": "embedding_reduced_18",
+        "dimension_index": 17,
+        "coefficient": 5.192759451728417,
+        "intercept": 8.142779790100713,
+        "p_value": 0.4906923383185664,
+        "is_significant": false,
+        "r2_adj": 0.2602682631301131
+      },
+      {
+        "channel_name": "Joe Lonsdale",
+        "dimension": "embedding_reduced_19",
+        "dimension_index": 18,
+        "coefficient": 6.71799741369216,
+        "intercept": 8.142779790100713,
+        "p_value": 0.39242066723986435,
+        "is_significant": false,
+        "r2_adj": 0.2602682631301131
+      },
+      {
+        "channel_name": "Joe Lonsdale",
+        "dimension": "embedding_reduced_20",
+        "dimension_index": 19,
+        "coefficient": -2.25671784987628,
+        "intercept": 8.142779790100713,
+        "p_value": 0.7290897788110335,
+        "is_significant": false,
+        "r2_adj": 0.2602682631301131
+      },
+      {
+        "channel_name": "Lenny's Podcast",
+        "dimension": "embedding_reduced_01",
+        "dimension_index": 0,
+        "coefficient": 7.266265623473386,
+        "intercept": 10.834974776680216,
+        "p_value": 0.09736744522523022,
+        "is_significant": false,
+        "r2_adj": 0.23909179254146096
+      },
+      {
+        "channel_name": "Lenny's Podcast",
+        "dimension": "embedding_reduced_02",
+        "dimension_index": 1,
+        "coefficient": -2.95796659391457,
+        "intercept": 10.834974776680216,
+        "p_value": 0.36505307047259783,
+        "is_significant": false,
+        "r2_adj": 0.23909179254146096
+      },
+      {
+        "channel_name": "Lenny's Podcast",
+        "dimension": "embedding_reduced_03",
+        "dimension_index": 2,
+        "coefficient": 4.233131974043031,
+        "intercept": 10.834974776680216,
+        "p_value": 0.2107021282795182,
+        "is_significant": false,
+        "r2_adj": 0.23909179254146096
+      },
+      {
+        "channel_name": "Lenny's Podcast",
+        "dimension": "embedding_reduced_04",
+        "dimension_index": 3,
+        "coefficient": -6.694116023708537,
+        "intercept": 10.834974776680216,
+        "p_value": 0.014312395036492315,
+        "is_significant": true,
+        "r2_adj": 0.23909179254146096
+      },
+      {
+        "channel_name": "Lenny's Podcast",
+        "dimension": "embedding_reduced_05",
+        "dimension_index": 4,
+        "coefficient": 5.748033253296434,
+        "intercept": 10.834974776680216,
+        "p_value": 0.18065006667198963,
+        "is_significant": false,
+        "r2_adj": 0.23909179254146096
+      },
+      {
+        "channel_name": "Lenny's Podcast",
+        "dimension": "embedding_reduced_06",
+        "dimension_index": 5,
+        "coefficient": 3.673839603409178,
+        "intercept": 10.834974776680216,
+        "p_value": 0.4099961693922457,
+        "is_significant": false,
+        "r2_adj": 0.23909179254146096
+      },
+      {
+        "channel_name": "Lenny's Podcast",
+        "dimension": "embedding_reduced_07",
+        "dimension_index": 6,
+        "coefficient": 2.7688315781885464,
+        "intercept": 10.834974776680216,
+        "p_value": 0.40119675410380806,
+        "is_significant": false,
+        "r2_adj": 0.23909179254146096
+      },
+      {
+        "channel_name": "Lenny's Podcast",
+        "dimension": "embedding_reduced_08",
+        "dimension_index": 7,
+        "coefficient": -2.81022260702408,
+        "intercept": 10.834974776680216,
+        "p_value": 0.3753747398418359,
+        "is_significant": false,
+        "r2_adj": 0.23909179254146096
+      },
+      {
+        "channel_name": "Lenny's Podcast",
+        "dimension": "embedding_reduced_09",
+        "dimension_index": 8,
+        "coefficient": 2.554232527567463,
+        "intercept": 10.834974776680216,
+        "p_value": 0.5007102511861251,
+        "is_significant": false,
+        "r2_adj": 0.23909179254146096
+      },
+      {
+        "channel_name": "Lenny's Podcast",
+        "dimension": "embedding_reduced_10",
+        "dimension_index": 9,
+        "coefficient": 3.9768094216049032,
+        "intercept": 10.834974776680216,
+        "p_value": 0.2008077189701456,
+        "is_significant": false,
+        "r2_adj": 0.23909179254146096
+      },
+      {
+        "channel_name": "Lenny's Podcast",
+        "dimension": "embedding_reduced_11",
+        "dimension_index": 10,
+        "coefficient": -3.5283054966400904,
+        "intercept": 10.834974776680216,
+        "p_value": 0.4720607691210771,
+        "is_significant": false,
+        "r2_adj": 0.23909179254146096
+      },
+      {
+        "channel_name": "Lenny's Podcast",
+        "dimension": "embedding_reduced_12",
+        "dimension_index": 11,
+        "coefficient": 0.03665408552092764,
+        "intercept": 10.834974776680216,
+        "p_value": 0.9929786417717262,
+        "is_significant": false,
+        "r2_adj": 0.23909179254146096
+      },
+      {
+        "channel_name": "Lenny's Podcast",
+        "dimension": "embedding_reduced_13",
+        "dimension_index": 12,
+        "coefficient": 4.859301649462911,
+        "intercept": 10.834974776680216,
+        "p_value": 0.2683371213738832,
+        "is_significant": false,
+        "r2_adj": 0.23909179254146096
+      },
+      {
+        "channel_name": "Lenny's Podcast",
+        "dimension": "embedding_reduced_14",
+        "dimension_index": 13,
+        "coefficient": -4.462901653699088,
+        "intercept": 10.834974776680216,
+        "p_value": 0.44580737714193985,
+        "is_significant": false,
+        "r2_adj": 0.23909179254146096
+      },
+      {
+        "channel_name": "Lenny's Podcast",
+        "dimension": "embedding_reduced_15",
+        "dimension_index": 14,
+        "coefficient": 9.050779172885067,
+        "intercept": 10.834974776680216,
+        "p_value": 0.03928724166650825,
+        "is_significant": true,
+        "r2_adj": 0.23909179254146096
+      },
+      {
+        "channel_name": "Lenny's Podcast",
+        "dimension": "embedding_reduced_16",
+        "dimension_index": 15,
+        "coefficient": -3.18197320574064,
+        "intercept": 10.834974776680216,
+        "p_value": 0.6005675305671896,
+        "is_significant": false,
+        "r2_adj": 0.23909179254146096
+      },
+      {
+        "channel_name": "Lenny's Podcast",
+        "dimension": "embedding_reduced_17",
+        "dimension_index": 16,
+        "coefficient": 3.960472278985229,
+        "intercept": 10.834974776680216,
+        "p_value": 0.35548889709973175,
+        "is_significant": false,
+        "r2_adj": 0.23909179254146096
+      },
+      {
+        "channel_name": "Lenny's Podcast",
+        "dimension": "embedding_reduced_18",
+        "dimension_index": 17,
+        "coefficient": 10.79418156187136,
+        "intercept": 10.834974776680216,
+        "p_value": 0.0627980791533472,
+        "is_significant": false,
+        "r2_adj": 0.23909179254146096
+      },
+      {
+        "channel_name": "Lenny's Podcast",
+        "dimension": "embedding_reduced_19",
+        "dimension_index": 18,
+        "coefficient": -5.715439749922973,
+        "intercept": 10.834974776680216,
+        "p_value": 0.2345027210303453,
+        "is_significant": false,
+        "r2_adj": 0.23909179254146096
+      },
+      {
+        "channel_name": "Lenny's Podcast",
+        "dimension": "embedding_reduced_20",
+        "dimension_index": 19,
+        "coefficient": 9.689594866893344,
+        "intercept": 10.834974776680216,
+        "p_value": 0.11964673005856818,
+        "is_significant": false,
+        "r2_adj": 0.23909179254146096
+      },
+      {
+        "channel_name": "My First Million",
+        "dimension": "embedding_reduced_01",
+        "dimension_index": 0,
+        "coefficient": -0.8928428052414557,
+        "intercept": 10.986971797418244,
+        "p_value": 0.7413609631248146,
+        "is_significant": false,
+        "r2_adj": -0.1387675265849888
+      },
+      {
+        "channel_name": "My First Million",
+        "dimension": "embedding_reduced_02",
+        "dimension_index": 1,
+        "coefficient": 2.55859080643817,
+        "intercept": 10.986971797418244,
+        "p_value": 0.2642428990031614,
+        "is_significant": false,
+        "r2_adj": -0.1387675265849888
+      },
+      {
+        "channel_name": "My First Million",
+        "dimension": "embedding_reduced_03",
+        "dimension_index": 2,
+        "coefficient": 2.1584560899072542,
+        "intercept": 10.986971797418244,
+        "p_value": 0.46145891000754546,
+        "is_significant": false,
+        "r2_adj": -0.1387675265849888
+      },
+      {
+        "channel_name": "My First Million",
+        "dimension": "embedding_reduced_04",
+        "dimension_index": 3,
+        "coefficient": 1.0721686764444698,
+        "intercept": 10.986971797418244,
+        "p_value": 0.6933927924658835,
+        "is_significant": false,
+        "r2_adj": -0.1387675265849888
+      },
+      {
+        "channel_name": "My First Million",
+        "dimension": "embedding_reduced_05",
+        "dimension_index": 4,
+        "coefficient": -1.8599759875959494,
+        "intercept": 10.986971797418244,
+        "p_value": 0.5994126232756862,
+        "is_significant": false,
+        "r2_adj": -0.1387675265849888
+      },
+      {
+        "channel_name": "My First Million",
+        "dimension": "embedding_reduced_06",
+        "dimension_index": 5,
+        "coefficient": 1.3417164124070702,
+        "intercept": 10.986971797418244,
+        "p_value": 0.7117348721200522,
+        "is_significant": false,
+        "r2_adj": -0.1387675265849888
+      },
+      {
+        "channel_name": "My First Million",
+        "dimension": "embedding_reduced_07",
+        "dimension_index": 6,
+        "coefficient": -3.949491700080337,
+        "intercept": 10.986971797418244,
+        "p_value": 0.24362702155973692,
+        "is_significant": false,
+        "r2_adj": -0.1387675265849888
+      },
+      {
+        "channel_name": "My First Million",
+        "dimension": "embedding_reduced_08",
+        "dimension_index": 7,
+        "coefficient": -0.16234412553345834,
+        "intercept": 10.986971797418244,
+        "p_value": 0.967817293129424,
+        "is_significant": false,
+        "r2_adj": -0.1387675265849888
+      },
+      {
+        "channel_name": "My First Million",
+        "dimension": "embedding_reduced_09",
+        "dimension_index": 8,
+        "coefficient": -0.6673946405029245,
+        "intercept": 10.986971797418244,
+        "p_value": 0.8558296825173113,
+        "is_significant": false,
+        "r2_adj": -0.1387675265849888
+      },
+      {
+        "channel_name": "My First Million",
+        "dimension": "embedding_reduced_10",
+        "dimension_index": 9,
+        "coefficient": 1.1144668739115762,
+        "intercept": 10.986971797418244,
+        "p_value": 0.7492728154170408,
+        "is_significant": false,
+        "r2_adj": -0.1387675265849888
+      },
+      {
+        "channel_name": "My First Million",
+        "dimension": "embedding_reduced_11",
+        "dimension_index": 10,
+        "coefficient": -5.885806067235311,
+        "intercept": 10.986971797418244,
+        "p_value": 0.18447447802585742,
+        "is_significant": false,
+        "r2_adj": -0.1387675265849888
+      },
+      {
+        "channel_name": "My First Million",
+        "dimension": "embedding_reduced_12",
+        "dimension_index": 11,
+        "coefficient": -5.065753749105736,
+        "intercept": 10.986971797418244,
+        "p_value": 0.32499810001231944,
+        "is_significant": false,
+        "r2_adj": -0.1387675265849888
+      },
+      {
+        "channel_name": "My First Million",
+        "dimension": "embedding_reduced_13",
+        "dimension_index": 12,
+        "coefficient": -6.474020503124686,
+        "intercept": 10.986971797418244,
+        "p_value": 0.07896793312979156,
+        "is_significant": false,
+        "r2_adj": -0.1387675265849888
+      },
+      {
+        "channel_name": "My First Million",
+        "dimension": "embedding_reduced_14",
+        "dimension_index": 13,
+        "coefficient": 1.3842799123072371,
+        "intercept": 10.986971797418244,
+        "p_value": 0.791858577184471,
+        "is_significant": false,
+        "r2_adj": -0.1387675265849888
+      },
+      {
+        "channel_name": "My First Million",
+        "dimension": "embedding_reduced_15",
+        "dimension_index": 14,
+        "coefficient": 5.416594690524521,
+        "intercept": 10.986971797418244,
+        "p_value": 0.2172516650381628,
+        "is_significant": false,
+        "r2_adj": -0.1387675265849888
+      },
+      {
+        "channel_name": "My First Million",
+        "dimension": "embedding_reduced_16",
+        "dimension_index": 15,
+        "coefficient": 2.2012646604594988,
+        "intercept": 10.986971797418244,
+        "p_value": 0.6246857451303116,
+        "is_significant": false,
+        "r2_adj": -0.1387675265849888
+      },
+      {
+        "channel_name": "My First Million",
+        "dimension": "embedding_reduced_17",
+        "dimension_index": 16,
+        "coefficient": 1.4568375711808415,
+        "intercept": 10.986971797418244,
+        "p_value": 0.7903666841604499,
+        "is_significant": false,
+        "r2_adj": -0.1387675265849888
+      },
+      {
+        "channel_name": "My First Million",
+        "dimension": "embedding_reduced_18",
+        "dimension_index": 17,
+        "coefficient": -1.0827060984026744,
+        "intercept": 10.986971797418244,
+        "p_value": 0.8245804176085538,
+        "is_significant": false,
+        "r2_adj": -0.1387675265849888
+      },
+      {
+        "channel_name": "My First Million",
+        "dimension": "embedding_reduced_19",
+        "dimension_index": 18,
+        "coefficient": 1.0224148349907338,
+        "intercept": 10.986971797418244,
+        "p_value": 0.7939523530946762,
+        "is_significant": false,
+        "r2_adj": -0.1387675265849888
+      },
+      {
+        "channel_name": "My First Million",
+        "dimension": "embedding_reduced_20",
+        "dimension_index": 19,
+        "coefficient": 6.860666805428858,
+        "intercept": 10.986971797418244,
+        "p_value": 0.17101419366626777,
+        "is_significant": false,
+        "r2_adj": -0.1387675265849888
+      },
+      {
+        "channel_name": "Network State Podcast",
+        "dimension": "embedding_reduced_01",
+        "dimension_index": 0,
+        "coefficient": 8.186827298481763,
+        "intercept": 7.836334795041875,
+        "p_value": 0.053017516821121796,
+        "is_significant": false,
+        "r2_adj": 0.525089118105352
+      },
+      {
+        "channel_name": "Network State Podcast",
+        "dimension": "embedding_reduced_02",
+        "dimension_index": 1,
+        "coefficient": 5.495206704771528,
+        "intercept": 7.836334795041875,
+        "p_value": 0.3732302398931743,
+        "is_significant": false,
+        "r2_adj": 0.525089118105352
+      },
+      {
+        "channel_name": "Network State Podcast",
+        "dimension": "embedding_reduced_03",
+        "dimension_index": 2,
+        "coefficient": -6.308784295960537,
+        "intercept": 7.836334795041875,
+        "p_value": 0.2563991210487292,
+        "is_significant": false,
+        "r2_adj": 0.525089118105352
+      },
+      {
+        "channel_name": "Network State Podcast",
+        "dimension": "embedding_reduced_04",
+        "dimension_index": 3,
+        "coefficient": 5.245281068011533,
+        "intercept": 7.836334795041875,
+        "p_value": 0.3726248843442663,
+        "is_significant": false,
+        "r2_adj": 0.525089118105352
+      },
+      {
+        "channel_name": "Network State Podcast",
+        "dimension": "embedding_reduced_05",
+        "dimension_index": 4,
+        "coefficient": -4.682857932078108,
+        "intercept": 7.836334795041875,
+        "p_value": 0.21057887717004856,
+        "is_significant": false,
+        "r2_adj": 0.525089118105352
+      },
+      {
+        "channel_name": "Network State Podcast",
+        "dimension": "embedding_reduced_06",
+        "dimension_index": 5,
+        "coefficient": 2.095180408036371,
+        "intercept": 7.836334795041875,
+        "p_value": 0.7558299365294942,
+        "is_significant": false,
+        "r2_adj": 0.525089118105352
+      },
+      {
+        "channel_name": "Network State Podcast",
+        "dimension": "embedding_reduced_07",
+        "dimension_index": 6,
+        "coefficient": -2.368396301613932,
+        "intercept": 7.836334795041875,
+        "p_value": 0.6626957998285364,
+        "is_significant": false,
+        "r2_adj": 0.525089118105352
+      },
+      {
+        "channel_name": "Network State Podcast",
+        "dimension": "embedding_reduced_08",
+        "dimension_index": 7,
+        "coefficient": 2.8300293955295075,
+        "intercept": 7.836334795041875,
+        "p_value": 0.6841554631396379,
+        "is_significant": false,
+        "r2_adj": 0.525089118105352
+      },
+      {
+        "channel_name": "Network State Podcast",
+        "dimension": "embedding_reduced_09",
+        "dimension_index": 8,
+        "coefficient": 0.02616106161615228,
+        "intercept": 7.836334795041875,
+        "p_value": 0.9968726516687715,
+        "is_significant": false,
+        "r2_adj": 0.525089118105352
+      },
+      {
+        "channel_name": "Network State Podcast",
+        "dimension": "embedding_reduced_10",
+        "dimension_index": 9,
+        "coefficient": 0.031102233126706125,
+        "intercept": 7.836334795041875,
+        "p_value": 0.9968122003831152,
+        "is_significant": false,
+        "r2_adj": 0.525089118105352
+      },
+      {
+        "channel_name": "Network State Podcast",
+        "dimension": "embedding_reduced_11",
+        "dimension_index": 10,
+        "coefficient": 2.489115798896851,
+        "intercept": 7.836334795041875,
+        "p_value": 0.6502649448915375,
+        "is_significant": false,
+        "r2_adj": 0.525089118105352
+      },
+      {
+        "channel_name": "Network State Podcast",
+        "dimension": "embedding_reduced_12",
+        "dimension_index": 11,
+        "coefficient": -4.7378248050382155,
+        "intercept": 7.836334795041875,
+        "p_value": 0.5721478207586878,
+        "is_significant": false,
+        "r2_adj": 0.525089118105352
+      },
+      {
+        "channel_name": "Network State Podcast",
+        "dimension": "embedding_reduced_13",
+        "dimension_index": 12,
+        "coefficient": -1.0801999707473198,
+        "intercept": 7.836334795041875,
+        "p_value": 0.8723123955088911,
+        "is_significant": false,
+        "r2_adj": 0.525089118105352
+      },
+      {
+        "channel_name": "Network State Podcast",
+        "dimension": "embedding_reduced_14",
+        "dimension_index": 13,
+        "coefficient": 7.818758090489704,
+        "intercept": 7.836334795041875,
+        "p_value": 0.29540001628195967,
+        "is_significant": false,
+        "r2_adj": 0.525089118105352
+      },
+      {
+        "channel_name": "Network State Podcast",
+        "dimension": "embedding_reduced_15",
+        "dimension_index": 14,
+        "coefficient": -7.153972308912888,
+        "intercept": 7.836334795041875,
+        "p_value": 0.4298587317673894,
+        "is_significant": false,
+        "r2_adj": 0.525089118105352
+      },
+      {
+        "channel_name": "Network State Podcast",
+        "dimension": "embedding_reduced_16",
+        "dimension_index": 15,
+        "coefficient": 8.652896422774882,
+        "intercept": 7.836334795041875,
+        "p_value": 0.37190657637647373,
+        "is_significant": false,
+        "r2_adj": 0.525089118105352
+      },
+      {
+        "channel_name": "Network State Podcast",
+        "dimension": "embedding_reduced_17",
+        "dimension_index": 16,
+        "coefficient": -9.12221794903544,
+        "intercept": 7.836334795041875,
+        "p_value": 0.26968442179125923,
+        "is_significant": false,
+        "r2_adj": 0.525089118105352
+      },
+      {
+        "channel_name": "Network State Podcast",
+        "dimension": "embedding_reduced_18",
+        "dimension_index": 17,
+        "coefficient": -1.3413023828462656,
+        "intercept": 7.836334795041875,
+        "p_value": 0.8764876907655315,
+        "is_significant": false,
+        "r2_adj": 0.525089118105352
+      },
+      {
+        "channel_name": "Network State Podcast",
+        "dimension": "embedding_reduced_19",
+        "dimension_index": 18,
+        "coefficient": -12.549406241574822,
+        "intercept": 7.836334795041875,
+        "p_value": 0.05487542613362547,
+        "is_significant": false,
+        "r2_adj": 0.525089118105352
+      },
+      {
+        "channel_name": "Network State Podcast",
+        "dimension": "embedding_reduced_20",
+        "dimension_index": 19,
+        "coefficient": -13.12364096154697,
+        "intercept": 7.836334795041875,
+        "p_value": 0.10358678777103164,
+        "is_significant": false,
+        "r2_adj": 0.525089118105352
+      },
+      {
+        "channel_name": "Patrick Boyle",
+        "dimension": "embedding_reduced_01",
+        "dimension_index": 0,
+        "coefficient": 1.3438210466510028,
+        "intercept": 12.986787124198228,
+        "p_value": 0.5782270987281427,
+        "is_significant": false,
+        "r2_adj": 0.17430679040418318
+      },
+      {
+        "channel_name": "Patrick Boyle",
+        "dimension": "embedding_reduced_02",
+        "dimension_index": 1,
+        "coefficient": 3.2951627089294053,
+        "intercept": 12.986787124198228,
+        "p_value": 0.1839005810689227,
+        "is_significant": false,
+        "r2_adj": 0.17430679040418318
+      },
+      {
+        "channel_name": "Patrick Boyle",
+        "dimension": "embedding_reduced_03",
+        "dimension_index": 2,
+        "coefficient": 1.5160844285286288,
+        "intercept": 12.986787124198228,
+        "p_value": 0.7148182527550289,
+        "is_significant": false,
+        "r2_adj": 0.17430679040418318
+      },
+      {
+        "channel_name": "Patrick Boyle",
+        "dimension": "embedding_reduced_04",
+        "dimension_index": 3,
+        "coefficient": -0.6897425508567279,
+        "intercept": 12.986787124198228,
+        "p_value": 0.7672464166842894,
+        "is_significant": false,
+        "r2_adj": 0.17430679040418318
+      },
+      {
+        "channel_name": "Patrick Boyle",
+        "dimension": "embedding_reduced_05",
+        "dimension_index": 4,
+        "coefficient": 2.9475486859411166,
+        "intercept": 12.986787124198228,
+        "p_value": 0.37566775456343793,
+        "is_significant": false,
+        "r2_adj": 0.17430679040418318
+      },
+      {
+        "channel_name": "Patrick Boyle",
+        "dimension": "embedding_reduced_06",
+        "dimension_index": 5,
+        "coefficient": -0.3391457650154184,
+        "intercept": 12.986787124198228,
+        "p_value": 0.9101271284960665,
+        "is_significant": false,
+        "r2_adj": 0.17430679040418318
+      },
+      {
+        "channel_name": "Patrick Boyle",
+        "dimension": "embedding_reduced_07",
+        "dimension_index": 6,
+        "coefficient": -0.2793187913477606,
+        "intercept": 12.986787124198228,
+        "p_value": 0.9434615757085392,
+        "is_significant": false,
+        "r2_adj": 0.17430679040418318
+      },
+      {
+        "channel_name": "Patrick Boyle",
+        "dimension": "embedding_reduced_08",
+        "dimension_index": 7,
+        "coefficient": 0.28080980941358824,
+        "intercept": 12.986787124198228,
+        "p_value": 0.9380156550943923,
+        "is_significant": false,
+        "r2_adj": 0.17430679040418318
+      },
+      {
+        "channel_name": "Patrick Boyle",
+        "dimension": "embedding_reduced_09",
+        "dimension_index": 8,
+        "coefficient": 1.1465568833581097,
+        "intercept": 12.986787124198228,
+        "p_value": 0.6231371352314137,
+        "is_significant": false,
+        "r2_adj": 0.17430679040418318
+      },
+      {
+        "channel_name": "Patrick Boyle",
+        "dimension": "embedding_reduced_10",
+        "dimension_index": 9,
+        "coefficient": 3.7035015024859064,
+        "intercept": 12.986787124198228,
+        "p_value": 0.12374505791604375,
+        "is_significant": false,
+        "r2_adj": 0.17430679040418318
+      },
+      {
+        "channel_name": "Patrick Boyle",
+        "dimension": "embedding_reduced_11",
+        "dimension_index": 10,
+        "coefficient": -2.1283142040807075,
+        "intercept": 12.986787124198228,
+        "p_value": 0.533856747892758,
+        "is_significant": false,
+        "r2_adj": 0.17430679040418318
+      },
+      {
+        "channel_name": "Patrick Boyle",
+        "dimension": "embedding_reduced_12",
+        "dimension_index": 11,
+        "coefficient": -0.23742050184077357,
+        "intercept": 12.986787124198228,
+        "p_value": 0.9465832621131041,
+        "is_significant": false,
+        "r2_adj": 0.17430679040418318
+      },
+      {
+        "channel_name": "Patrick Boyle",
+        "dimension": "embedding_reduced_13",
+        "dimension_index": 12,
+        "coefficient": 0.6797626176362215,
+        "intercept": 12.986787124198228,
+        "p_value": 0.8098018449188544,
+        "is_significant": false,
+        "r2_adj": 0.17430679040418318
+      },
+      {
+        "channel_name": "Patrick Boyle",
+        "dimension": "embedding_reduced_14",
+        "dimension_index": 13,
+        "coefficient": 2.4849054160543247,
+        "intercept": 12.986787124198228,
+        "p_value": 0.5477926847325199,
+        "is_significant": false,
+        "r2_adj": 0.17430679040418318
+      },
+      {
+        "channel_name": "Patrick Boyle",
+        "dimension": "embedding_reduced_15",
+        "dimension_index": 14,
+        "coefficient": 0.24787263027481465,
+        "intercept": 12.986787124198228,
+        "p_value": 0.9432541658435717,
+        "is_significant": false,
+        "r2_adj": 0.17430679040418318
+      },
+      {
+        "channel_name": "Patrick Boyle",
+        "dimension": "embedding_reduced_16",
+        "dimension_index": 15,
+        "coefficient": 1.5257801114703078,
+        "intercept": 12.986787124198228,
+        "p_value": 0.641076675954791,
+        "is_significant": false,
+        "r2_adj": 0.17430679040418318
+      },
+      {
+        "channel_name": "Patrick Boyle",
+        "dimension": "embedding_reduced_17",
+        "dimension_index": 16,
+        "coefficient": 2.3659121156943925,
+        "intercept": 12.986787124198228,
+        "p_value": 0.4745441745624228,
+        "is_significant": false,
+        "r2_adj": 0.17430679040418318
+      },
+      {
+        "channel_name": "Patrick Boyle",
+        "dimension": "embedding_reduced_18",
+        "dimension_index": 17,
+        "coefficient": 2.883928450784195,
+        "intercept": 12.986787124198228,
+        "p_value": 0.4039355100166224,
+        "is_significant": false,
+        "r2_adj": 0.17430679040418318
+      },
+      {
+        "channel_name": "Patrick Boyle",
+        "dimension": "embedding_reduced_19",
+        "dimension_index": 18,
+        "coefficient": 0.8081988324140479,
+        "intercept": 12.986787124198228,
+        "p_value": 0.8264865095859395,
+        "is_significant": false,
+        "r2_adj": 0.17430679040418318
+      },
+      {
+        "channel_name": "Patrick Boyle",
+        "dimension": "embedding_reduced_20",
+        "dimension_index": 19,
+        "coefficient": -1.3636263430767963,
+        "intercept": 12.986787124198228,
+        "p_value": 0.6579989063798137,
+        "is_significant": false,
+        "r2_adj": 0.17430679040418318
+      },
+      {
+        "channel_name": "Peter H. Diamandis",
+        "dimension": "embedding_reduced_01",
+        "dimension_index": 0,
+        "coefficient": -6.357518011047173,
+        "intercept": 10.925793465950264,
+        "p_value": 0.2091718072310575,
+        "is_significant": false,
+        "r2_adj": 0.09842248402447462
+      },
+      {
+        "channel_name": "Peter H. Diamandis",
+        "dimension": "embedding_reduced_02",
+        "dimension_index": 1,
+        "coefficient": 1.9135920872004024,
+        "intercept": 10.925793465950264,
+        "p_value": 0.4563567894605417,
+        "is_significant": false,
+        "r2_adj": 0.09842248402447462
+      },
+      {
+        "channel_name": "Peter H. Diamandis",
+        "dimension": "embedding_reduced_03",
+        "dimension_index": 2,
+        "coefficient": 4.146958196251586,
+        "intercept": 10.925793465950264,
+        "p_value": 0.17721948793830458,
+        "is_significant": false,
+        "r2_adj": 0.09842248402447462
+      },
+      {
+        "channel_name": "Peter H. Diamandis",
+        "dimension": "embedding_reduced_04",
+        "dimension_index": 3,
+        "coefficient": 2.5642505360538266,
+        "intercept": 10.925793465950264,
+        "p_value": 0.4410680993406294,
+        "is_significant": false,
+        "r2_adj": 0.09842248402447462
+      },
+      {
+        "channel_name": "Peter H. Diamandis",
+        "dimension": "embedding_reduced_05",
+        "dimension_index": 4,
+        "coefficient": -3.055581268916896,
+        "intercept": 10.925793465950264,
+        "p_value": 0.19571919172420488,
+        "is_significant": false,
+        "r2_adj": 0.09842248402447462
+      },
+      {
+        "channel_name": "Peter H. Diamandis",
+        "dimension": "embedding_reduced_06",
+        "dimension_index": 5,
+        "coefficient": 3.1557645475982063,
+        "intercept": 10.925793465950264,
+        "p_value": 0.45041361849223926,
+        "is_significant": false,
+        "r2_adj": 0.09842248402447462
+      },
+      {
+        "channel_name": "Peter H. Diamandis",
+        "dimension": "embedding_reduced_07",
+        "dimension_index": 6,
+        "coefficient": -2.2796010959417865,
+        "intercept": 10.925793465950264,
+        "p_value": 0.4228195789931146,
+        "is_significant": false,
+        "r2_adj": 0.09842248402447462
+      },
+      {
+        "channel_name": "Peter H. Diamandis",
+        "dimension": "embedding_reduced_08",
+        "dimension_index": 7,
+        "coefficient": 3.8004424568656816,
+        "intercept": 10.925793465950264,
+        "p_value": 0.37922314966692827,
+        "is_significant": false,
+        "r2_adj": 0.09842248402447462
+      },
+      {
+        "channel_name": "Peter H. Diamandis",
+        "dimension": "embedding_reduced_09",
+        "dimension_index": 8,
+        "coefficient": 5.815614103255722,
+        "intercept": 10.925793465950264,
+        "p_value": 0.11736257403413819,
+        "is_significant": false,
+        "r2_adj": 0.09842248402447462
+      },
+      {
+        "channel_name": "Peter H. Diamandis",
+        "dimension": "embedding_reduced_10",
+        "dimension_index": 9,
+        "coefficient": -3.1382620629386944,
+        "intercept": 10.925793465950264,
+        "p_value": 0.42269191303549747,
+        "is_significant": false,
+        "r2_adj": 0.09842248402447462
+      },
+      {
+        "channel_name": "Peter H. Diamandis",
+        "dimension": "embedding_reduced_11",
+        "dimension_index": 10,
+        "coefficient": -1.951945360772159,
+        "intercept": 10.925793465950264,
+        "p_value": 0.4847457464142848,
+        "is_significant": false,
+        "r2_adj": 0.09842248402447462
+      },
+      {
+        "channel_name": "Peter H. Diamandis",
+        "dimension": "embedding_reduced_12",
+        "dimension_index": 11,
+        "coefficient": -0.9206427729833067,
+        "intercept": 10.925793465950264,
+        "p_value": 0.8170446523964494,
+        "is_significant": false,
+        "r2_adj": 0.09842248402447462
+      },
+      {
+        "channel_name": "Peter H. Diamandis",
+        "dimension": "embedding_reduced_13",
+        "dimension_index": 12,
+        "coefficient": -1.72787214508927,
+        "intercept": 10.925793465950264,
+        "p_value": 0.600913374498899,
+        "is_significant": false,
+        "r2_adj": 0.09842248402447462
+      },
+      {
+        "channel_name": "Peter H. Diamandis",
+        "dimension": "embedding_reduced_14",
+        "dimension_index": 13,
+        "coefficient": -1.3874093073270473,
+        "intercept": 10.925793465950264,
+        "p_value": 0.7034876913639152,
+        "is_significant": false,
+        "r2_adj": 0.09842248402447462
+      },
+      {
+        "channel_name": "Peter H. Diamandis",
+        "dimension": "embedding_reduced_15",
+        "dimension_index": 14,
+        "coefficient": 8.639909812679559,
+        "intercept": 10.925793465950264,
+        "p_value": 0.10519160393919598,
+        "is_significant": false,
+        "r2_adj": 0.09842248402447462
+      },
+      {
+        "channel_name": "Peter H. Diamandis",
+        "dimension": "embedding_reduced_16",
+        "dimension_index": 15,
+        "coefficient": -7.919828963121436,
+        "intercept": 10.925793465950264,
+        "p_value": 0.07372140325297954,
+        "is_significant": false,
+        "r2_adj": 0.09842248402447462
+      },
+      {
+        "channel_name": "Peter H. Diamandis",
+        "dimension": "embedding_reduced_17",
+        "dimension_index": 16,
+        "coefficient": -2.89995147213601,
+        "intercept": 10.925793465950264,
+        "p_value": 0.5070631430187085,
+        "is_significant": false,
+        "r2_adj": 0.09842248402447462
+      },
+      {
+        "channel_name": "Peter H. Diamandis",
+        "dimension": "embedding_reduced_18",
+        "dimension_index": 17,
+        "coefficient": 10.710910373596409,
+        "intercept": 10.925793465950264,
+        "p_value": 0.04878042848541979,
+        "is_significant": true,
+        "r2_adj": 0.09842248402447462
+      },
+      {
+        "channel_name": "Peter H. Diamandis",
+        "dimension": "embedding_reduced_19",
+        "dimension_index": 18,
+        "coefficient": -7.350066880422119,
+        "intercept": 10.925793465950264,
+        "p_value": 0.1853285279423846,
+        "is_significant": false,
+        "r2_adj": 0.09842248402447462
+      },
+      {
+        "channel_name": "Peter H. Diamandis",
+        "dimension": "embedding_reduced_20",
+        "dimension_index": 19,
+        "coefficient": -3.79868398637365,
+        "intercept": 10.925793465950264,
+        "p_value": 0.33040138617023274,
+        "is_significant": false,
+        "r2_adj": 0.09842248402447462
+      },
+      {
+        "channel_name": "Principles by Ray Dalio",
+        "dimension": "embedding_reduced_01",
+        "dimension_index": 0,
+        "coefficient": -3.757385821399808,
+        "intercept": 10.39155476370576,
+        "p_value": 0.27305922281759715,
+        "is_significant": false,
+        "r2_adj": 0.2130466563042459
+      },
+      {
+        "channel_name": "Principles by Ray Dalio",
+        "dimension": "embedding_reduced_02",
+        "dimension_index": 1,
+        "coefficient": -1.3975960897744506,
+        "intercept": 10.39155476370576,
+        "p_value": 0.757494685756618,
+        "is_significant": false,
+        "r2_adj": 0.2130466563042459
+      },
+      {
+        "channel_name": "Principles by Ray Dalio",
+        "dimension": "embedding_reduced_03",
+        "dimension_index": 2,
+        "coefficient": 6.009727046121119,
+        "intercept": 10.39155476370576,
+        "p_value": 0.37131933836705233,
+        "is_significant": false,
+        "r2_adj": 0.2130466563042459
+      },
+      {
+        "channel_name": "Principles by Ray Dalio",
+        "dimension": "embedding_reduced_04",
+        "dimension_index": 3,
+        "coefficient": -9.327899077088066,
+        "intercept": 10.39155476370576,
+        "p_value": 0.2972614403619994,
+        "is_significant": false,
+        "r2_adj": 0.2130466563042459
+      },
+      {
+        "channel_name": "Principles by Ray Dalio",
+        "dimension": "embedding_reduced_05",
+        "dimension_index": 4,
+        "coefficient": -1.865976254728011,
+        "intercept": 10.39155476370576,
+        "p_value": 0.6821122529136452,
+        "is_significant": false,
+        "r2_adj": 0.2130466563042459
+      },
+      {
+        "channel_name": "Principles by Ray Dalio",
+        "dimension": "embedding_reduced_06",
+        "dimension_index": 5,
+        "coefficient": 1.8527024268684276,
+        "intercept": 10.39155476370576,
+        "p_value": 0.7788348822801309,
+        "is_significant": false,
+        "r2_adj": 0.2130466563042459
+      },
+      {
+        "channel_name": "Principles by Ray Dalio",
+        "dimension": "embedding_reduced_07",
+        "dimension_index": 6,
+        "coefficient": 3.5174454202721144,
+        "intercept": 10.39155476370576,
+        "p_value": 0.5792455311821916,
+        "is_significant": false,
+        "r2_adj": 0.2130466563042459
+      },
+      {
+        "channel_name": "Principles by Ray Dalio",
+        "dimension": "embedding_reduced_08",
+        "dimension_index": 7,
+        "coefficient": 12.729452181976235,
+        "intercept": 10.39155476370576,
+        "p_value": 0.07386709013231224,
+        "is_significant": false,
+        "r2_adj": 0.2130466563042459
+      },
+      {
+        "channel_name": "Principles by Ray Dalio",
+        "dimension": "embedding_reduced_09",
+        "dimension_index": 8,
+        "coefficient": -4.713837147951164,
+        "intercept": 10.39155476370576,
+        "p_value": 0.4096880845643982,
+        "is_significant": false,
+        "r2_adj": 0.2130466563042459
+      },
+      {
+        "channel_name": "Principles by Ray Dalio",
+        "dimension": "embedding_reduced_10",
+        "dimension_index": 9,
+        "coefficient": -3.6511236988687363,
+        "intercept": 10.39155476370576,
+        "p_value": 0.5860735042334839,
+        "is_significant": false,
+        "r2_adj": 0.2130466563042459
+      },
+      {
+        "channel_name": "Principles by Ray Dalio",
+        "dimension": "embedding_reduced_11",
+        "dimension_index": 10,
+        "coefficient": 1.4932815042914953,
+        "intercept": 10.39155476370576,
+        "p_value": 0.8154064006711662,
+        "is_significant": false,
+        "r2_adj": 0.2130466563042459
+      },
+      {
+        "channel_name": "Principles by Ray Dalio",
+        "dimension": "embedding_reduced_12",
+        "dimension_index": 11,
+        "coefficient": 21.18847319081687,
+        "intercept": 10.39155476370576,
+        "p_value": 0.003358770397374221,
+        "is_significant": true,
+        "r2_adj": 0.2130466563042459
+      },
+      {
+        "channel_name": "Principles by Ray Dalio",
+        "dimension": "embedding_reduced_13",
+        "dimension_index": 12,
+        "coefficient": -4.56039067041122,
+        "intercept": 10.39155476370576,
+        "p_value": 0.39932158573529275,
+        "is_significant": false,
+        "r2_adj": 0.2130466563042459
+      },
+      {
+        "channel_name": "Principles by Ray Dalio",
+        "dimension": "embedding_reduced_14",
+        "dimension_index": 13,
+        "coefficient": 5.596714510589923,
+        "intercept": 10.39155476370576,
+        "p_value": 0.3417875797282178,
+        "is_significant": false,
+        "r2_adj": 0.2130466563042459
+      },
+      {
+        "channel_name": "Principles by Ray Dalio",
+        "dimension": "embedding_reduced_15",
+        "dimension_index": 14,
+        "coefficient": 18.257930994534277,
+        "intercept": 10.39155476370576,
+        "p_value": 0.023594334581550688,
+        "is_significant": true,
+        "r2_adj": 0.2130466563042459
+      },
+      {
+        "channel_name": "Principles by Ray Dalio",
+        "dimension": "embedding_reduced_16",
+        "dimension_index": 15,
+        "coefficient": 4.744426510398192,
+        "intercept": 10.39155476370576,
+        "p_value": 0.3026089689088286,
+        "is_significant": false,
+        "r2_adj": 0.2130466563042459
+      },
+      {
+        "channel_name": "Principles by Ray Dalio",
+        "dimension": "embedding_reduced_17",
+        "dimension_index": 16,
+        "coefficient": -10.427453318823238,
+        "intercept": 10.39155476370576,
+        "p_value": 0.07691475462311964,
+        "is_significant": false,
+        "r2_adj": 0.2130466563042459
+      },
+      {
+        "channel_name": "Principles by Ray Dalio",
+        "dimension": "embedding_reduced_18",
+        "dimension_index": 17,
+        "coefficient": -13.140755405148123,
+        "intercept": 10.39155476370576,
+        "p_value": 0.04218702261947599,
+        "is_significant": true,
+        "r2_adj": 0.2130466563042459
+      },
+      {
+        "channel_name": "Principles by Ray Dalio",
+        "dimension": "embedding_reduced_19",
+        "dimension_index": 18,
+        "coefficient": 9.515947715829913,
+        "intercept": 10.39155476370576,
+        "p_value": 0.2770684152608086,
+        "is_significant": false,
+        "r2_adj": 0.2130466563042459
+      },
+      {
+        "channel_name": "Principles by Ray Dalio",
+        "dimension": "embedding_reduced_20",
+        "dimension_index": 19,
+        "coefficient": 2.2117596708393044,
+        "intercept": 10.39155476370576,
+        "p_value": 0.6769316019575694,
+        "is_significant": false,
+        "r2_adj": 0.2130466563042459
+      },
+      {
+        "channel_name": "Real Vision Presents",
+        "dimension": "embedding_reduced_01",
+        "dimension_index": 0,
+        "coefficient": 6.364109221848146,
+        "intercept": 9.533116058541365,
+        "p_value": 0.1547091901669777,
+        "is_significant": false,
+        "r2_adj": 0.805950794109718
+      },
+      {
+        "channel_name": "Real Vision Presents",
+        "dimension": "embedding_reduced_02",
+        "dimension_index": 1,
+        "coefficient": 6.473368192862117,
+        "intercept": 9.533116058541365,
+        "p_value": 0.36976873732631366,
+        "is_significant": false,
+        "r2_adj": 0.805950794109718
+      },
+      {
+        "channel_name": "Real Vision Presents",
+        "dimension": "embedding_reduced_03",
+        "dimension_index": 2,
+        "coefficient": -21.402943127357506,
+        "intercept": 9.533116058541365,
+        "p_value": 2.175749535300461e-05,
+        "is_significant": true,
+        "r2_adj": 0.805950794109718
+      },
+      {
+        "channel_name": "Real Vision Presents",
+        "dimension": "embedding_reduced_04",
+        "dimension_index": 3,
+        "coefficient": 4.253153462573559,
+        "intercept": 9.533116058541365,
+        "p_value": 0.5219408493361444,
+        "is_significant": false,
+        "r2_adj": 0.805950794109718
+      },
+      {
+        "channel_name": "Real Vision Presents",
+        "dimension": "embedding_reduced_05",
+        "dimension_index": 4,
+        "coefficient": 2.8025913630041472,
+        "intercept": 9.533116058541365,
+        "p_value": 0.49413565952072447,
+        "is_significant": false,
+        "r2_adj": 0.805950794109718
+      },
+      {
+        "channel_name": "Real Vision Presents",
+        "dimension": "embedding_reduced_06",
+        "dimension_index": 5,
+        "coefficient": 4.65520810025286,
+        "intercept": 9.533116058541365,
+        "p_value": 0.494843525968068,
+        "is_significant": false,
+        "r2_adj": 0.805950794109718
+      },
+      {
+        "channel_name": "Real Vision Presents",
+        "dimension": "embedding_reduced_07",
+        "dimension_index": 6,
+        "coefficient": 10.390892515954219,
+        "intercept": 9.533116058541365,
+        "p_value": 0.08415133475268732,
+        "is_significant": false,
+        "r2_adj": 0.805950794109718
+      },
+      {
+        "channel_name": "Real Vision Presents",
+        "dimension": "embedding_reduced_08",
+        "dimension_index": 7,
+        "coefficient": 2.765428490658728,
+        "intercept": 9.533116058541365,
+        "p_value": 0.5494435996402173,
+        "is_significant": false,
+        "r2_adj": 0.805950794109718
+      },
+      {
+        "channel_name": "Real Vision Presents",
+        "dimension": "embedding_reduced_09",
+        "dimension_index": 8,
+        "coefficient": 15.122045214915943,
+        "intercept": 9.533116058541365,
+        "p_value": 0.02107504273208323,
+        "is_significant": true,
+        "r2_adj": 0.805950794109718
+      },
+      {
+        "channel_name": "Real Vision Presents",
+        "dimension": "embedding_reduced_10",
+        "dimension_index": 9,
+        "coefficient": -15.488423805017739,
+        "intercept": 9.533116058541365,
+        "p_value": 0.02731153609285084,
+        "is_significant": true,
+        "r2_adj": 0.805950794109718
+      },
+      {
+        "channel_name": "Real Vision Presents",
+        "dimension": "embedding_reduced_11",
+        "dimension_index": 10,
+        "coefficient": 3.528871087263509,
+        "intercept": 9.533116058541365,
+        "p_value": 0.6160458463229782,
+        "is_significant": false,
+        "r2_adj": 0.805950794109718
+      },
+      {
+        "channel_name": "Real Vision Presents",
+        "dimension": "embedding_reduced_12",
+        "dimension_index": 11,
+        "coefficient": 5.046584565466535,
+        "intercept": 9.533116058541365,
+        "p_value": 0.3587182231693923,
+        "is_significant": false,
+        "r2_adj": 0.805950794109718
+      },
+      {
+        "channel_name": "Real Vision Presents",
+        "dimension": "embedding_reduced_13",
+        "dimension_index": 12,
+        "coefficient": -9.041726208058911,
+        "intercept": 9.533116058541365,
+        "p_value": 0.09155626118652964,
+        "is_significant": false,
+        "r2_adj": 0.805950794109718
+      },
+      {
+        "channel_name": "Real Vision Presents",
+        "dimension": "embedding_reduced_14",
+        "dimension_index": 13,
+        "coefficient": 2.065449374299531,
+        "intercept": 9.533116058541365,
+        "p_value": 0.7857315736807546,
+        "is_significant": false,
+        "r2_adj": 0.805950794109718
+      },
+      {
+        "channel_name": "Real Vision Presents",
+        "dimension": "embedding_reduced_15",
+        "dimension_index": 14,
+        "coefficient": -12.894340588867781,
+        "intercept": 9.533116058541365,
+        "p_value": 0.041288387763172806,
+        "is_significant": true,
+        "r2_adj": 0.805950794109718
+      },
+      {
+        "channel_name": "Real Vision Presents",
+        "dimension": "embedding_reduced_16",
+        "dimension_index": 15,
+        "coefficient": -1.1690887691116032,
+        "intercept": 9.533116058541365,
+        "p_value": 0.8566113437988476,
+        "is_significant": false,
+        "r2_adj": 0.805950794109718
+      },
+      {
+        "channel_name": "Real Vision Presents",
+        "dimension": "embedding_reduced_17",
+        "dimension_index": 16,
+        "coefficient": -7.00790963571569,
+        "intercept": 9.533116058541365,
+        "p_value": 0.16293123222907305,
+        "is_significant": false,
+        "r2_adj": 0.805950794109718
+      },
+      {
+        "channel_name": "Real Vision Presents",
+        "dimension": "embedding_reduced_18",
+        "dimension_index": 17,
+        "coefficient": 10.982897763473485,
+        "intercept": 9.533116058541365,
+        "p_value": 0.11733390312060342,
+        "is_significant": false,
+        "r2_adj": 0.805950794109718
+      },
+      {
+        "channel_name": "Real Vision Presents",
+        "dimension": "embedding_reduced_19",
+        "dimension_index": 18,
+        "coefficient": 6.355433486883066,
+        "intercept": 9.533116058541365,
+        "p_value": 0.3788635418602365,
+        "is_significant": false,
+        "r2_adj": 0.805950794109718
+      },
+      {
+        "channel_name": "Real Vision Presents",
+        "dimension": "embedding_reduced_20",
+        "dimension_index": 19,
+        "coefficient": -9.218865801334413,
+        "intercept": 9.533116058541365,
+        "p_value": 0.13901566895522643,
+        "is_significant": false,
+        "r2_adj": 0.805950794109718
+      },
+      {
+        "channel_name": "Sequoia Capital",
+        "dimension": "embedding_reduced_01",
+        "dimension_index": 0,
+        "coefficient": 5.176731331948044,
+        "intercept": 12.628847638970395,
+        "p_value": 0.1364454285289062,
+        "is_significant": false,
+        "r2_adj": -0.03712206261871054
+      },
+      {
+        "channel_name": "Sequoia Capital",
+        "dimension": "embedding_reduced_02",
+        "dimension_index": 1,
+        "coefficient": -5.478288187398293,
+        "intercept": 12.628847638970395,
+        "p_value": 0.38410161020154643,
+        "is_significant": false,
+        "r2_adj": -0.03712206261871054
+      },
+      {
+        "channel_name": "Sequoia Capital",
+        "dimension": "embedding_reduced_03",
+        "dimension_index": 2,
+        "coefficient": -1.8555213594369868,
+        "intercept": 12.628847638970395,
+        "p_value": 0.7767180655126065,
+        "is_significant": false,
+        "r2_adj": -0.03712206261871054
+      },
+      {
+        "channel_name": "Sequoia Capital",
+        "dimension": "embedding_reduced_04",
+        "dimension_index": 3,
+        "coefficient": 2.496625034556632,
+        "intercept": 12.628847638970395,
+        "p_value": 0.6054301526515624,
+        "is_significant": false,
+        "r2_adj": -0.03712206261871054
+      },
+      {
+        "channel_name": "Sequoia Capital",
+        "dimension": "embedding_reduced_05",
+        "dimension_index": 4,
+        "coefficient": 6.008614472551138,
+        "intercept": 12.628847638970395,
+        "p_value": 0.40440557749799844,
+        "is_significant": false,
+        "r2_adj": -0.03712206261871054
+      },
+      {
+        "channel_name": "Sequoia Capital",
+        "dimension": "embedding_reduced_06",
+        "dimension_index": 5,
+        "coefficient": 4.305628614762895,
+        "intercept": 12.628847638970395,
+        "p_value": 0.5667832243714959,
+        "is_significant": false,
+        "r2_adj": -0.03712206261871054
+      },
+      {
+        "channel_name": "Sequoia Capital",
+        "dimension": "embedding_reduced_07",
+        "dimension_index": 6,
+        "coefficient": -2.883417017342992,
+        "intercept": 12.628847638970395,
+        "p_value": 0.6107145805199463,
+        "is_significant": false,
+        "r2_adj": -0.03712206261871054
+      },
+      {
+        "channel_name": "Sequoia Capital",
+        "dimension": "embedding_reduced_08",
+        "dimension_index": 7,
+        "coefficient": -8.390344423253577,
+        "intercept": 12.628847638970395,
+        "p_value": 0.2478899398041452,
+        "is_significant": false,
+        "r2_adj": -0.03712206261871054
+      },
+      {
+        "channel_name": "Sequoia Capital",
+        "dimension": "embedding_reduced_09",
+        "dimension_index": 8,
+        "coefficient": 4.849963883208363,
+        "intercept": 12.628847638970395,
+        "p_value": 0.36369879655555537,
+        "is_significant": false,
+        "r2_adj": -0.03712206261871054
+      },
+      {
+        "channel_name": "Sequoia Capital",
+        "dimension": "embedding_reduced_10",
+        "dimension_index": 9,
+        "coefficient": 4.3407174858891056,
+        "intercept": 12.628847638970395,
+        "p_value": 0.5245532479912141,
+        "is_significant": false,
+        "r2_adj": -0.03712206261871054
+      },
+      {
+        "channel_name": "Sequoia Capital",
+        "dimension": "embedding_reduced_11",
+        "dimension_index": 10,
+        "coefficient": -9.372625614870767,
+        "intercept": 12.628847638970395,
+        "p_value": 0.25102791719684675,
+        "is_significant": false,
+        "r2_adj": -0.03712206261871054
+      },
+      {
+        "channel_name": "Sequoia Capital",
+        "dimension": "embedding_reduced_12",
+        "dimension_index": 11,
+        "coefficient": -7.44193582405344,
+        "intercept": 12.628847638970395,
+        "p_value": 0.3285300895079899,
+        "is_significant": false,
+        "r2_adj": -0.03712206261871054
+      },
+      {
+        "channel_name": "Sequoia Capital",
+        "dimension": "embedding_reduced_13",
+        "dimension_index": 12,
+        "coefficient": -1.6614227242077888,
+        "intercept": 12.628847638970395,
+        "p_value": 0.8333931753315452,
+        "is_significant": false,
+        "r2_adj": -0.03712206261871054
+      },
+      {
+        "channel_name": "Sequoia Capital",
+        "dimension": "embedding_reduced_14",
+        "dimension_index": 13,
+        "coefficient": -5.251299150231804,
+        "intercept": 12.628847638970395,
+        "p_value": 0.4813141138251693,
+        "is_significant": false,
+        "r2_adj": -0.03712206261871054
+      },
+      {
+        "channel_name": "Sequoia Capital",
+        "dimension": "embedding_reduced_15",
+        "dimension_index": 14,
+        "coefficient": 9.23913800453168,
+        "intercept": 12.628847638970395,
+        "p_value": 0.27874336772716196,
+        "is_significant": false,
+        "r2_adj": -0.03712206261871054
+      },
+      {
+        "channel_name": "Sequoia Capital",
+        "dimension": "embedding_reduced_16",
+        "dimension_index": 15,
+        "coefficient": 5.400184678985388,
+        "intercept": 12.628847638970395,
+        "p_value": 0.5262966892563865,
+        "is_significant": false,
+        "r2_adj": -0.03712206261871054
+      },
+      {
+        "channel_name": "Sequoia Capital",
+        "dimension": "embedding_reduced_17",
+        "dimension_index": 16,
+        "coefficient": 0.2941213969380647,
+        "intercept": 12.628847638970395,
+        "p_value": 0.9780044191580928,
+        "is_significant": false,
+        "r2_adj": -0.03712206261871054
+      },
+      {
+        "channel_name": "Sequoia Capital",
+        "dimension": "embedding_reduced_18",
+        "dimension_index": 17,
+        "coefficient": 6.762499215911442,
+        "intercept": 12.628847638970395,
+        "p_value": 0.36023732439126566,
+        "is_significant": false,
+        "r2_adj": -0.03712206261871054
+      },
+      {
+        "channel_name": "Sequoia Capital",
+        "dimension": "embedding_reduced_19",
+        "dimension_index": 18,
+        "coefficient": 8.936676542341633,
+        "intercept": 12.628847638970395,
+        "p_value": 0.39026128218762,
+        "is_significant": false,
+        "r2_adj": -0.03712206261871054
+      },
+      {
+        "channel_name": "Sequoia Capital",
+        "dimension": "embedding_reduced_20",
+        "dimension_index": 19,
+        "coefficient": 3.470321787546073,
+        "intercept": 12.628847638970395,
+        "p_value": 0.6597677438269729,
+        "is_significant": false,
+        "r2_adj": -0.03712206261871054
+      },
+      {
+        "channel_name": "The Prof G Pod \u2013 Scott Galloway",
+        "dimension": "embedding_reduced_01",
+        "dimension_index": 0,
+        "coefficient": 6.993960523433966,
+        "intercept": 10.831051050212185,
+        "p_value": 0.041838425860659965,
+        "is_significant": true,
+        "r2_adj": 0.13914447305608613
+      },
+      {
+        "channel_name": "The Prof G Pod \u2013 Scott Galloway",
+        "dimension": "embedding_reduced_02",
+        "dimension_index": 1,
+        "coefficient": -3.6678433748697366,
+        "intercept": 10.831051050212185,
+        "p_value": 0.28867985540801055,
+        "is_significant": false,
+        "r2_adj": 0.13914447305608613
+      },
+      {
+        "channel_name": "The Prof G Pod \u2013 Scott Galloway",
+        "dimension": "embedding_reduced_03",
+        "dimension_index": 2,
+        "coefficient": 2.7399148167729006,
+        "intercept": 10.831051050212185,
+        "p_value": 0.49969229656664393,
+        "is_significant": false,
+        "r2_adj": 0.13914447305608613
+      },
+      {
+        "channel_name": "The Prof G Pod \u2013 Scott Galloway",
+        "dimension": "embedding_reduced_04",
+        "dimension_index": 3,
+        "coefficient": -2.3948468408220696,
+        "intercept": 10.831051050212185,
+        "p_value": 0.5002243386086187,
+        "is_significant": false,
+        "r2_adj": 0.13914447305608613
+      },
+      {
+        "channel_name": "The Prof G Pod \u2013 Scott Galloway",
+        "dimension": "embedding_reduced_05",
+        "dimension_index": 4,
+        "coefficient": 1.652212011811482,
+        "intercept": 10.831051050212185,
+        "p_value": 0.6395777717120867,
+        "is_significant": false,
+        "r2_adj": 0.13914447305608613
+      },
+      {
+        "channel_name": "The Prof G Pod \u2013 Scott Galloway",
+        "dimension": "embedding_reduced_06",
+        "dimension_index": 5,
+        "coefficient": -1.8254615309019826,
+        "intercept": 10.831051050212185,
+        "p_value": 0.7195376587907882,
+        "is_significant": false,
+        "r2_adj": 0.13914447305608613
+      },
+      {
+        "channel_name": "The Prof G Pod \u2013 Scott Galloway",
+        "dimension": "embedding_reduced_07",
+        "dimension_index": 6,
+        "coefficient": -1.881927863468969,
+        "intercept": 10.831051050212185,
+        "p_value": 0.584957584610112,
+        "is_significant": false,
+        "r2_adj": 0.13914447305608613
+      },
+      {
+        "channel_name": "The Prof G Pod \u2013 Scott Galloway",
+        "dimension": "embedding_reduced_08",
+        "dimension_index": 7,
+        "coefficient": 0.4623205255997185,
+        "intercept": 10.831051050212185,
+        "p_value": 0.9082027844670645,
+        "is_significant": false,
+        "r2_adj": 0.13914447305608613
+      },
+      {
+        "channel_name": "The Prof G Pod \u2013 Scott Galloway",
+        "dimension": "embedding_reduced_09",
+        "dimension_index": 8,
+        "coefficient": -5.649080923612431,
+        "intercept": 10.831051050212185,
+        "p_value": 0.19153043100897113,
+        "is_significant": false,
+        "r2_adj": 0.13914447305608613
+      },
+      {
+        "channel_name": "The Prof G Pod \u2013 Scott Galloway",
+        "dimension": "embedding_reduced_10",
+        "dimension_index": 9,
+        "coefficient": -0.7257659512296484,
+        "intercept": 10.831051050212185,
+        "p_value": 0.8582318782223481,
+        "is_significant": false,
+        "r2_adj": 0.13914447305608613
+      },
+      {
+        "channel_name": "The Prof G Pod \u2013 Scott Galloway",
+        "dimension": "embedding_reduced_11",
+        "dimension_index": 10,
+        "coefficient": -1.4625417179131501,
+        "intercept": 10.831051050212185,
+        "p_value": 0.809743377662741,
+        "is_significant": false,
+        "r2_adj": 0.13914447305608613
+      },
+      {
+        "channel_name": "The Prof G Pod \u2013 Scott Galloway",
+        "dimension": "embedding_reduced_12",
+        "dimension_index": 11,
+        "coefficient": 9.744702854085972,
+        "intercept": 10.831051050212185,
+        "p_value": 0.06672553602610604,
+        "is_significant": false,
+        "r2_adj": 0.13914447305608613
+      },
+      {
+        "channel_name": "The Prof G Pod \u2013 Scott Galloway",
+        "dimension": "embedding_reduced_13",
+        "dimension_index": 12,
+        "coefficient": 3.4604999253501205,
+        "intercept": 10.831051050212185,
+        "p_value": 0.5623217962987571,
+        "is_significant": false,
+        "r2_adj": 0.13914447305608613
+      },
+      {
+        "channel_name": "The Prof G Pod \u2013 Scott Galloway",
+        "dimension": "embedding_reduced_14",
+        "dimension_index": 13,
+        "coefficient": -0.8673258848773706,
+        "intercept": 10.831051050212185,
+        "p_value": 0.9016844361348677,
+        "is_significant": false,
+        "r2_adj": 0.13914447305608613
+      },
+      {
+        "channel_name": "The Prof G Pod \u2013 Scott Galloway",
+        "dimension": "embedding_reduced_15",
+        "dimension_index": 14,
+        "coefficient": -1.0587470823508767,
+        "intercept": 10.831051050212185,
+        "p_value": 0.8120817748490423,
+        "is_significant": false,
+        "r2_adj": 0.13914447305608613
+      },
+      {
+        "channel_name": "The Prof G Pod \u2013 Scott Galloway",
+        "dimension": "embedding_reduced_16",
+        "dimension_index": 15,
+        "coefficient": -5.407999038600764,
+        "intercept": 10.831051050212185,
+        "p_value": 0.33202476772229705,
+        "is_significant": false,
+        "r2_adj": 0.13914447305608613
+      },
+      {
+        "channel_name": "The Prof G Pod \u2013 Scott Galloway",
+        "dimension": "embedding_reduced_17",
+        "dimension_index": 16,
+        "coefficient": 6.5236840959110705,
+        "intercept": 10.831051050212185,
+        "p_value": 0.2711931076837263,
+        "is_significant": false,
+        "r2_adj": 0.13914447305608613
+      },
+      {
+        "channel_name": "The Prof G Pod \u2013 Scott Galloway",
+        "dimension": "embedding_reduced_18",
+        "dimension_index": 17,
+        "coefficient": -0.7285699928633349,
+        "intercept": 10.831051050212185,
+        "p_value": 0.9293628071732704,
+        "is_significant": false,
+        "r2_adj": 0.13914447305608613
+      },
+      {
+        "channel_name": "The Prof G Pod \u2013 Scott Galloway",
+        "dimension": "embedding_reduced_19",
+        "dimension_index": 18,
+        "coefficient": 8.516541660798087,
+        "intercept": 10.831051050212185,
+        "p_value": 0.23945594546391727,
+        "is_significant": false,
+        "r2_adj": 0.13914447305608613
+      },
+      {
+        "channel_name": "The Prof G Pod \u2013 Scott Galloway",
+        "dimension": "embedding_reduced_20",
+        "dimension_index": 19,
+        "coefficient": 11.292265275778181,
+        "intercept": 10.831051050212185,
+        "p_value": 0.06464470495425301,
+        "is_significant": false,
+        "r2_adj": 0.13914447305608613
+      },
+      {
+        "channel_name": "This Week in Startups",
+        "dimension": "embedding_reduced_01",
+        "dimension_index": 0,
+        "coefficient": -1.462855079310665,
+        "intercept": 9.358876289425366,
+        "p_value": 0.636990659403029,
+        "is_significant": false,
+        "r2_adj": 0.14793426592139536
+      },
+      {
+        "channel_name": "This Week in Startups",
+        "dimension": "embedding_reduced_02",
+        "dimension_index": 1,
+        "coefficient": 0.8907097328630513,
+        "intercept": 9.358876289425366,
+        "p_value": 0.8504125610072184,
+        "is_significant": false,
+        "r2_adj": 0.14793426592139536
+      },
+      {
+        "channel_name": "This Week in Startups",
+        "dimension": "embedding_reduced_03",
+        "dimension_index": 2,
+        "coefficient": 7.872098671234124,
+        "intercept": 9.358876289425366,
+        "p_value": 0.19126364454282574,
+        "is_significant": false,
+        "r2_adj": 0.14793426592139536
+      },
+      {
+        "channel_name": "This Week in Startups",
+        "dimension": "embedding_reduced_04",
+        "dimension_index": 3,
+        "coefficient": 5.063032204743781,
+        "intercept": 9.358876289425366,
+        "p_value": 0.1999106673430749,
+        "is_significant": false,
+        "r2_adj": 0.14793426592139536
+      },
+      {
+        "channel_name": "This Week in Startups",
+        "dimension": "embedding_reduced_05",
+        "dimension_index": 4,
+        "coefficient": 8.453261348657357,
+        "intercept": 9.358876289425366,
+        "p_value": 0.1320935529031781,
+        "is_significant": false,
+        "r2_adj": 0.14793426592139536
+      },
+      {
+        "channel_name": "This Week in Startups",
+        "dimension": "embedding_reduced_06",
+        "dimension_index": 5,
+        "coefficient": -6.431388986316415,
+        "intercept": 9.358876289425366,
+        "p_value": 0.2016853192788899,
+        "is_significant": false,
+        "r2_adj": 0.14793426592139536
+      },
+      {
+        "channel_name": "This Week in Startups",
+        "dimension": "embedding_reduced_07",
+        "dimension_index": 6,
+        "coefficient": 4.594206614086874,
+        "intercept": 9.358876289425366,
+        "p_value": 0.1929475705003721,
+        "is_significant": false,
+        "r2_adj": 0.14793426592139536
+      },
+      {
+        "channel_name": "This Week in Startups",
+        "dimension": "embedding_reduced_08",
+        "dimension_index": 7,
+        "coefficient": 8.774882840590921,
+        "intercept": 9.358876289425366,
+        "p_value": 0.24961931174578883,
+        "is_significant": false,
+        "r2_adj": 0.14793426592139536
+      },
+      {
+        "channel_name": "This Week in Startups",
+        "dimension": "embedding_reduced_09",
+        "dimension_index": 8,
+        "coefficient": -10.207115396928554,
+        "intercept": 9.358876289425366,
+        "p_value": 0.13568811375790757,
+        "is_significant": false,
+        "r2_adj": 0.14793426592139536
+      },
+      {
+        "channel_name": "This Week in Startups",
+        "dimension": "embedding_reduced_10",
+        "dimension_index": 9,
+        "coefficient": -0.7811896864706487,
+        "intercept": 9.358876289425366,
+        "p_value": 0.9128670366185783,
+        "is_significant": false,
+        "r2_adj": 0.14793426592139536
+      },
+      {
+        "channel_name": "This Week in Startups",
+        "dimension": "embedding_reduced_11",
+        "dimension_index": 10,
+        "coefficient": -1.4232080162972345,
+        "intercept": 9.358876289425366,
+        "p_value": 0.8278167883868578,
+        "is_significant": false,
+        "r2_adj": 0.14793426592139536
+      },
+      {
+        "channel_name": "This Week in Startups",
+        "dimension": "embedding_reduced_12",
+        "dimension_index": 11,
+        "coefficient": 7.804811143991759,
+        "intercept": 9.358876289425366,
+        "p_value": 0.10192205265363817,
+        "is_significant": false,
+        "r2_adj": 0.14793426592139536
+      },
+      {
+        "channel_name": "This Week in Startups",
+        "dimension": "embedding_reduced_13",
+        "dimension_index": 12,
+        "coefficient": -3.2570315761325688,
+        "intercept": 9.358876289425366,
+        "p_value": 0.6061665503089281,
+        "is_significant": false,
+        "r2_adj": 0.14793426592139536
+      },
+      {
+        "channel_name": "This Week in Startups",
+        "dimension": "embedding_reduced_14",
+        "dimension_index": 13,
+        "coefficient": -5.246109041878469,
+        "intercept": 9.358876289425366,
+        "p_value": 0.5031192416331339,
+        "is_significant": false,
+        "r2_adj": 0.14793426592139536
+      },
+      {
+        "channel_name": "This Week in Startups",
+        "dimension": "embedding_reduced_15",
+        "dimension_index": 14,
+        "coefficient": -10.652098391510068,
+        "intercept": 9.358876289425366,
+        "p_value": 0.07695420374608528,
+        "is_significant": false,
+        "r2_adj": 0.14793426592139536
+      },
+      {
+        "channel_name": "This Week in Startups",
+        "dimension": "embedding_reduced_16",
+        "dimension_index": 15,
+        "coefficient": -13.280912908949503,
+        "intercept": 9.358876289425366,
+        "p_value": 0.07824844253131528,
+        "is_significant": false,
+        "r2_adj": 0.14793426592139536
+      },
+      {
+        "channel_name": "This Week in Startups",
+        "dimension": "embedding_reduced_17",
+        "dimension_index": 16,
+        "coefficient": 5.449466283917962,
+        "intercept": 9.358876289425366,
+        "p_value": 0.43627857805951853,
+        "is_significant": false,
+        "r2_adj": 0.14793426592139536
+      },
+      {
+        "channel_name": "This Week in Startups",
+        "dimension": "embedding_reduced_18",
+        "dimension_index": 17,
+        "coefficient": 11.427551604562677,
+        "intercept": 9.358876289425366,
+        "p_value": 0.1797927927258799,
+        "is_significant": false,
+        "r2_adj": 0.14793426592139536
+      },
+      {
+        "channel_name": "This Week in Startups",
+        "dimension": "embedding_reduced_19",
+        "dimension_index": 18,
+        "coefficient": 5.585245215986665,
+        "intercept": 9.358876289425366,
+        "p_value": 0.380983456158393,
+        "is_significant": false,
+        "r2_adj": 0.14793426592139536
+      },
+      {
+        "channel_name": "This Week in Startups",
+        "dimension": "embedding_reduced_20",
+        "dimension_index": 19,
+        "coefficient": -3.42611474654643,
+        "intercept": 9.358876289425366,
+        "p_value": 0.6186437997074024,
+        "is_significant": false,
+        "r2_adj": 0.14793426592139536
+      },
+      {
+        "channel_name": "Tim Ferriss",
+        "dimension": "embedding_reduced_01",
+        "dimension_index": 0,
+        "coefficient": -1.5544339288494626,
+        "intercept": 10.38209457755702,
+        "p_value": 0.5032584866236112,
+        "is_significant": false,
+        "r2_adj": 0.2841617857760379
+      },
+      {
+        "channel_name": "Tim Ferriss",
+        "dimension": "embedding_reduced_02",
+        "dimension_index": 1,
+        "coefficient": 5.595584775955291,
+        "intercept": 10.38209457755702,
+        "p_value": 0.16981494731007557,
+        "is_significant": false,
+        "r2_adj": 0.2841617857760379
+      },
+      {
+        "channel_name": "Tim Ferriss",
+        "dimension": "embedding_reduced_03",
+        "dimension_index": 2,
+        "coefficient": 3.9794840495176906,
+        "intercept": 10.38209457755702,
+        "p_value": 0.5128172693428943,
+        "is_significant": false,
+        "r2_adj": 0.2841617857760379
+      },
+      {
+        "channel_name": "Tim Ferriss",
+        "dimension": "embedding_reduced_04",
+        "dimension_index": 3,
+        "coefficient": -3.2041216455329877,
+        "intercept": 10.38209457755702,
+        "p_value": 0.30781833378516626,
+        "is_significant": false,
+        "r2_adj": 0.2841617857760379
+      },
+      {
+        "channel_name": "Tim Ferriss",
+        "dimension": "embedding_reduced_05",
+        "dimension_index": 4,
+        "coefficient": 1.9273596039214125,
+        "intercept": 10.38209457755702,
+        "p_value": 0.6149268651040865,
+        "is_significant": false,
+        "r2_adj": 0.2841617857760379
+      },
+      {
+        "channel_name": "Tim Ferriss",
+        "dimension": "embedding_reduced_06",
+        "dimension_index": 5,
+        "coefficient": 5.50410781523928,
+        "intercept": 10.38209457755702,
+        "p_value": 0.2524905739613409,
+        "is_significant": false,
+        "r2_adj": 0.2841617857760379
+      },
+      {
+        "channel_name": "Tim Ferriss",
+        "dimension": "embedding_reduced_07",
+        "dimension_index": 6,
+        "coefficient": -3.0608376048000565,
+        "intercept": 10.38209457755702,
+        "p_value": 0.5159960086036169,
+        "is_significant": false,
+        "r2_adj": 0.2841617857760379
+      },
+      {
+        "channel_name": "Tim Ferriss",
+        "dimension": "embedding_reduced_08",
+        "dimension_index": 7,
+        "coefficient": 4.781393887032208,
+        "intercept": 10.38209457755702,
+        "p_value": 0.46947994955116357,
+        "is_significant": false,
+        "r2_adj": 0.2841617857760379
+      },
+      {
+        "channel_name": "Tim Ferriss",
+        "dimension": "embedding_reduced_09",
+        "dimension_index": 8,
+        "coefficient": 0.514486798571614,
+        "intercept": 10.38209457755702,
+        "p_value": 0.940590313090129,
+        "is_significant": false,
+        "r2_adj": 0.2841617857760379
+      },
+      {
+        "channel_name": "Tim Ferriss",
+        "dimension": "embedding_reduced_10",
+        "dimension_index": 9,
+        "coefficient": -1.9682776863129412,
+        "intercept": 10.38209457755702,
+        "p_value": 0.7415247519327536,
+        "is_significant": false,
+        "r2_adj": 0.2841617857760379
+      },
+      {
+        "channel_name": "Tim Ferriss",
+        "dimension": "embedding_reduced_11",
+        "dimension_index": 10,
+        "coefficient": -17.01169489710655,
+        "intercept": 10.38209457755702,
+        "p_value": 0.018290979904002164,
+        "is_significant": true,
+        "r2_adj": 0.2841617857760379
+      },
+      {
+        "channel_name": "Tim Ferriss",
+        "dimension": "embedding_reduced_12",
+        "dimension_index": 11,
+        "coefficient": 2.8862796392152976,
+        "intercept": 10.38209457755702,
+        "p_value": 0.6570294105516776,
+        "is_significant": false,
+        "r2_adj": 0.2841617857760379
+      },
+      {
+        "channel_name": "Tim Ferriss",
+        "dimension": "embedding_reduced_13",
+        "dimension_index": 12,
+        "coefficient": 5.474388797045642,
+        "intercept": 10.38209457755702,
+        "p_value": 0.3846425876648709,
+        "is_significant": false,
+        "r2_adj": 0.2841617857760379
+      },
+      {
+        "channel_name": "Tim Ferriss",
+        "dimension": "embedding_reduced_14",
+        "dimension_index": 13,
+        "coefficient": -4.530251383591446,
+        "intercept": 10.38209457755702,
+        "p_value": 0.47976396957100664,
+        "is_significant": false,
+        "r2_adj": 0.2841617857760379
+      },
+      {
+        "channel_name": "Tim Ferriss",
+        "dimension": "embedding_reduced_15",
+        "dimension_index": 14,
+        "coefficient": 10.390342198805588,
+        "intercept": 10.38209457755702,
+        "p_value": 0.17554083697585815,
+        "is_significant": false,
+        "r2_adj": 0.2841617857760379
+      },
+      {
+        "channel_name": "Tim Ferriss",
+        "dimension": "embedding_reduced_16",
+        "dimension_index": 15,
+        "coefficient": -7.462959280544825,
+        "intercept": 10.38209457755702,
+        "p_value": 0.22964494369562088,
+        "is_significant": false,
+        "r2_adj": 0.2841617857760379
+      },
+      {
+        "channel_name": "Tim Ferriss",
+        "dimension": "embedding_reduced_17",
+        "dimension_index": 16,
+        "coefficient": 2.6685897028866217,
+        "intercept": 10.38209457755702,
+        "p_value": 0.748682241272422,
+        "is_significant": false,
+        "r2_adj": 0.2841617857760379
+      },
+      {
+        "channel_name": "Tim Ferriss",
+        "dimension": "embedding_reduced_18",
+        "dimension_index": 17,
+        "coefficient": -0.039248873943350304,
+        "intercept": 10.38209457755702,
+        "p_value": 0.9959556685925572,
+        "is_significant": false,
+        "r2_adj": 0.2841617857760379
+      },
+      {
+        "channel_name": "Tim Ferriss",
+        "dimension": "embedding_reduced_19",
+        "dimension_index": 18,
+        "coefficient": -9.10239616633052,
+        "intercept": 10.38209457755702,
+        "p_value": 0.14404344129228777,
+        "is_significant": false,
+        "r2_adj": 0.2841617857760379
+      },
+      {
+        "channel_name": "Tim Ferriss",
+        "dimension": "embedding_reduced_20",
+        "dimension_index": 19,
+        "coefficient": -4.666816579894509,
+        "intercept": 10.38209457755702,
+        "p_value": 0.5209932447889362,
+        "is_significant": false,
+        "r2_adj": 0.2841617857760379
+      },
+      {
+        "channel_name": "Tony Robbins",
+        "dimension": "embedding_reduced_01",
+        "dimension_index": 0,
+        "coefficient": 0.32270704505214276,
+        "intercept": 10.694594214244443,
+        "p_value": 0.8786935491381264,
+        "is_significant": false,
+        "r2_adj": 0.20842221839984798
+      },
+      {
+        "channel_name": "Tony Robbins",
+        "dimension": "embedding_reduced_02",
+        "dimension_index": 1,
+        "coefficient": -2.630611970160384,
+        "intercept": 10.694594214244443,
+        "p_value": 0.43501225621739503,
+        "is_significant": false,
+        "r2_adj": 0.20842221839984798
+      },
+      {
+        "channel_name": "Tony Robbins",
+        "dimension": "embedding_reduced_03",
+        "dimension_index": 2,
+        "coefficient": 1.7427817370783671,
+        "intercept": 10.694594214244443,
+        "p_value": 0.5907044009027196,
+        "is_significant": false,
+        "r2_adj": 0.20842221839984798
+      },
+      {
+        "channel_name": "Tony Robbins",
+        "dimension": "embedding_reduced_04",
+        "dimension_index": 3,
+        "coefficient": -3.7113542122826804,
+        "intercept": 10.694594214244443,
+        "p_value": 0.4848252303245624,
+        "is_significant": false,
+        "r2_adj": 0.20842221839984798
+      },
+      {
+        "channel_name": "Tony Robbins",
+        "dimension": "embedding_reduced_05",
+        "dimension_index": 4,
+        "coefficient": -5.888266956721807,
+        "intercept": 10.694594214244443,
+        "p_value": 0.09886798831981625,
+        "is_significant": false,
+        "r2_adj": 0.20842221839984798
+      },
+      {
+        "channel_name": "Tony Robbins",
+        "dimension": "embedding_reduced_06",
+        "dimension_index": 5,
+        "coefficient": -6.199668437992592,
+        "intercept": 10.694594214244443,
+        "p_value": 0.25606879113351433,
+        "is_significant": false,
+        "r2_adj": 0.20842221839984798
+      },
+      {
+        "channel_name": "Tony Robbins",
+        "dimension": "embedding_reduced_07",
+        "dimension_index": 6,
+        "coefficient": 1.637441258790827,
+        "intercept": 10.694594214244443,
+        "p_value": 0.6806664217040812,
+        "is_significant": false,
+        "r2_adj": 0.20842221839984798
+      },
+      {
+        "channel_name": "Tony Robbins",
+        "dimension": "embedding_reduced_08",
+        "dimension_index": 7,
+        "coefficient": 1.5916222910349767,
+        "intercept": 10.694594214244443,
+        "p_value": 0.6927734727613757,
+        "is_significant": false,
+        "r2_adj": 0.20842221839984798
+      },
+      {
+        "channel_name": "Tony Robbins",
+        "dimension": "embedding_reduced_09",
+        "dimension_index": 8,
+        "coefficient": 2.0091296820641835,
+        "intercept": 10.694594214244443,
+        "p_value": 0.5366440485287154,
+        "is_significant": false,
+        "r2_adj": 0.20842221839984798
+      },
+      {
+        "channel_name": "Tony Robbins",
+        "dimension": "embedding_reduced_10",
+        "dimension_index": 9,
+        "coefficient": 2.10958355352828,
+        "intercept": 10.694594214244443,
+        "p_value": 0.6484256069898606,
+        "is_significant": false,
+        "r2_adj": 0.20842221839984798
+      },
+      {
+        "channel_name": "Tony Robbins",
+        "dimension": "embedding_reduced_11",
+        "dimension_index": 10,
+        "coefficient": -9.620685318753576,
+        "intercept": 10.694594214244443,
+        "p_value": 0.07570466607799042,
+        "is_significant": false,
+        "r2_adj": 0.20842221839984798
+      },
+      {
+        "channel_name": "Tony Robbins",
+        "dimension": "embedding_reduced_12",
+        "dimension_index": 11,
+        "coefficient": -4.258981128038464,
+        "intercept": 10.694594214244443,
+        "p_value": 0.4534794895592439,
+        "is_significant": false,
+        "r2_adj": 0.20842221839984798
+      },
+      {
+        "channel_name": "Tony Robbins",
+        "dimension": "embedding_reduced_13",
+        "dimension_index": 12,
+        "coefficient": -0.6953466589312853,
+        "intercept": 10.694594214244443,
+        "p_value": 0.8943013252448955,
+        "is_significant": false,
+        "r2_adj": 0.20842221839984798
+      },
+      {
+        "channel_name": "Tony Robbins",
+        "dimension": "embedding_reduced_14",
+        "dimension_index": 13,
+        "coefficient": -1.3301580620302431,
+        "intercept": 10.694594214244443,
+        "p_value": 0.8468100867052251,
+        "is_significant": false,
+        "r2_adj": 0.20842221839984798
+      },
+      {
+        "channel_name": "Tony Robbins",
+        "dimension": "embedding_reduced_15",
+        "dimension_index": 14,
+        "coefficient": -0.44829138394209167,
+        "intercept": 10.694594214244443,
+        "p_value": 0.910301228612146,
+        "is_significant": false,
+        "r2_adj": 0.20842221839984798
+      },
+      {
+        "channel_name": "Tony Robbins",
+        "dimension": "embedding_reduced_16",
+        "dimension_index": 15,
+        "coefficient": 12.446223381697887,
+        "intercept": 10.694594214244443,
+        "p_value": 0.04161305531655765,
+        "is_significant": true,
+        "r2_adj": 0.20842221839984798
+      },
+      {
+        "channel_name": "Tony Robbins",
+        "dimension": "embedding_reduced_17",
+        "dimension_index": 16,
+        "coefficient": 2.4874709605009357,
+        "intercept": 10.694594214244443,
+        "p_value": 0.599655565598564,
+        "is_significant": false,
+        "r2_adj": 0.20842221839984798
+      },
+      {
+        "channel_name": "Tony Robbins",
+        "dimension": "embedding_reduced_18",
+        "dimension_index": 17,
+        "coefficient": 5.232456027437195,
+        "intercept": 10.694594214244443,
+        "p_value": 0.33417024136127027,
+        "is_significant": false,
+        "r2_adj": 0.20842221839984798
+      },
+      {
+        "channel_name": "Tony Robbins",
+        "dimension": "embedding_reduced_19",
+        "dimension_index": 18,
+        "coefficient": -0.5863059149259211,
+        "intercept": 10.694594214244443,
+        "p_value": 0.9131318597523467,
+        "is_significant": false,
+        "r2_adj": 0.20842221839984798
+      },
+      {
+        "channel_name": "Tony Robbins",
+        "dimension": "embedding_reduced_20",
+        "dimension_index": 19,
+        "coefficient": 1.6721316780763473,
+        "intercept": 10.694594214244443,
+        "p_value": 0.7284136660120817,
+        "is_significant": false,
+        "r2_adj": 0.20842221839984798
+      },
+      {
+        "channel_name": "Valuetainment",
+        "dimension": "embedding_reduced_01",
+        "dimension_index": 0,
+        "coefficient": 10.601884941874639,
+        "intercept": 11.284346255331338,
+        "p_value": 0.03392587077892272,
+        "is_significant": true,
+        "r2_adj": 0.3982920130423828
+      },
+      {
+        "channel_name": "Valuetainment",
+        "dimension": "embedding_reduced_02",
+        "dimension_index": 1,
+        "coefficient": -1.450454948292073,
+        "intercept": 11.284346255331338,
+        "p_value": 0.6936336771532228,
+        "is_significant": false,
+        "r2_adj": 0.3982920130423828
+      },
+      {
+        "channel_name": "Valuetainment",
+        "dimension": "embedding_reduced_03",
+        "dimension_index": 2,
+        "coefficient": 7.164708900572556,
+        "intercept": 11.284346255331338,
+        "p_value": 0.39205263597086093,
+        "is_significant": false,
+        "r2_adj": 0.3982920130423828
+      },
+      {
+        "channel_name": "Valuetainment",
+        "dimension": "embedding_reduced_04",
+        "dimension_index": 3,
+        "coefficient": 6.453478975412351,
+        "intercept": 11.284346255331338,
+        "p_value": 0.09470883781141898,
+        "is_significant": false,
+        "r2_adj": 0.3982920130423828
+      },
+      {
+        "channel_name": "Valuetainment",
+        "dimension": "embedding_reduced_05",
+        "dimension_index": 4,
+        "coefficient": 0.9869605850494771,
+        "intercept": 11.284346255331338,
+        "p_value": 0.8426156641752605,
+        "is_significant": false,
+        "r2_adj": 0.3982920130423828
+      },
+      {
+        "channel_name": "Valuetainment",
+        "dimension": "embedding_reduced_06",
+        "dimension_index": 5,
+        "coefficient": 16.688461991465914,
+        "intercept": 11.284346255331338,
+        "p_value": 0.004514418808900269,
+        "is_significant": true,
+        "r2_adj": 0.3982920130423828
+      },
+      {
+        "channel_name": "Valuetainment",
+        "dimension": "embedding_reduced_07",
+        "dimension_index": 6,
+        "coefficient": 5.120909046910279,
+        "intercept": 11.284346255331338,
+        "p_value": 0.32130238657537563,
+        "is_significant": false,
+        "r2_adj": 0.3982920130423828
+      },
+      {
+        "channel_name": "Valuetainment",
+        "dimension": "embedding_reduced_08",
+        "dimension_index": 7,
+        "coefficient": -8.575099859066285,
+        "intercept": 11.284346255331338,
+        "p_value": 0.19342261383556242,
+        "is_significant": false,
+        "r2_adj": 0.3982920130423828
+      },
+      {
+        "channel_name": "Valuetainment",
+        "dimension": "embedding_reduced_09",
+        "dimension_index": 8,
+        "coefficient": 5.982054736171293,
+        "intercept": 11.284346255331338,
+        "p_value": 0.3133142587892367,
+        "is_significant": false,
+        "r2_adj": 0.3982920130423828
+      },
+      {
+        "channel_name": "Valuetainment",
+        "dimension": "embedding_reduced_10",
+        "dimension_index": 9,
+        "coefficient": 0.9518793210796677,
+        "intercept": 11.284346255331338,
+        "p_value": 0.826228624640885,
+        "is_significant": false,
+        "r2_adj": 0.3982920130423828
+      },
+      {
+        "channel_name": "Valuetainment",
+        "dimension": "embedding_reduced_11",
+        "dimension_index": 10,
+        "coefficient": -1.5994135138450396,
+        "intercept": 11.284346255331338,
+        "p_value": 0.8132841787745786,
+        "is_significant": false,
+        "r2_adj": 0.3982920130423828
+      },
+      {
+        "channel_name": "Valuetainment",
+        "dimension": "embedding_reduced_12",
+        "dimension_index": 11,
+        "coefficient": -4.056433366723855,
+        "intercept": 11.284346255331338,
+        "p_value": 0.5260257511629884,
+        "is_significant": false,
+        "r2_adj": 0.3982920130423828
+      },
+      {
+        "channel_name": "Valuetainment",
+        "dimension": "embedding_reduced_13",
+        "dimension_index": 12,
+        "coefficient": -14.024413841652539,
+        "intercept": 11.284346255331338,
+        "p_value": 0.0623642576669981,
+        "is_significant": false,
+        "r2_adj": 0.3982920130423828
+      },
+      {
+        "channel_name": "Valuetainment",
+        "dimension": "embedding_reduced_14",
+        "dimension_index": 13,
+        "coefficient": -3.560296071130652,
+        "intercept": 11.284346255331338,
+        "p_value": 0.6196690086362415,
+        "is_significant": false,
+        "r2_adj": 0.3982920130423828
+      },
+      {
+        "channel_name": "Valuetainment",
+        "dimension": "embedding_reduced_15",
+        "dimension_index": 14,
+        "coefficient": -4.971501217602334,
+        "intercept": 11.284346255331338,
+        "p_value": 0.47271145349875776,
+        "is_significant": false,
+        "r2_adj": 0.3982920130423828
+      },
+      {
+        "channel_name": "Valuetainment",
+        "dimension": "embedding_reduced_16",
+        "dimension_index": 15,
+        "coefficient": -1.3544187189847272,
+        "intercept": 11.284346255331338,
+        "p_value": 0.8238998716574717,
+        "is_significant": false,
+        "r2_adj": 0.3982920130423828
+      },
+      {
+        "channel_name": "Valuetainment",
+        "dimension": "embedding_reduced_17",
+        "dimension_index": 16,
+        "coefficient": 3.2554807992288133,
+        "intercept": 11.284346255331338,
+        "p_value": 0.6579809634818423,
+        "is_significant": false,
+        "r2_adj": 0.3982920130423828
+      },
+      {
+        "channel_name": "Valuetainment",
+        "dimension": "embedding_reduced_18",
+        "dimension_index": 17,
+        "coefficient": -0.4213080339014925,
+        "intercept": 11.284346255331338,
+        "p_value": 0.9606853790029415,
+        "is_significant": false,
+        "r2_adj": 0.3982920130423828
+      },
+      {
+        "channel_name": "Valuetainment",
+        "dimension": "embedding_reduced_19",
+        "dimension_index": 18,
+        "coefficient": 9.954632665986587,
+        "intercept": 11.284346255331338,
+        "p_value": 0.16813052482502425,
+        "is_significant": false,
+        "r2_adj": 0.3982920130423828
+      },
+      {
+        "channel_name": "Valuetainment",
+        "dimension": "embedding_reduced_20",
+        "dimension_index": 19,
+        "coefficient": 7.389469286742829,
+        "intercept": 11.284346255331338,
+        "p_value": 0.30992149812972397,
+        "is_significant": false,
+        "r2_adj": 0.3982920130423828
+      },
+      {
+        "channel_name": "Y Combinator",
+        "dimension": "embedding_reduced_01",
+        "dimension_index": 0,
+        "coefficient": 0.8814008014107184,
+        "intercept": 11.101519071024349,
+        "p_value": 0.8231148470854913,
+        "is_significant": false,
+        "r2_adj": -0.34202486218558037
+      },
+      {
+        "channel_name": "Y Combinator",
+        "dimension": "embedding_reduced_02",
+        "dimension_index": 1,
+        "coefficient": 0.865522885507076,
+        "intercept": 11.101519071024349,
+        "p_value": 0.8188096729052166,
+        "is_significant": false,
+        "r2_adj": -0.34202486218558037
+      },
+      {
+        "channel_name": "Y Combinator",
+        "dimension": "embedding_reduced_03",
+        "dimension_index": 2,
+        "coefficient": 5.384348661255352,
+        "intercept": 11.101519071024349,
+        "p_value": 0.32065408108044247,
+        "is_significant": false,
+        "r2_adj": -0.34202486218558037
+      },
+      {
+        "channel_name": "Y Combinator",
+        "dimension": "embedding_reduced_04",
+        "dimension_index": 3,
+        "coefficient": 5.006328037346146,
+        "intercept": 11.101519071024349,
+        "p_value": 0.43295195766879335,
+        "is_significant": false,
+        "r2_adj": -0.34202486218558037
+      },
+      {
+        "channel_name": "Y Combinator",
+        "dimension": "embedding_reduced_05",
+        "dimension_index": 4,
+        "coefficient": -4.736530991113425,
+        "intercept": 11.101519071024349,
+        "p_value": 0.3847354927874036,
+        "is_significant": false,
+        "r2_adj": -0.34202486218558037
+      },
+      {
+        "channel_name": "Y Combinator",
+        "dimension": "embedding_reduced_06",
+        "dimension_index": 5,
+        "coefficient": -2.1800931544539077,
+        "intercept": 11.101519071024349,
+        "p_value": 0.7233388990777475,
+        "is_significant": false,
+        "r2_adj": -0.34202486218558037
+      },
+      {
+        "channel_name": "Y Combinator",
+        "dimension": "embedding_reduced_07",
+        "dimension_index": 6,
+        "coefficient": 2.762627885139989,
+        "intercept": 11.101519071024349,
+        "p_value": 0.4943981819511537,
+        "is_significant": false,
+        "r2_adj": -0.34202486218558037
+      },
+      {
+        "channel_name": "Y Combinator",
+        "dimension": "embedding_reduced_08",
+        "dimension_index": 7,
+        "coefficient": 6.306300506271377,
+        "intercept": 11.101519071024349,
+        "p_value": 0.29470643607770464,
+        "is_significant": false,
+        "r2_adj": -0.34202486218558037
+      },
+      {
+        "channel_name": "Y Combinator",
+        "dimension": "embedding_reduced_09",
+        "dimension_index": 8,
+        "coefficient": -0.014237184388267057,
+        "intercept": 11.101519071024349,
+        "p_value": 0.997310178804147,
+        "is_significant": false,
+        "r2_adj": -0.34202486218558037
+      },
+      {
+        "channel_name": "Y Combinator",
+        "dimension": "embedding_reduced_10",
+        "dimension_index": 9,
+        "coefficient": 3.063348792231407,
+        "intercept": 11.101519071024349,
+        "p_value": 0.5135010965055378,
+        "is_significant": false,
+        "r2_adj": -0.34202486218558037
+      },
+      {
+        "channel_name": "Y Combinator",
+        "dimension": "embedding_reduced_11",
+        "dimension_index": 10,
+        "coefficient": 1.5185188509032488,
+        "intercept": 11.101519071024349,
+        "p_value": 0.766085129708015,
+        "is_significant": false,
+        "r2_adj": -0.34202486218558037
+      },
+      {
+        "channel_name": "Y Combinator",
+        "dimension": "embedding_reduced_12",
+        "dimension_index": 11,
+        "coefficient": 3.8224011802684825,
+        "intercept": 11.101519071024349,
+        "p_value": 0.3654839105699291,
+        "is_significant": false,
+        "r2_adj": -0.34202486218558037
+      },
+      {
+        "channel_name": "Y Combinator",
+        "dimension": "embedding_reduced_13",
+        "dimension_index": 12,
+        "coefficient": -3.9536778962577523,
+        "intercept": 11.101519071024349,
+        "p_value": 0.4117059046180416,
+        "is_significant": false,
+        "r2_adj": -0.34202486218558037
+      },
+      {
+        "channel_name": "Y Combinator",
+        "dimension": "embedding_reduced_14",
+        "dimension_index": 13,
+        "coefficient": 1.4087089612523798,
+        "intercept": 11.101519071024349,
+        "p_value": 0.8427403298621872,
+        "is_significant": false,
+        "r2_adj": -0.34202486218558037
+      },
+      {
+        "channel_name": "Y Combinator",
+        "dimension": "embedding_reduced_15",
+        "dimension_index": 14,
+        "coefficient": -0.9576822325316936,
+        "intercept": 11.101519071024349,
+        "p_value": 0.8216709901617817,
+        "is_significant": false,
+        "r2_adj": -0.34202486218558037
+      },
+      {
+        "channel_name": "Y Combinator",
+        "dimension": "embedding_reduced_16",
+        "dimension_index": 15,
+        "coefficient": 4.237371915945817,
+        "intercept": 11.101519071024349,
+        "p_value": 0.38965291848641626,
+        "is_significant": false,
+        "r2_adj": -0.34202486218558037
+      },
+      {
+        "channel_name": "Y Combinator",
+        "dimension": "embedding_reduced_17",
+        "dimension_index": 16,
+        "coefficient": 0.903066536387497,
+        "intercept": 11.101519071024349,
+        "p_value": 0.8973551479926822,
+        "is_significant": false,
+        "r2_adj": -0.34202486218558037
+      },
+      {
+        "channel_name": "Y Combinator",
+        "dimension": "embedding_reduced_18",
+        "dimension_index": 17,
+        "coefficient": -7.130808678970952,
+        "intercept": 11.101519071024349,
+        "p_value": 0.23714094400909458,
+        "is_significant": false,
+        "r2_adj": -0.34202486218558037
+      },
+      {
+        "channel_name": "Y Combinator",
+        "dimension": "embedding_reduced_19",
+        "dimension_index": 18,
+        "coefficient": 3.0545139989730288,
+        "intercept": 11.101519071024349,
+        "p_value": 0.7099390400621,
+        "is_significant": false,
+        "r2_adj": -0.34202486218558037
+      },
+      {
+        "channel_name": "Y Combinator",
+        "dimension": "embedding_reduced_20",
+        "dimension_index": 19,
+        "coefficient": 0.31840783599735456,
+        "intercept": 11.101519071024349,
+        "p_value": 0.9552429323233695,
+        "is_significant": false,
+        "r2_adj": -0.34202486218558037
+      },
+      {
+        "channel_name": "a16z",
+        "dimension": "embedding_reduced_01",
+        "dimension_index": 0,
+        "coefficient": -1.4075068497849195,
+        "intercept": 9.344835711847761,
+        "p_value": 0.4019583120279415,
+        "is_significant": false,
+        "r2_adj": 0.2714369811577
+      },
+      {
+        "channel_name": "a16z",
+        "dimension": "embedding_reduced_02",
+        "dimension_index": 1,
+        "coefficient": 2.3910729000172593,
+        "intercept": 9.344835711847761,
+        "p_value": 0.4038458517987539,
+        "is_significant": false,
+        "r2_adj": 0.2714369811577
+      },
+      {
+        "channel_name": "a16z",
+        "dimension": "embedding_reduced_03",
+        "dimension_index": 2,
+        "coefficient": 4.864749753537506,
+        "intercept": 9.344835711847761,
+        "p_value": 0.13350860081515734,
+        "is_significant": false,
+        "r2_adj": 0.2714369811577
+      },
+      {
+        "channel_name": "a16z",
+        "dimension": "embedding_reduced_04",
+        "dimension_index": 3,
+        "coefficient": -6.710830652680437,
+        "intercept": 9.344835711847761,
+        "p_value": 0.031442801843533257,
+        "is_significant": true,
+        "r2_adj": 0.2714369811577
+      },
+      {
+        "channel_name": "a16z",
+        "dimension": "embedding_reduced_05",
+        "dimension_index": 4,
+        "coefficient": 1.1967410236625282,
+        "intercept": 9.344835711847761,
+        "p_value": 0.6375276990413092,
+        "is_significant": false,
+        "r2_adj": 0.2714369811577
+      },
+      {
+        "channel_name": "a16z",
+        "dimension": "embedding_reduced_06",
+        "dimension_index": 5,
+        "coefficient": 1.814267259691814,
+        "intercept": 9.344835711847761,
+        "p_value": 0.5840266626210103,
+        "is_significant": false,
+        "r2_adj": 0.2714369811577
+      },
+      {
+        "channel_name": "a16z",
+        "dimension": "embedding_reduced_07",
+        "dimension_index": 6,
+        "coefficient": -5.022792640041981,
+        "intercept": 9.344835711847761,
+        "p_value": 0.08074974014791025,
+        "is_significant": false,
+        "r2_adj": 0.2714369811577
+      },
+      {
+        "channel_name": "a16z",
+        "dimension": "embedding_reduced_08",
+        "dimension_index": 7,
+        "coefficient": 5.6925655950002785,
+        "intercept": 9.344835711847761,
+        "p_value": 0.10227487331361489,
+        "is_significant": false,
+        "r2_adj": 0.2714369811577
+      },
+      {
+        "channel_name": "a16z",
+        "dimension": "embedding_reduced_09",
+        "dimension_index": 8,
+        "coefficient": -1.8501973165433472,
+        "intercept": 9.344835711847761,
+        "p_value": 0.6579542923744766,
+        "is_significant": false,
+        "r2_adj": 0.2714369811577
+      },
+      {
+        "channel_name": "a16z",
+        "dimension": "embedding_reduced_10",
+        "dimension_index": 9,
+        "coefficient": 0.11028811146760986,
+        "intercept": 9.344835711847761,
+        "p_value": 0.9766407703686408,
+        "is_significant": false,
+        "r2_adj": 0.2714369811577
+      },
+      {
+        "channel_name": "a16z",
+        "dimension": "embedding_reduced_11",
+        "dimension_index": 10,
+        "coefficient": -2.3874112806234002,
+        "intercept": 9.344835711847761,
+        "p_value": 0.5286998496336653,
+        "is_significant": false,
+        "r2_adj": 0.2714369811577
+      },
+      {
+        "channel_name": "a16z",
+        "dimension": "embedding_reduced_12",
+        "dimension_index": 11,
+        "coefficient": -0.8324739960730945,
+        "intercept": 9.344835711847761,
+        "p_value": 0.8264408786985714,
+        "is_significant": false,
+        "r2_adj": 0.2714369811577
+      },
+      {
+        "channel_name": "a16z",
+        "dimension": "embedding_reduced_13",
+        "dimension_index": 12,
+        "coefficient": 13.512635154208148,
+        "intercept": 9.344835711847761,
+        "p_value": 0.004178931658108852,
+        "is_significant": true,
+        "r2_adj": 0.2714369811577
+      },
+      {
+        "channel_name": "a16z",
+        "dimension": "embedding_reduced_14",
+        "dimension_index": 13,
+        "coefficient": 3.4122028232358406,
+        "intercept": 9.344835711847761,
+        "p_value": 0.4187968424952987,
+        "is_significant": false,
+        "r2_adj": 0.2714369811577
+      },
+      {
+        "channel_name": "a16z",
+        "dimension": "embedding_reduced_15",
+        "dimension_index": 14,
+        "coefficient": -5.303915122000195,
+        "intercept": 9.344835711847761,
+        "p_value": 0.25896742920906135,
+        "is_significant": false,
+        "r2_adj": 0.2714369811577
+      },
+      {
+        "channel_name": "a16z",
+        "dimension": "embedding_reduced_16",
+        "dimension_index": 15,
+        "coefficient": -7.724284424981093,
+        "intercept": 9.344835711847761,
+        "p_value": 0.15175509662648373,
+        "is_significant": false,
+        "r2_adj": 0.2714369811577
+      },
+      {
+        "channel_name": "a16z",
+        "dimension": "embedding_reduced_17",
+        "dimension_index": 16,
+        "coefficient": -4.69751708832339,
+        "intercept": 9.344835711847761,
+        "p_value": 0.29793421508638923,
+        "is_significant": false,
+        "r2_adj": 0.2714369811577
+      },
+      {
+        "channel_name": "a16z",
+        "dimension": "embedding_reduced_18",
+        "dimension_index": 17,
+        "coefficient": -1.9334068605573131,
+        "intercept": 9.344835711847761,
+        "p_value": 0.7149617341749733,
+        "is_significant": false,
+        "r2_adj": 0.2714369811577
+      },
+      {
+        "channel_name": "a16z",
+        "dimension": "embedding_reduced_19",
+        "dimension_index": 18,
+        "coefficient": 15.98534216906129,
+        "intercept": 9.344835711847761,
+        "p_value": 0.005686539797229427,
+        "is_significant": true,
+        "r2_adj": 0.2714369811577
+      },
+      {
+        "channel_name": "a16z",
+        "dimension": "embedding_reduced_20",
+        "dimension_index": 19,
+        "coefficient": -6.59527359568746,
+        "intercept": 9.344835711847761,
+        "p_value": 0.16788074339932066,
+        "is_significant": false,
+        "r2_adj": 0.2714369811577
+      }
+    ]
+  }
+}
