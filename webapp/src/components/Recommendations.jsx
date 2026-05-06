@@ -1,7 +1,5 @@
 import { useMemo } from 'react';
-import { ScatterChart, Scatter, XAxis, YAxis, Tooltip, ResponsiveContainer, CartesianGrid, Cell, Legend } from 'recharts';
-
-const COLORS = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042', '#8884d8', '#82ca9d', '#ffc658', '#8dd1e1', '#a4de6c', '#d0ed57'];
+import { ScatterChart, Scatter, XAxis, YAxis, Tooltip, ResponsiveContainer, CartesianGrid, Cell } from 'recharts';
 
 const CustomTooltip = ({ active, payload }) => {
   if (active && payload && payload.length) {
@@ -25,7 +23,15 @@ function Recommendations({ videos, selectedChannel, engagementCenters }) {
     const centerData = engagementCenters.find(c => c.channel_name === selectedChannel);
     if (!centerData || !centerData.engagement_center_20d) return [];
 
-    const center20D = centerData.engagement_center_20d;
+    const rawCenter20D = centerData.engagement_center_20d;
+
+    // Normalize the center
+    let centerNorm = 0;
+    for (let i = 0; i < 20; i++) {
+      centerNorm += rawCenter20D[i] * rawCenter20D[i];
+    }
+    centerNorm = Math.sqrt(centerNorm);
+    const center20D = centerNorm > 0 ? rawCenter20D.map(val => val / centerNorm) : rawCenter20D;
 
     const euclideanDistance20D = (vecA, vecB) => {
       let sumSquare = 0;
@@ -57,13 +63,10 @@ function Recommendations({ videos, selectedChannel, engagementCenters }) {
     return <div className="notification">No recommendations available for this channel.</div>;
   }
 
-  // Find unique channels to map colors
-  const uniqueChannels = Array.from(new Set(chartData.map(item => item.channel_name)));
-
   return (
     <div className="box">
       <h2 className="subtitle">Recommended Videos</h2>
-      <p className="mb-4">Top 100 videos closest to the engagement center of <strong>{selectedChannel}</strong> across all channels.</p>
+      <p className="mb-4">Top 100 videos closest to the normalized engagement center of <strong>{selectedChannel}</strong> across all channels.</p>
 
       <div style={{ width: '100%', height: 500 }}>
         <ResponsiveContainer>
@@ -73,7 +76,7 @@ function Recommendations({ videos, selectedChannel, engagementCenters }) {
               type="number"
               dataKey="distance"
               name="Distance"
-              label={{ value: 'Distance to Engagement Center (20D)', position: 'insideBottom', offset: -10 }}
+              label={{ value: 'Distance to Normalized Engagement Center (20D)', position: 'insideBottom', offset: -10 }}
             />
             <YAxis
               type="number"
@@ -83,25 +86,37 @@ function Recommendations({ videos, selectedChannel, engagementCenters }) {
               label={{ value: 'Views', angle: -90, position: 'insideLeft', offset: 0 }}
             />
             <Tooltip content={<CustomTooltip />} cursor={{ strokeDasharray: '3 3' }} />
-            <Legend wrapperStyle={{ paddingTop: '20px' }} />
-
-            {uniqueChannels.map((channelName, index) => {
-              const channelData = chartData.filter(item => item.channel_name === channelName);
-              return (
-                <Scatter
-                  key={channelName}
-                  name={channelName}
-                  data={channelData}
-                  fill={COLORS[index % COLORS.length]}
-                >
-                  {channelData.map((entry, idx) => (
-                    <Cell key={`cell-${idx}`} fill={COLORS[index % COLORS.length]} />
-                  ))}
-                </Scatter>
-              );
-            })}
+            <Scatter name="Recommendations" data={chartData} fill="#8884d8">
+              {chartData.map((entry, idx) => (
+                <Cell key={`cell-${idx}`} fill="#8884d8" />
+              ))}
+            </Scatter>
           </ScatterChart>
         </ResponsiveContainer>
+      </div>
+
+      <h3 className="subtitle is-5 mt-5">Video Details</h3>
+      <div className="table-container">
+        <table className="table is-fullwidth is-striped is-hoverable">
+          <thead>
+            <tr>
+              <th>Video Title</th>
+              <th>Channel Name</th>
+              <th className="has-text-right">Distance (20D)</th>
+              <th className="has-text-right">Views</th>
+            </tr>
+          </thead>
+          <tbody>
+            {chartData.map((row, idx) => (
+              <tr key={idx}>
+                <td>{row.video_title}</td>
+                <td>{row.channel_name}</td>
+                <td className="has-text-right">{row.distance.toFixed(4)}</td>
+                <td className="has-text-right">{Math.round(row.views).toLocaleString()}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
       </div>
     </div>
   );
