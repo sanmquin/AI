@@ -26,6 +26,11 @@ function App() {
   const [dimensionDescriptions, setDimensionDescriptions] = useState([]);
   const [predictions, setPredictions] = useState([]);
   const [activeTab, setActiveTab] = useState('overview');
+  const [isGemmaModalOpen, setIsGemmaModalOpen] = useState(false);
+  const [gemmaPrompt, setGemmaPrompt] = useState('');
+  const [gemmaAnswer, setGemmaAnswer] = useState('');
+  const [gemmaError, setGemmaError] = useState('');
+  const [isGemmaLoading, setIsGemmaLoading] = useState(false);
 
   const [selectedX, setSelectedX] = useState(null);
   const [selectedY, setSelectedY] = useState(null);
@@ -174,6 +179,53 @@ function App() {
     setSelectedChannelsMulti([]);
   };
 
+  const openGemmaModal = () => {
+    setGemmaError('');
+    setIsGemmaModalOpen(true);
+  };
+
+  const closeGemmaModal = () => {
+    if (!isGemmaLoading) {
+      setIsGemmaModalOpen(false);
+    }
+  };
+
+  const handleGemmaSubmit = async (event) => {
+    event.preventDefault();
+
+    const prompt = gemmaPrompt.trim();
+
+    if (!prompt) {
+      setGemmaError('Enter a prompt before asking Gemma.');
+      return;
+    }
+
+    setIsGemmaLoading(true);
+    setGemmaError('');
+    setGemmaAnswer('');
+
+    try {
+      const response = await fetch('/.netlify/functions/ask-gemma', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ prompt }),
+      });
+      const result = await response.json();
+
+      if (!response.ok) {
+        throw new Error(result.error || 'Gemma request failed.');
+      }
+
+      setGemmaAnswer(result.answer || 'Gemma returned an empty response.');
+    } catch (err) {
+      setGemmaError(err.message || 'Unable to ask Gemma right now.');
+    } finally {
+      setIsGemmaLoading(false);
+    }
+  };
+
   return (
     <div className="container p-4">
       <nav className="navbar mb-4" role="navigation" aria-label="main navigation">
@@ -182,7 +234,84 @@ function App() {
             Video & Cluster Visualization
           </a>
         </div>
+        <div className="navbar-menu is-active">
+          <div className="navbar-end">
+            <div className="navbar-item">
+              <button className="button is-primary" type="button" onClick={openGemmaModal}>
+                Ask Gemma
+              </button>
+            </div>
+          </div>
+        </div>
       </nav>
+
+      <div className={`modal ${isGemmaModalOpen ? 'is-active' : ''}`}>
+        <div className="modal-background" onClick={closeGemmaModal}></div>
+        <div className="modal-card">
+          <header className="modal-card-head">
+            <p className="modal-card-title">Ask Gemma</p>
+            <button
+              className="delete"
+              type="button"
+              aria-label="close"
+              onClick={closeGemmaModal}
+              disabled={isGemmaLoading}
+            ></button>
+          </header>
+          <form onSubmit={handleGemmaSubmit}>
+            <section className="modal-card-body">
+              <div className="field">
+                <label className="label" htmlFor="gemma-prompt">Prompt</label>
+                <div className="control">
+                  <textarea
+                    id="gemma-prompt"
+                    className="textarea"
+                    placeholder="Ask Gemma about the channel data, dimensions, or anything else..."
+                    value={gemmaPrompt}
+                    onChange={(event) => setGemmaPrompt(event.target.value)}
+                    rows="5"
+                    disabled={isGemmaLoading}
+                  />
+                </div>
+              </div>
+
+              {gemmaError && (
+                <div className="notification is-danger is-light">
+                  {gemmaError}
+                </div>
+              )}
+
+              {gemmaAnswer && (
+                <article className="message is-info">
+                  <div className="message-header">
+                    <p>Gemma says</p>
+                  </div>
+                  <div className="message-body" style={{ whiteSpace: 'pre-wrap' }}>
+                    {gemmaAnswer}
+                  </div>
+                </article>
+              )}
+            </section>
+            <footer className="modal-card-foot">
+              <button
+                className={`button is-primary ${isGemmaLoading ? 'is-loading' : ''}`}
+                type="submit"
+                disabled={isGemmaLoading}
+              >
+                Send prompt
+              </button>
+              <button
+                className="button"
+                type="button"
+                onClick={closeGemmaModal}
+                disabled={isGemmaLoading}
+              >
+                Close
+              </button>
+            </footer>
+          </form>
+        </div>
+      </div>
 
       <div className="box">
         <ChannelSelector

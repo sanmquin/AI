@@ -2,12 +2,15 @@
   base = "webapp"
   publish = "dist"
   command = "npm install && npm run build"
+  functions = "netlify/functions"
 
 [build.environment]
   # Documenting environment variables:
   # Add required environment variables here or in the Netlify UI.
   # VITE_API_URL = "The URL of the backend API"
   # VITE_APP_MODE = "Development or production mode"
+  # GEMINI_API_KEY = "Google AI API key used by the ask-gemma Netlify function"
+  # GEMMA_MODEL = "Optional Gemma model override (defaults to gemma-4-31b-it)"
 
 [context.branch-deploy]
   # Do not set branch deployments
