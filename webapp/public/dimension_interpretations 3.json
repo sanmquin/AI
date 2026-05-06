@@ -1,0 +1,597 @@
+{
+  "schema_version": "1.0.0",
+  "artifacts": {
+    "dimension_interpretations": [
+      {
+        "dimension_index": 0,
+        "dimension_name": "embedding_reduced_01",
+        "definition": "Dimension 0 distinguishes content focused on **personal growth, life advice, and broad entrepreneurial strategies** from videos offering **detailed, expert-led discussions on specific, cutting-edge technology, venture capital, and macroeconomic trends.**",
+        "top_20_sample": [
+          "- How to Get Your Customers to Stay FOREVER",
+          "- The Powerful Alternative To Fine-Tuning",
+          "- How to Earn an Income on Gold",
+          "- If You Have a Hard Life, Watch This",
+          "- Success IS NOT What you Think it Will Be"
+        ],
+        "bottom_20_sample": [
+          "- China Open-Source, Compute Arms Race, Reordering Global Trade | BG2 w/ Bill Gurley and Brad Gerstner",
+          "- Ep16. Nuclear Update, AI Fast & Furious, State of VC | BG2 w/ Bill Gurley & Brad Gerstner",
+          "- NVIDIA: OpenAI, Future of Compute, and the American Dream  | BG2 w/ Bill Gurley and Brad Gerstner",
+          "- Ep7. The Great IPO Debate, Tesla Robotaxi v Uber, Tech Check | BG2 with Bill Gurley & Brad Gerstner",
+          "- Uber vs. Tesla, Robotaxi Timelines, and the End of Human Driving | Uber CEO Dara Khosrowshahi | #243"
+        ]
+      },
+      {
+        "dimension_index": 1,
+        "dimension_name": "embedding_reduced_02",
+        "definition": "Dimension 1 distinguishes content that offers **in-depth analysis or investigative reporting on specific, high-stakes real-world entities, events, or geopolitical and financial controversies** from videos providing **highly prescriptive and hypothetical \"get-rich\" strategies or guides for individual wealth accumulation.**",
+        "top_20_sample": [
+          "- The Wartime CEO: Vlad Tenev of Robinhood",
+          "- Delta Electronics: Taiwan's Power Supply Giant",
+          "- Exiled Iranian Prince Reza Pahlavi: Transition Plan and the Fight for Iran's Freedom",
+          "- China's Bonkers Bike-share Bubble",
+          "- David Friedberg on the Fractal Frontier"
+        ],
+        "bottom_20_sample": [
+          "- If I Wanted to Create a Business That Runs Itself, Here's What I'd Do",
+          "- If I Could Only Teach You ONE Thing, This Would Be It...",
+          "- The 6 Most Profitable AI Businesses to Start in 2026",
+          "- The Only 25 Ways to Make Money in 2026",
+          "- This $40M AI Company Is Using AI Tutors to Teach 2 Hours/Day | #233"
+        ]
+      },
+      {
+        "dimension_index": 2,
+        "dimension_name": "embedding_reduced_03",
+        "definition": "Dimension 2 distinguishes content focused on **forward-looking, often speculative discussions about emerging technologies, future conferences, and evolving societal frameworks** from videos analyzing **current, real-world economic, geopolitical, and social challenges or critiques of existing systems.**",
+        "top_20_sample": [
+          "- Looking Back on 2025",
+          "- Best Of 2025",
+          "- Watch This To Get Ahead In 2026",
+          "- 46 - Network State Conference 2025 - Fireside with Nas Daily & Balaji",
+          "- 51 - Network State Conference 2025 - Paul McNiel on Wagon Box"
+        ],
+        "bottom_20_sample": [
+          "- \u201c$300K To Raise A Kid?\u201d - Families PRICED OUT As Parenting Costs EXPLODE",
+          "- How Trump\u2019s Deportation Campaign Is Reshaping Small Town America",
+          "- How Thailand Went From Asian Leader to Laggard",
+          "- Why the Ultra Rich Are Pouring Billions Into Defense, AI & Healthcare",
+          "- Iran War EXPLODES Oil Prices \u2014 How Will the War Inflation Impact China?"
+        ]
+      },
+      {
+        "dimension_index": 3,
+        "dimension_name": "embedding_reduced_04",
+        "definition": "Dimension 3 distinguishes content presented with a **sensational, opinionated, or emotionally charged rhetorical style** to deliver commentary or philosophical insights from videos offering **objective, analytical, and informative discussions focused on technological advancements**, particularly in the field of AI.",
+        "top_20_sample": [
+          "- \u201cLove Requires Letting Go\u201d - Sadhguru BREAKS DOWN Why Your Marriage Is FAILING",
+          "- Don\u2019t Say Epstein!",
+          "- \u201cEric Swalwell Got FIRED\u201d - California Governor Race ROCKED By SURPRISE Dropout",
+          "- \u201cThe Fear Of FAILURE\u201d - Sadhguru UNCOVERS The Mind Games KILLING Your Potential",
+          "- \u201cYou DON\u2019T Play With God\u201d - Trump UNDER FIRE Over Jesus Trump Christ Meme"
+        ],
+        "bottom_20_sample": [
+          "- How AI Will Be a Boom for the Workforce",
+          "- The AI Agent Economy Is Here",
+          "- How AI Accelerates Materials Discovery",
+          "- How Global Security, AI, and Geopolitics Are Reshaping The Investment Landscape",
+          "- Trillions in AI Investment\u2014But No Bubble?"
+        ]
+      },
+      {
+        "dimension_index": 4,
+        "dimension_name": "embedding_reduced_05",
+        "definition": "Dimension 4 distinguishes content featuring **high-level strategic commentary and critical analysis of current geopolitical, economic, and technological policy decisions** from videos offering **speculative financial forecasts and investment strategies centered on future technological breakthroughs, particularly in cryptocurrency and AI.**",
+        "top_20_sample": [
+          "- Tariffs, Free Trade, Export Controls, H20 & Rare Earth Ban | BG2 w/ Bill Gurley & Brad Gerstner",
+          "- China, AI Immigration, Rare Earths & Chips, Tariffs, Markets | BG2 w/ Bill Gurley & Brad Gerstner",
+          "- AI, Middle East, China, Tariffs, Recon Bill, Invest America | BG2 w/ Bill Gurley & Brad Gerstner",
+          "- A guide to difficult conversations, building high-trust teams, and designing a life you love",
+          "- Europe's Free Speech Failure and the \"Censorship Industrial Complex\" with Sarah B. Rogers"
+        ],
+        "bottom_20_sample": [
+          "- Largest Bitcoin Miner Predicts Next Bitcoin Bull Run",
+          "- Toshiba\u2019s Breakthrough Laptop PC",
+          "- Stablecoins, Regulation, Mining And 2026 Outlook",
+          "- Bitcoin\u2019s Future Will Be Decided by This One Shift",
+          "- Solana Breakpoint 2025: MetaDAO |"
+        ]
+      },
+      {
+        "dimension_index": 5,
+        "dimension_name": "embedding_reduced_06",
+        "definition": "Dimension 5 distinguishes content focused on **macro-level forecasts and analyses of the future trajectory and potential challenges of global economic, financial, and geopolitical systems** from videos offering **micro-level guidance, personal development, and inspirational accounts of individual entrepreneurial success.**",
+        "top_20_sample": [
+          "- What could be ahead for the US dollar?",
+          "- Is Bitcoin In A Bear Market?",
+          "- Is the Global Trading System Breaking Down?",
+          "- Art Market Collapse?",
+          "- What The U.S. Need to Do?"
+        ],
+        "bottom_20_sample": [
+          "- Claude Code & MCPs built my $145K marketing machine",
+          "- A guide to difficult conversations, building high-trust teams, and designing a life you love",
+          "- Tim McGraw \u2014 Selling 100M+ Records and 30+ Years of Creative Longevity",
+          "- Head of Growth (Anthropic):\u00a0 \u201cClaude is growing itself at this point\u201d",
+          "- Give me 99 seconds and I'll make you DANGEROUSLY good with AI"
+        ]
+      },
+      {
+        "dimension_index": 6,
+        "dimension_name": "embedding_reduced_07",
+        "definition": "Dimension 6 distinguishes content explicitly and deeply centered on **Artificial Intelligence**, encompassing its technical aspects, specific models, ethical considerations, and transformative societal impact, from videos focused on **entrepreneurship, personal wealth creation strategies, and general business success stories.**",
+        "top_20_sample": [
+          "- How Intelligent Is AI, Really?",
+          "- What Does AI Mean For Higher Ed? | Office Hours",
+          "- Is AI a Threat to Privacy?  | Prof G Conversations",
+          "- OpenAI Releases ChatGPT AI Agent Skills",
+          "- Is AI Killing Entry-Level Jobs? | Office Hours"
+        ],
+        "bottom_20_sample": [
+          "- Binance CEO: 4 Months in Prison, $4 Billion Fine, and What Comes Next",
+          "- Building a $12,000,000 Business for a Stranger in 25 Minutes",
+          "- Building a $1,000,000 Business for a Stranger in 26 Minutes",
+          "- From $0 to a $3 BILLION Beauty Empire with Anastasia Soare",
+          "- Wall Street Is ALL-IN On Bitcoin"
+        ]
+      },
+      {
+        "dimension_index": 7,
+        "dimension_name": "embedding_reduced_08",
+        "definition": "Dimension 7 distinguishes content characterized by **urgent, often alarmist warnings and revelations about future societal upheavals or hidden controversies** from videos offering **measured, expert-driven analyses of current technological developments, market dynamics, and actionable business or personal growth strategies.**",
+        "top_20_sample": [
+          "- NASA's Warning: We Are 1 Year From Losing the Moon",
+          "- AI Warning: \"Millions of Humans Will Be Obsolete\"",
+          "- Epstein Files: The 6 Names the DOJ Didn't Want You to See",
+          "- Former Crown Prince of Iran: Why This Regime Must Be Taken Down",
+          "- Why AI will dwarf every tech revolution before it: robots, manufacturing, AR glasses from CES 2026"
+        ],
+        "bottom_20_sample": [
+          "- Ep9. GPT-4o, Astra, Multi Modal, China Tariffs, Tech Earnings | BG2 with Bill Gurley & Brad Gerstner",
+          "- Psychometric Testing",
+          "- Stargate, Executive Orders, TikTok, DOGE, Public Valuations | BG2 w/ Bill Gurley & Brad Gerstner",
+          "- Market Predictions, Rates & Inflation, DOGE, CES, AI Compute | BG2 w/ Bill Gurley & Brad Gerstner",
+          "- BG2 with Bill Gurley & Brad Gerstner | MANG VC Gone Wild, Can You Trust AI Valuations? & More | E01"
+        ]
+      },
+      {
+        "dimension_index": 8,
+        "dimension_name": "embedding_reduced_09",
+        "definition": "Dimension 8 distinguishes content focused on **immediate, often sensationalized news, current breakthroughs, or urgent market buzz in technology and finance** from videos providing **long-term macroeconomic predictions, geopolitical analyses, and theoretical discussions about future societal and economic models.**",
+        "top_20_sample": [
+          "- The AI Company Everyone Slept On Just Broke Every Record",
+          "- The Infinite Money Glitch is Broken!",
+          "- \"Ralph Wiggum\" AI Agent will 10x Claude Code/Amp",
+          "- My biggest announcement ever\u2026",
+          "- OpenAI Kills Sora & Hits $100M ARR on Ads | Oura Going Public & Whoop Raises at $10BN"
+        ],
+        "bottom_20_sample": [
+          "- What\u2019s Next for The World? | An Optimist\u2019s Guide to the Planet",
+          "- Why Isn't Bitcoin Going Up While Gold & Silver Are Surging?",
+          "- Are the Rich Really Leaving Britain?",
+          "- 35 - Network State Conference 2025 - Haseeb Qureshi of Dragonfly explains how to distribute tokens",
+          "- 28 - Network State Conference 2025 - Patri Friedman on charter cities and network states"
+        ]
+      },
+      {
+        "dimension_index": 9,
+        "dimension_name": "embedding_reduced_10",
+        "definition": "Dimension 9 differentiates content that critically analyzes failures, systemic problems, and shortcomings within industries or technologies from videos promoting optimistic opportunities, speculative success, and positive self-improvement.",
+        "top_20_sample": [
+          "- Mitchell Green: Why 50% of VCs Should Not Exist",
+          "- How Did the Metaverse Fail So Badly?",
+          "- Why Your Startup Website Isn't Converting",
+          "- Why the Original Apple Silicon Failed",
+          "- OpenClaw Creator: Why 80% Of Apps Will Disappear"
+        ],
+        "bottom_20_sample": [
+          "- The AI Race Will Make Bitcoin EXPLODE",
+          "- If You're in Your 20s or 30s, Here's How to Win (at Anything)",
+          "- They're Opening the Stock Market to Everyone. Here's What That Actually Means",
+          "- All-Time High Stocks\u2026 Bitcoin About To Explode?",
+          "- The Biggest Wealth Transfer In History is Happening Right Now!"
+        ]
+      },
+      {
+        "dimension_index": 10,
+        "dimension_name": "embedding_reduced_11",
+        "definition": "Dimension 10 differentiates content that analyzes **national and global systemic structures, foundational infrastructure, and high-level geopolitical strategies** from videos focused on **immediate market dynamics, price predictions, and investment commentary specifically within the cryptocurrency sector.**",
+        "top_20_sample": [
+          "- Inside America\u2019s AI Strategy: Infrastructure, Regulation, and Global Competition",
+          "- The Renaissance of the American Factory | a16z 2026 Big Ideas",
+          "- The Importance of the Health U.S.-China relations and of Our Oceans",
+          "- Context Engineering Our Way to Long-Horizon Agents: LangChain\u2019s Harrison Chase",
+          "- 54 - Network State Conference 2025 - James of A\u0302rc on the A\u0302rc L2 at Network School"
+        ],
+        "bottom_20_sample": [
+          "- Bitcoin Is Crashing and Exchanges Freezing Up",
+          "- Why Bitcoin Could Hit All-Time Highs Again in 2026",
+          "- AI Bubble, Stablecoin Boom, and Runnin' Down a Dream | BG2 w/ Bill Gurley and Brad Gerstner",
+          "- Bitcoin vs Gold vs Stocks: The Chart Everyone Misses",
+          "- The Bitcoin Rotation No One Sees Coming"
+        ]
+      },
+      {
+        "dimension_index": 11,
+        "dimension_name": "embedding_reduced_12",
+        "definition": "Dimension 11 distinguishes content focused on **strategic, macro-level discussions about the economic, geopolitical, and societal impact of AI and emerging technologies.** This contrasts with videos offering **tactical, micro-level guidance and technical explanations for specific AI tools and software applications.**",
+        "top_20_sample": [
+          "- The AI Agent Economy Is Here",
+          "- 6 Levels of AI Investing Everyone Should Know",
+          "- Jake Paul on Endorsing Trump & the AI Economy",
+          "- Ray Dalio\u2019s Best Advice for Young Entrepreneurs",
+          "- Marc Andreessen: The Truth About Immigration & DEI"
+        ],
+        "bottom_20_sample": [
+          "- Anthropic releases method to 10\u00d7 Claude Code / Opus 4.5",
+          "- Anthropic\u2019s Mythos is a cyber-weapon, so you can\u2019t have it | E2273",
+          "- How to Stand Out (without getting shot down)",
+          "- Ternary Computing: Theoretically Better than Binary",
+          "- Wildfires are out of control. Computer Vision can stop them."
+        ]
+      },
+      {
+        "dimension_index": 12,
+        "dimension_name": "embedding_reduced_13",
+        "definition": "Dimension 12 distinguishes content that explores **fundamental engineering principles, the historical evolution of technology, and universal philosophies of success** from videos offering **practical, often monetized, 'how-to' guides for leveraging specific, current AI tools and addressing immediate market trends.**",
+        "top_20_sample": [
+          "- The Supercritical CO2 Turbine: Waterless Wonder",
+          "- Chip Fabs in Space: Technically Possible, Completely Impractical",
+          "- Success IS NOT What you Think it Will Be",
+          "- 3D NAND: The Most Scalable Semiconductor",
+          "- The Most Important Founder You've Never Heard Of"
+        ],
+        "bottom_20_sample": [
+          "- How the Economic Machine Works - Part 4",
+          "- Can France Fix Its Debt Problem?",
+          "- Firecrawl AI clearly explained (and how to make $$)",
+          "- How OpenClaw (Clawdbot) Is Rewriting the Way Our Team Works with Rahul Sood | E2242",
+          "- Tokenizing US Treasuries With Don Wilson"
+        ]
+      },
+      {
+        "dimension_index": 13,
+        "dimension_name": "embedding_reduced_14",
+        "definition": "Dimension 13 distinguishes content focused on **the strategic and operational decisions of company founders, CEOs, and venture capitalists in building and scaling technology businesses** from videos offering **broad analyses of global economic systems, geopolitical forces, and fundamental technological infrastructure.**",
+        "top_20_sample": [
+          "- The Future Of Initialized Capital",
+          "- What\u2019s the Future of Vertical SaaS in an AGI World? Jamie Cuffe, CEO of Pace",
+          "- The Most Founder Mode CEO Working Today Isn\u2019t the Founder: Opendoor\u2019s Kaz Nejatian",
+          "- Solana Founder: Crypto Is About to Change Finance Like the Internet Changed Everything Else | EP#204",
+          "- Opendoor CEO: Housing Is Broken (Here\u2019s the Fix)"
+        ],
+        "bottom_20_sample": [
+          "- What Americans Get Wrong About China \u2014 Investor Bill Gurley",
+          "- How To Test 208 Billion Transistors",
+          "- Bill Gurley \u2014 The AI Era, 10 Days in China, & Life Lessons from Bob Dylan, Jerry Seinfeld,, and More",
+          "- How The Economic Machine Works: Part 2",
+          "- Ep13. Silicon Valley\u2019s Political 180, META AI, COVID Postmortem | BG2 w/ Bill Gurley & Brad Gerstner"
+        ]
+      },
+      {
+        "dimension_index": 14,
+        "dimension_name": "embedding_reduced_15",
+        "definition": "Dimension 14 distinguishes content focused on **foundational principles, systemic understanding, and macro-level analysis of economic, technological, or business systems** from videos offering **practical advice, specific case studies of individual companies or founders, and personal development strategies.**",
+        "top_20_sample": [
+          "- The 50-Year Mortgage: What You MUST Know!",
+          "- Precious Metal Miners: What you Need to Know.",
+          "- David Senra: Why the Best Are Not just 10% Better",
+          "- The Big Cycle: Reaching the Top",
+          "- The Big Cycle: Reaching the Top"
+        ],
+        "bottom_20_sample": [
+          "- 3 Steps to Becoming Your BEST SELF in 2026!",
+          "- Japanese Peril Created the Internet",
+          "- A behind-the-scenes interview with Lenny Rachitsky on building his newsletter and podcast",
+          "- How to Survive the Next Tech Revolution (w/ Brett Gibson)",
+          "- The Small Act of Kindness That Shaped Tony Robbins Life"
+        ]
+      },
+      {
+        "dimension_index": 15,
+        "dimension_name": "embedding_reduced_16",
+        "definition": "Dimension 15 distinguishes content offering **visionary, prescriptive frameworks and critical evaluations for designing or reforming systems, philosophies, and future paradigms** from videos providing **descriptive analysis and factual reporting of specific current events, company performances, or established market dynamics.**",
+        "top_20_sample": [
+          "- Philosophies on Failure & Learning",
+          "- Prediction Markets Are a Scam (With a Chart)",
+          "- Business is Hard Until You Build These Systems",
+          "- Passing Along My Investment and Economic Principles",
+          "- Bitcoin Is Crashing and Exchanges Freezing Up"
+        ],
+        "bottom_20_sample": [
+          "- TSMC Arizona: What About the Water?",
+          "- \"The Only Man In The Arena\" - Trump vs Iran: What REALLY Happened Behind Closed Doors",
+          "- Why Tim McGraw Never Hated His Absent Father",
+          "- Why I Founded OceanX",
+          "- How the Iran War Revealed a Truth About Gas"
+        ]
+      },
+      {
+        "dimension_index": 16,
+        "dimension_name": "embedding_reduced_17",
+        "definition": "Dimension 16 distinguishes content that explores **groundbreaking innovations and foundational shifts establishing new paradigms or systemic solutions across various domains** from videos offering **practical personal finance, short-term market analysis, or commentary on existing societal and economic challenges.**",
+        "top_20_sample": [
+          "- The Principles for Dealing with the Changing World Order - 5 Minute Version",
+          "- The Principles for Dealing with the Changing World Order - 5 Minute Version",
+          "- Principles for Dealing with the Changing World Order - 5 Minute",
+          "- Former Crown Prince of Iran: Why This Regime Must Be Taken Down",
+          "- How the Iran War Revealed a Truth About Gas"
+        ],
+        "bottom_20_sample": [
+          "- Can France Fix Its Debt Problem?",
+          "- If you\u2019re in your 40s, build a business on these trends.",
+          "- Is America Better Without Christianity?",
+          "- Home Depot Founder's \"Millionaire\" Business Strategy",
+          "- \"Ralph Wiggum\" AI Agent will 10x Claude Code/Amp"
+        ]
+      },
+      {
+        "dimension_index": 17,
+        "dimension_name": "embedding_reduced_18",
+        "definition": "Dimension 17 distinguishes content that provides **generalizable, actionable strategies and blueprints for entrepreneurial success, business growth, or personal financial improvement** from videos offering **insights into specific entities, detailed analyses of niche technological, economic, or philosophical concepts, or individual narratives.**",
+        "top_20_sample": [
+          "- Copy This Strategy, It'll Blow Up Your Business",
+          "- If you have career regrets in 2026, watch this.",
+          "- If I Wanted to Create a Business That Runs Itself, Here's What I'd Do",
+          "- If I Started A Business in 2026, I'd Do This",
+          "- How The Economic Machine Works: Part 2"
+        ],
+        "bottom_20_sample": [
+          "- Palo Alto Networks CEO Nikesh Arora on the Virtues of Being an Outsider",
+          "- 53 - Network State Conference 2025 - Punk 6529 on NFT Network States",
+          "- How Bitcoin Could Get To $10 MILLION Per Coin",
+          "- 37 - Network State Conference 2025 - Xen Baynham-Herd on the Base Network State",
+          "- Why Tim McGraw Never Hated His Absent Father"
+        ]
+      },
+      {
+        "dimension_index": 18,
+        "dimension_name": "embedding_reduced_19",
+        "definition": "Dimension 18 distinguishes content focused on **visionary, transformative strategies and opportunities for radical future change or significant impact, often emphasizing empowerment and aspiration for a new state,** from videos offering **detailed, specific analyses, historical accounts, or practical insights into established systems, past events, or concrete applications and outcomes.**",
+        "top_20_sample": [
+          "- How to Stand Out (without getting shot down)",
+          "- How to Start a 1-Person AI Business (With Zero Code)",
+          "- How to Stop Wasting Your Life (No More Distractions)",
+          "- How to Build Systems (So Your Business Runs Without You)",
+          "- World's #1 Mentalist: How To Win Any Negotiation and Close Any Deal"
+        ],
+        "bottom_20_sample": [
+          "- Ray Dalio On The Biggest Failure of His Career",
+          "- If I Wanted to Make $100K Before 2026, I\u2019d Do This",
+          "- Insights from Coatue's Growth Investor Lucas Swisher",
+          "- If I Wanted to Make My First $100K in 2026, I\u2019d Do This",
+          "- The Dangerous Feature in Tesla's Doors"
+        ]
+      },
+      {
+        "dimension_index": 19,
+        "dimension_name": "embedding_reduced_20",
+        "definition": "Dimension 19 distinguishes content primarily centered on **the processes, impacts, or narratives of significant change, transformation, and evolution across various scales** from videos focusing on **the analysis, application, or comparison of existing entities, systems, or strategies within their current state.**",
+        "top_20_sample": [
+          "- Ray Dalio On The Changing World Order",
+          "- Karpathy's \"autoresearch\" broke the internet",
+          "- Why the Bitcoin Narrative Is Shifting Right Now",
+          "- How to Change Your Life in 30 Days",
+          "- All Change?"
+        ],
+        "bottom_20_sample": [
+          "- I Ranked the Best AI Tools to Make Money in 2026",
+          "- $1M to $10M: The enterprise sales playbook with Jen Abel",
+          "- Principles for Success: The Call to Adventure",
+          "- Making $$$ with OpenClaw",
+          "- Best Holiday Gifts Under $100 That We Actually Use"
+        ]
+      }
+    ],
+    "simultaneous_interpretations": [
+      {
+        "dimension_index": 0,
+        "dimension_name": "Mindset & Personal Growth vs. Elite VC & Macro Commentary",
+        "top_name": "Personal Development & Success Mindset",
+        "bottom_name": "Elite VC, Hard Tech & Macroeconomics",
+        "top_description": "Content focused on broad life advice, psychological resilience, and general success principles for individuals.",
+        "bottom_description": "Expert-led podcast discussions and panels analyzing venture capital, specific technology trends (like AI compute), and global macroeconomic shifts.",
+        "definition": "This dimension contrasts broad, accessible advice on personal growth, mindset, and general entrepreneurial success with highly specialized, expert-led commentary on venture capital, deep technology markets, and macroeconomic policies.",
+        "dimension_column": "embedding_reduced_01"
+      },
+      {
+        "dimension_index": 1,
+        "dimension_name": "Investigative Case Studies vs. Prescriptive Wealth Hacks",
+        "top_name": "In-depth Reporting & Geopolitical Case Studies",
+        "bottom_name": "Hypothetical 'Get-Rich' Guides",
+        "top_description": "Investigative analyses of real-world entities, historical business bubbles, and significant geopolitical figures or states.",
+        "bottom_description": "Highly prescriptive, tactical, and often hypothetical guides aimed at individual wealth accumulation, solo-hustles, and 'zero-to-one' business hacks.",
+        "definition": "This dimension distinguishes content offering factual, investigative reporting on specific high-stakes companies and geopolitical events from highly speculative, prescriptive content designed to teach viewers fast wealth-building strategies.",
+        "dimension_column": "embedding_reduced_02"
+      },
+      {
+        "dimension_index": 2,
+        "dimension_name": "Speculative Societal Frameworks vs. Current Macro Crises",
+        "top_name": "Future-Focused Conferences & Societal Models",
+        "bottom_name": "Immediate Socio-Economic & Geopolitical Threats",
+        "top_description": "Discussions centered around future-oriented conferences, speculative governance (e.g., Network States), and upcoming technological paradigms.",
+        "bottom_description": "Reporting and critique on immediate real-world challenges such as inflation, infrastructure failures, war, and demographic crises.",
+        "definition": "This dimension contrasts visionary, forward-looking discussions about alternative societal structures and future tech conferences with grounded, urgent reporting on current economic, social, and geopolitical crises.",
+        "dimension_column": "embedding_reduced_03"
+      },
+      {
+        "dimension_index": 3,
+        "dimension_name": "Sensationalized Commentary vs. Objective Tech Innovation Analysis",
+        "top_name": "Emotionally Charged Political & Cultural Commentary",
+        "bottom_name": "Objective AI & Tech Industry Analysis",
+        "top_description": "Opinionated, often clickbait-style rhetoric focusing on political scandals, celebrity provocations, and dramatic philosophical assertions.",
+        "bottom_description": "Measured, data-driven discussions regarding the capabilities, economics, and real-world deployment of artificial intelligence and frontier tech.",
+        "definition": "This dimension separates content driven by sensationalism, emotional appeal, and aggressive cultural/political commentary from sober, informative, and objective analysis of technological advancements and AI enterprise solutions.",
+        "dimension_column": "embedding_reduced_04"
+      },
+      {
+        "dimension_index": 4,
+        "dimension_name": "Geo-Tech Policy Analysis vs. Thematic Asset Speculation",
+        "top_name": "High-Level Geo-Tech & Trade Policy",
+        "bottom_name": "Thematic Investment Forecasts (Crypto/Space/AI)",
+        "top_description": "Strategic debates on international tariffs, immigration, big tech regulation, and high-level corporate governance.",
+        "bottom_description": "Bullish, forward-looking financial forecasts specifically targeting niche technological breakthroughs like Bitcoin, reusable rockets, and autonomous vehicles.",
+        "definition": "This dimension differentiates broad, high-level discussions of international trade, tech policy, and corporate governance from highly targeted, speculative investment theses focusing on specific asset classes like crypto and space tech.",
+        "dimension_column": "embedding_reduced_05"
+      },
+      {
+        "dimension_index": 5,
+        "dimension_name": "Global Macro-Finance Systems vs. Micro-Productivity & Solo-Hustle",
+        "top_name": "Global Macroeconomic Forecasts",
+        "bottom_name": "Micro-Level Productivity & Founder Success Stories",
+        "top_description": "Analysis of global financial systems, fiat currency stability, international trade breakdowns, and macro market cycles.",
+        "bottom_description": "Tactical advice on personal workflow optimization, using specific AI tools for daily tasks, and inspirational micro-business success stories.",
+        "definition": "This dimension contrasts macro-level explorations of global financial architecture and systemic economic forecasts with micro-level, actionable content focused on individual productivity, workflow hacks, and solo entrepreneurship.",
+        "dimension_column": "embedding_reduced_06"
+      },
+      {
+        "dimension_index": 6,
+        "dimension_name": "Deep AI Capabilities vs. Broad Entrepreneurial Wealth Creation",
+        "top_name": "AI Technical Capabilities & Societal Impact",
+        "bottom_name": "General Entrepreneurship & Corporate Biographies",
+        "top_description": "Explorations of deep tech capabilities, specifically focusing on AI models, brain-computer interfaces, compute hardware, and their ethical implications.",
+        "bottom_description": "Broad narratives of building massive companies, general business acquisitions, and wealth creation across traditional and consumer sectors.",
+        "definition": "This dimension distinguishes content exclusively focused on the technical mechanics, development, and existential impact of artificial intelligence from broad, traditional stories of entrepreneurial wealth creation, consumer brands, and crypto finance.",
+        "dimension_column": "embedding_reduced_07"
+      },
+      {
+        "dimension_index": 7,
+        "dimension_name": "Alarmist Expos\u00e9s vs. Measured Business Strategy",
+        "top_name": "Catastrophic Warnings & Hidden Controversies",
+        "bottom_name": "Measured Tech & Business Strategy",
+        "top_description": "Urgent, alarmist content warning of societal collapse, exposing hidden political scandals, or predicting disastrous technological obsolescence.",
+        "bottom_description": "Routine, level-headed evaluations of current tech earnings, standard startup strategies, and practical software reviews.",
+        "definition": "This dimension separates emotionally urgent, fear-driven warnings and expos\u00e9s regarding systemic threats from grounded, routine analysis of everyday business operations, software usage, and market performance.",
+        "dimension_column": "embedding_reduced_08"
+      },
+      {
+        "dimension_index": 8,
+        "dimension_name": "Immediate Tech Hype vs. Long-Term Societal Theory",
+        "top_name": "Breaking Tech Buzz & Product Leaks",
+        "bottom_name": "Long-Term Macro Theory & Governance Models",
+        "top_description": "Sensationalized, immediate reactions to breaking software releases, AI tool leaks, and sudden corporate drama in the tech world.",
+        "bottom_description": "Slow, theoretical discourse on long-term macroeconomics, alternative governance structures (like Charter Cities), and demographic shifts.",
+        "definition": "This dimension contrasts the immediate, hype-driven news cycle surrounding new tech products and startup valuations with slow, theoretical, and academic discourse on long-term societal, economic, and geopolitical restructuring.",
+        "dimension_column": "embedding_reduced_09"
+      },
+      {
+        "dimension_index": 9,
+        "dimension_name": "Systemic Critiques & Failures vs. Bullish Market Speculation",
+        "top_name": "Industry Critiques & Post-Mortems",
+        "bottom_name": "Hyper-Optimistic Financial Speculation",
+        "top_description": "Critical analysis exploring why specific products, venture capital models, or historical tech initiatives failed or are fundamentally flawed.",
+        "bottom_description": "Highly optimistic, hype-driven content promoting massive incoming wealth transfers, explosive bull runs in crypto, and unlimited motivation.",
+        "definition": "This dimension differentiates critical, retrospective post-mortems of systemic failures and flawed business models from overly optimistic, forward-looking content promising explosive financial returns and market booms.",
+        "dimension_column": "embedding_reduced_10"
+      },
+      {
+        "dimension_index": 10,
+        "dimension_name": "National Industrial Strategy vs. Crypto Asset Price Action",
+        "top_name": "National Infrastructure & Geopolitical Strategy",
+        "bottom_name": "Cryptocurrency Price Dynamics",
+        "top_description": "Analyses of foundational physical infrastructure, energy grids, manufacturing bases, and international supply chain strategies.",
+        "bottom_description": "Real-time commentary on crypto market volatility, Bitcoin breakout predictions, and comparisons of digital assets versus precious metals.",
+        "definition": "This dimension distinguishes content focused on heavy physical infrastructure, national industrial policy, and global logistics from content strictly analyzing the immediate price movements and market sentiment of cryptocurrencies.",
+        "dimension_column": "embedding_reduced_11"
+      },
+      {
+        "dimension_index": 11,
+        "dimension_name": "Macro AI Economy vs. Tactical AI Coding Tutorials",
+        "top_name": "Macro AI Economic Impact & Leadership",
+        "bottom_name": "Tactical AI Coding & Software Tutorials",
+        "top_description": "High-level philosophical and economic perspectives from industry leaders on how AI will reshape global workforces, investing, and nations.",
+        "bottom_description": "Granular, screen-share-style tutorials on configuring specific AI coding assistants, fine-tuning APIs, and building local software tools.",
+        "definition": "This dimension contrasts visionary, macro-level economic philosophy from tech leaders about the AI era with highly tactical, micro-level tutorials on how to code and operate specific AI software tools.",
+        "dimension_column": "embedding_reduced_12"
+      },
+      {
+        "dimension_index": 12,
+        "dimension_name": "Fundamental Hardware Science vs. Applied AI Monetization",
+        "top_name": "Fundamental Engineering & Hardware Science",
+        "bottom_name": "Applied AI Tools & SaaS Monetization",
+        "top_description": "Deep-dives into the physics, history, and engineering of hardware, such as turbines, semiconductors, and spacecraft.",
+        "bottom_description": "Practical guides on leveraging contemporary software, AI agents, and online platforms to generate immediate revenue or automate workflows.",
+        "definition": "This dimension contrasts content detailing the rigorous, foundational engineering of physical hardware and thermodynamics with fast-paced, practical guides on monetizing software and AI applications.",
+        "dimension_column": "embedding_reduced_13"
+      },
+      {
+        "dimension_index": 13,
+        "dimension_name": "B2B SaaS Ecosystem vs. Broad Macro & Trade Policy",
+        "top_name": "Startup Ecosystem & B2B SaaS Strategy",
+        "bottom_name": "Macroeconomics & Global Tech Policy",
+        "top_description": "Inside baseball discussions on venture capital deployment, founder dynamics, and the operational scaling of B2B SaaS companies.",
+        "bottom_description": "Broad conversations analyzing global trade, geopolitical rivalries (e.g., US-China), and overarching macroeconomic constraints.",
+        "definition": "This dimension distinguishes content focused on the micro-mechanics of the venture capital and B2B SaaS startup ecosystem from broad, macro-level podcast discussions regarding international trade, geopolitics, and global tech policy.",
+        "dimension_column": "embedding_reduced_14"
+      },
+      {
+        "dimension_index": 14,
+        "dimension_name": "Systemic Financial Mechanics vs. Niche Creator Profiles",
+        "top_name": "Systemic Economic & Historical Principles",
+        "bottom_name": "Individual Creator & Startup Profiles",
+        "top_description": "Educational content explaining the fundamental mechanics of the economy (e.g., debt cycles), historical wealth accumulation, and universal business principles.",
+        "bottom_description": "Specific interviews and profiles focusing on individual creators, niche startups, and personal self-improvement tactics.",
+        "definition": "This dimension differentiates educational, foundational content that maps out universal economic and historical frameworks from granular, specific content profiling individual creators, niche businesses, and daily self-help routines.",
+        "dimension_column": "embedding_reduced_15"
+      },
+      {
+        "dimension_index": 15,
+        "dimension_name": "Conceptual System Design vs. Concrete Corporate Reporting",
+        "top_name": "Visionary Frameworks & System Design",
+        "bottom_name": "Concrete Geopolitical & Corporate News",
+        "top_description": "Abstract, conceptual discussions about reforming governance, building new societal frameworks, and foundational business philosophies.",
+        "bottom_description": "Factual, descriptive reporting on specific current events, corporate earnings, local geopolitical skirmishes, and concrete company updates.",
+        "definition": "This dimension contrasts abstract, visionary discourse aimed at redesigning societal and business frameworks with concrete, factual journalism covering immediate corporate developments and geopolitical news.",
+        "dimension_column": "embedding_reduced_16"
+      },
+      {
+        "dimension_index": 16,
+        "dimension_name": "Paradigm-Shifting Innovations vs. Conventional Business Tactics",
+        "top_name": "Deep Tech Innovations & Historical Paradigms",
+        "bottom_name": "Conventional Business Strategies & Consumer Finance",
+        "top_description": "Explorations of radical deep tech (nuclear, space, advanced compute) and monumental shifts in historical world orders.",
+        "bottom_description": "Discussions on standard retail business strategies, conventional national debt concerns, and incremental consumer software updates.",
+        "definition": "This dimension contrasts content about massive, paradigm-shifting technological breakthroughs and historical reorganizations with content discussing conventional, everyday retail business tactics and standard consumer finance.",
+        "dimension_column": "embedding_reduced_17"
+      },
+      {
+        "dimension_index": 17,
+        "dimension_name": "Generalizable Success Blueprints vs. Niche Subject Matter Deep Dives",
+        "top_name": "Actionable Business & Economic Frameworks",
+        "bottom_name": "Niche Autobiographies & Specialized Panels",
+        "top_description": "Highly structured, universally applicable guides on scaling businesses, mastering economic machines, and optimizing career trajectories.",
+        "bottom_description": "Highly specific, localized accounts, autobiographical stories, and specialized conference panels regarding niche Web3 concepts or personal histories.",
+        "definition": "This dimension separates content providing broad, actionable, and structured blueprints for economic and business success from highly specialized, niche content focusing on personal autobiographies or esoteric Web3 panels.",
+        "dimension_column": "embedding_reduced_18"
+      },
+      {
+        "dimension_index": 18,
+        "dimension_name": "Action-Oriented Solopreneurship vs. Historical & Engineering Retrospectives",
+        "top_name": "Action-Oriented Solo-Hustle & Empowerment",
+        "bottom_name": "Detailed Historical & Engineering Explainers",
+        "top_description": "High-energy, prescriptive guides aimed at empowering individuals to build solo businesses, eliminate distractions, and hack their productivity.",
+        "bottom_description": "Slow, methodical documentaries and explainers detailing past economic debt cycles, complex engineering hardware, and historical business failures.",
+        "definition": "This dimension contrasts forward-looking, high-energy content aimed at personal empowerment and solo-entrepreneurial action with backward-looking, methodical analysis of historical economic cycles and heavy engineering mechanics.",
+        "dimension_column": "embedding_reduced_19"
+      },
+      {
+        "dimension_index": 19,
+        "dimension_name": "Transformational Pivot Narratives vs. Static Tool Comparisons",
+        "top_name": "Narratives of Transformation & Change",
+        "bottom_name": "Static Tool Rankings & Playbooks",
+        "top_description": "Content focusing on the process of profound change, whether it's shifting global world orders, complete corporate restructuring, or massive narrative shifts.",
+        "bottom_description": "Utilitarian content offering static rankings, listicles, direct comparisons of existing tools, and fixed sales playbooks.",
+        "definition": "This dimension differentiates dynamic storytelling centered around profound structural, personal, or global transformations from static, utilitarian content focused on ranking existing tools, outlining fixed playbooks, and comparing products.",
+        "dimension_column": "embedding_reduced_20"
+      }
+    ]
+  },
+  "run_summary": {
+    "models_used": [
+      "gemini-1.5-flash",
+      "gemini-1.5-pro"
+    ],
+    "dimensions_processed": 20,
+    "timestamp": "2026-05-06T18:59:15Z"
+  }
+}
