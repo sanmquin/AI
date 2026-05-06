@@ -11,6 +11,7 @@ import DimensionChart from './components/DimensionChart';
 import DimensionTable from './components/DimensionTable';
 import HighlightVideos from './components/HighlightVideos';
 import CompetitionChart from './components/CompetitionChart';
+import Recommendations from './components/Recommendations';
 
 function App() {
   const [data, setData] = useState([]);
@@ -202,6 +203,9 @@ function App() {
             <li className={activeTab === 'dimensions' ? 'is-active' : ''}>
               <a onClick={() => setActiveTab('dimensions')}>Dimensions</a>
             </li>
+            <li className={activeTab === 'recommendations' ? 'is-active' : ''}>
+              <a onClick={() => setActiveTab('recommendations')}>Recommendations</a>
+            </li>
             <li className={activeTab === 'competition' ? 'is-active' : ''}>
               <a onClick={() => setActiveTab('competition')}>Competition</a>
             </li>
@@ -250,6 +254,12 @@ function App() {
             <Table data={filteredData} />
           </div>
         </>
+      ) : activeTab === 'recommendations' ? (
+        <Recommendations
+          videos={data}
+          selectedChannel={selectedChannel}
+          engagementCenters={engagementCenters}
+        />
       ) : activeTab === 'competition' ? (
         <>
           <CompetitionChart
