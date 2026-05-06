@@ -199,11 +199,11 @@ The next step is not invention. It is commercialization.
 ---
 
 ## Appendix — Repository Evidence Used
-- Research framing: `/home/runner/work/AI/AI/Research.md`
-- Platform overview and pipeline: `/home/runner/work/AI/AI/README.md`
-- Graph schema and artifact system: `/home/runner/work/AI/AI/src/Graphiko/README.md`
-- Web app contract and product surface: `/home/runner/work/AI/AI/webapp/src/App.jsx`
+- Research framing: `Research.md`
+- Platform overview and pipeline: `README.md`
+- Graph schema and artifact system: `src/Graphiko/README.md`
+- Web app contract and product surface: `webapp/src/App.jsx`
 - Channel and engagement artifacts:  
-  - `/home/runner/work/AI/AI/webapp/public/clusters.json`  
-  - `/home/runner/work/AI/AI/webapp/public/channels.json`  
-  - `/home/runner/work/AI/AI/webapp/public/engagement.json`
+  - `webapp/public/clusters.json`  
+  - `webapp/public/channels.json`  
+  - `webapp/public/engagement.json`
