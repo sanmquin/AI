@@ -7,6 +7,10 @@ import ClusterStats from './components/ClusterStats';
 import ChannelsChart from './components/ChannelsChart';
 import ChannelStatsTable from './components/ChannelStatsTable';
 import EngagementMetricsTable from './components/EngagementMetricsTable';
+import DimensionChart from './components/DimensionChart';
+import DimensionTable from './components/DimensionTable';
+import HighlightVideos from './components/HighlightVideos';
+import CompetitionChart from './components/CompetitionChart';
 
 function App() {
   const [data, setData] = useState([]);
@@ -19,6 +23,12 @@ function App() {
   const [error, setError] = useState(null);
   const [engagementCenters, setEngagementCenters] = useState([]);
   const [engagementMetrics, setEngagementMetrics] = useState([]);
+  const [dimensionDescriptions, setDimensionDescriptions] = useState([]);
+  const [predictions, setPredictions] = useState([]);
+  const [activeTab, setActiveTab] = useState('overview');
+
+  const [selectedX, setSelectedX] = useState(null);
+  const [selectedY, setSelectedY] = useState(null);
 
   useEffect(() => {
     let isMounted = true;
@@ -35,9 +45,17 @@ function App() {
       fetch('/engagement.json').then(res => {
         if (!res.ok) throw new Error('Failed to load engagement.json');
         return res.json();
+      }),
+      fetch('/descriptions.json').then(res => {
+        if (!res.ok) throw new Error('Failed to load descriptions.json');
+        return res.json();
+      }),
+      fetch('/predictions.json').then(res => {
+        if (!res.ok) throw new Error('Failed to load predictions.json');
+        return res.json();
       })
     ])
-      .then(([clustersData, channelsData, engagementData]) => {
+      .then(([clustersData, channelsData, engagementData, descriptionsData, predictionsData]) => {
         if (isMounted) {
           const videos = clustersData?.artifacts?.videos_clustered || [];
           setData(videos);
@@ -60,6 +78,12 @@ function App() {
 
           const metrics = engagementData?.artifacts?.channel_engagement_metrics || [];
           setEngagementMetrics(metrics);
+
+          const descriptions = descriptionsData?.artifacts?.dimension_interpretations || [];
+          setDimensionDescriptions(descriptions);
+
+          const channelModels = predictionsData?.artifacts?.channel_models || [];
+          setPredictions(channelModels);
 
           setLoading(false);
         }
@@ -84,6 +108,11 @@ function App() {
     return data.filter(item => item.channel_name === selectedChannel);
   }, [data, selectedChannel]);
 
+  const channelPredictions = useMemo(() => {
+    if (!selectedChannel) return [];
+    return predictions.filter(p => p.channel_name === selectedChannel);
+  }, [predictions, selectedChannel]);
+
   const channelStats = useMemo(() => {
     const statsMap = new Map();
     data.forEach(item => {
@@ -103,6 +132,34 @@ function App() {
     });
     return statsArray;
   }, [data]);
+
+  // Calculate default axes for HighlightVideos if they are null
+  const defaultAxes = useMemo(() => {
+      if (channelPredictions && channelPredictions.length > 0) {
+        let minCoef = Infinity;
+        let minIdx = 0;
+        let maxCoef = -Infinity;
+        let maxIdx = 0;
+
+        channelPredictions.forEach((p) => {
+          if (p.coefficient < minCoef) {
+            minCoef = p.coefficient;
+            minIdx = p.dimension_index;
+          }
+          if (p.coefficient > maxCoef) {
+            maxCoef = p.coefficient;
+            maxIdx = p.dimension_index;
+          }
+        });
+
+        return { x: minIdx.toString(), y: maxIdx.toString() };
+      }
+      return { x: '0', y: '1' }; // Fallback
+  }, [channelPredictions]);
+
+  const currentX = selectedX !== null ? selectedX : defaultAxes.x;
+  const currentY = selectedY !== null ? selectedY : defaultAxes.y;
+
 
   if (loading) {
     return <div className="container p-4"><p>Loading data...</p></div>;
@@ -136,6 +193,22 @@ function App() {
         />
       </div>
 
+      {selectedChannel && !showCenters && (
+        <div className="tabs is-boxed">
+          <ul>
+            <li className={activeTab === 'overview' ? 'is-active' : ''}>
+              <a onClick={() => setActiveTab('overview')}>Overview</a>
+            </li>
+            <li className={activeTab === 'dimensions' ? 'is-active' : ''}>
+              <a onClick={() => setActiveTab('dimensions')}>Dimensions</a>
+            </li>
+            <li className={activeTab === 'competition' ? 'is-active' : ''}>
+              <a onClick={() => setActiveTab('competition')}>Competition</a>
+            </li>
+          </ul>
+        </div>
+      )}
+
       {!selectedChannel || showCenters ? (
         <>
           <div className="box">
@@ -159,7 +232,7 @@ function App() {
             <EngagementMetricsTable data={engagementMetrics} />
           </div>
         </>
-      ) : (
+      ) : activeTab === 'overview' ? (
         <>
           <div className="columns">
             <div className="column is-full">
@@ -176,6 +249,36 @@ function App() {
             <h2 className="subtitle">Video List</h2>
             <Table data={filteredData} />
           </div>
+        </>
+      ) : activeTab === 'competition' ? (
+        <>
+          <CompetitionChart
+            videos={data}
+            selectedChannel={selectedChannel}
+          />
+        </>
+      ) : (
+        <>
+          <DimensionChart
+            data={filteredData}
+            predictions={channelPredictions}
+            dimensionDescriptions={dimensionDescriptions}
+            selectedX={selectedX}
+            selectedY={selectedY}
+            onXChange={setSelectedX}
+            onYChange={setSelectedY}
+          />
+
+          <HighlightVideos
+            data={filteredData}
+            selectedX={currentX}
+            selectedY={currentY}
+          />
+
+          <DimensionTable
+            descriptions={dimensionDescriptions}
+            predictions={channelPredictions}
+          />
         </>
       )}
     </div>
