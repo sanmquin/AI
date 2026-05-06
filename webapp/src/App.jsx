@@ -254,7 +254,6 @@ function App() {
         <>
           <CompetitionChart
             videos={data}
-            channelProjections={channelProjections}
             selectedChannel={selectedChannel}
           />
         </>
