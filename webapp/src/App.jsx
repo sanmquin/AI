@@ -280,6 +280,7 @@ function App() {
             descriptions={dimensionDescriptions}
             data={filteredData}
             selectedChannel={selectedChannel}
+            allVideos={data}
           />
         </>
       ) : (

@@ -1,4 +1,5 @@
 import { useMemo } from 'react';
+import { euclideanDistance } from '../utils/math';
 
 function humanizeViews(views) {
   if (views >= 1000000000) {
@@ -13,7 +14,35 @@ function humanizeViews(views) {
   return views.toString();
 }
 
-function ExportView({ predictions, descriptions, data, selectedChannel }) {
+function getStats(videos) {
+  let sumViews = 0;
+  let count = 0;
+  let sumEmbedding = new Array(20).fill(0);
+
+  videos.forEach(v => {
+    const views = typeof v.view_count === 'number' ? v.view_count : (typeof v.viewCount === 'number' ? v.viewCount : 0);
+    const embedding = v.embedding_20d;
+
+    if (embedding && embedding.length === 20) {
+      for (let i = 0; i < 20; i++) {
+        sumEmbedding[i] += embedding[i];
+      }
+      sumViews += views;
+      count += 1;
+    }
+  });
+
+  if (count > 0) {
+    return {
+      center: sumEmbedding.map(sum => sum / count),
+      avgViews: sumViews / count,
+      count
+    };
+  }
+  return null;
+}
+
+function ExportView({ predictions, descriptions, data, selectedChannel, allVideos }) {
   const markdownContent = useMemo(() => {
     if (!predictions || predictions.length === 0 || !data || data.length === 0) {
       return 'No data available for export.';
@@ -64,8 +93,128 @@ function ExportView({ predictions, descriptions, data, selectedChannel }) {
       }
     });
 
+    // ---------------------------------------------------------
+    // Competitor Analysis Section
+    // ---------------------------------------------------------
+    if (allVideos && allVideos.length > 0) {
+      md += `---\n\n`;
+      md += `## Competitor Analysis\n\n`;
+
+      // 1. Find the selected channel's cluster with the most engagement
+      const clustersForChannel = {};
+      data.forEach(v => {
+        if (!v.cluster_name) return;
+        if (!clustersForChannel[v.cluster_name]) {
+          clustersForChannel[v.cluster_name] = [];
+        }
+        clustersForChannel[v.cluster_name].push(v);
+      });
+
+      let bestClusterStats = null;
+      let maxAvgViews = -1;
+
+      Object.entries(clustersForChannel).forEach(([, videos]) => {
+        const stats = getStats(videos);
+        if (stats && stats.avgViews > maxAvgViews) {
+          maxAvgViews = stats.avgViews;
+          bestClusterStats = stats;
+        }
+      });
+
+      // Calculate overall channel average views for the selected channel
+      const selectedChannelStats = getStats(data);
+
+      if (bestClusterStats && selectedChannelStats) {
+        // Group all other channels
+        const otherChannels = {};
+        allVideos.forEach(v => {
+          if (v.channel_name === selectedChannel) return;
+          if (!otherChannels[v.channel_name]) {
+            otherChannels[v.channel_name] = [];
+          }
+          otherChannels[v.channel_name].push(v);
+        });
+
+        // 2. Find closest channels with *greater* engagement than the selected channel's overall average
+        const channelCandidates = [];
+        Object.entries(otherChannels).forEach(([channelName, videos]) => {
+          const stats = getStats(videos);
+          if (stats && stats.avgViews > selectedChannelStats.avgViews) {
+            const distance = euclideanDistance(bestClusterStats.center, stats.center);
+            channelCandidates.push({
+              channelName,
+              videos,
+              distance,
+              avgViews: stats.avgViews
+            });
+          }
+        });
+
+        // Sort by distance ascending and take top 3
+        channelCandidates.sort((a, b) => a.distance - b.distance);
+        const top3Competitors = channelCandidates.slice(0, 3);
+
+        if (top3Competitors.length > 0) {
+          md += `Closest channels with greater overall engagement than **${selectedChannel}** (based on its highest engagement cluster):\n\n`;
+
+          top3Competitors.forEach((competitor, idx) => {
+            md += `### ${idx + 1}. ${competitor.channelName}\n`;
+
+            // Group competitor's videos by cluster
+            const compClusters = {};
+            competitor.videos.forEach(v => {
+              const cName = v.cluster_name || 'Unclustered';
+              if (!compClusters[cName]) {
+                compClusters[cName] = [];
+              }
+              compClusters[cName].push(v);
+            });
+
+            // Find competitor's cluster closest to the selected channel's best cluster
+            let closestCompClusterName = null;
+            let minDistance = Infinity;
+            let closestCompVideos = [];
+
+            Object.entries(compClusters).forEach(([cName, videos]) => {
+              const stats = getStats(videos);
+              if (stats) {
+                const dist = euclideanDistance(bestClusterStats.center, stats.center);
+                if (dist < minDistance) {
+                  minDistance = dist;
+                  closestCompClusterName = cName;
+                  closestCompVideos = videos;
+                }
+              }
+            });
+
+            if (closestCompClusterName) {
+              // Sort videos in the closest cluster by view count descending
+              const sortedVideos = [...closestCompVideos].sort((a, b) => {
+                const viewsA = typeof a.view_count === 'number' ? a.view_count : (typeof a.viewCount === 'number' ? a.viewCount : 0);
+                const viewsB = typeof b.view_count === 'number' ? b.view_count : (typeof b.viewCount === 'number' ? b.viewCount : 0);
+                return viewsB - viewsA;
+              });
+
+              // Take top 10
+              const top10 = sortedVideos.slice(0, 10);
+
+              md += `**Closest Cluster:** ${closestCompClusterName}\n`;
+              md += `**Top Videos:**\n`;
+              top10.forEach((video) => {
+                const rawViews = typeof video.view_count === 'number' ? video.view_count : (typeof video.viewCount === 'number' ? video.viewCount : 0);
+                md += `- ${video.video_title} (${humanizeViews(rawViews)} views)\n`;
+              });
+              md += `\n`;
+            }
+          });
+        } else {
+          md += `No other channels found with greater engagement.\n\n`;
+        }
+      }
+    }
+
     return md;
-  }, [predictions, descriptions, data, selectedChannel]);
+  }, [predictions, descriptions, data, selectedChannel, allVideos]);
 
   return (
     <div className="box">
