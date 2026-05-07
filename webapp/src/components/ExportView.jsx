@@ -258,10 +258,29 @@ function ExportView({ predictions, descriptions, data, selectedChannel, allVideo
     return md;
   }, [predictions, descriptions, data, selectedChannel, allVideos, engagementCenters]);
 
+  const handleDownload = () => {
+    const blob = new Blob([markdownContent], { type: 'text/markdown;charset=utf-8;' });
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement('a');
+    link.href = url;
+    link.setAttribute('download', `${selectedChannel.replace(/\s+/g, '_')}_export.md`);
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    URL.revokeObjectURL(url);
+  };
+
   return (
     <div className="box">
-      <h2 className="subtitle">Markdown Export</h2>
-      <p className="mb-2">Copy the markdown below to export the top 3 most significant dimensions and their representative videos.</p>
+      <div className="is-flex is-justify-content-space-between is-align-items-center mb-2">
+        <div>
+          <h2 className="subtitle mb-1">Markdown Export</h2>
+          <p className="is-size-7">Copy the markdown below to export the top 3 most significant dimensions and their representative videos.</p>
+        </div>
+        <button className="button is-primary is-small" onClick={handleDownload}>
+          Download Markdown
+        </button>
+      </div>
       <div className="control">
         <textarea
           className="textarea is-family-code"
