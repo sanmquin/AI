@@ -281,6 +281,7 @@ function App() {
             data={filteredData}
             selectedChannel={selectedChannel}
             allVideos={data}
+            engagementCenters={engagementCenters}
           />
         </>
       ) : (
