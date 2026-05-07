@@ -1,9 +1,19 @@
 import { useMemo } from 'react';
 import { ScatterChart, Scatter, XAxis, YAxis, Tooltip, ResponsiveContainer, Cell, ReferenceLine } from 'recharts';
+import { scaleCenterToMaxDistance } from '../utils/math';
 
 const CustomTooltip = ({ active, payload, xIndex, yIndex }) => {
   if (active && payload && payload.length) {
     const data = payload[0].payload;
+    if (data.isEngagementCenter) {
+      return (
+        <div className="box" style={{ padding: '10px' }}>
+          <p><strong>Engagement Center</strong></p>
+          <p>Dim {xIndex}: {data.x.toFixed(4)}</p>
+          <p>Dim {yIndex}: {data.y.toFixed(4)}</p>
+        </div>
+      );
+    }
     return (
       <div className="box" style={{ padding: '10px' }}>
         <p><strong>{data.video_title}</strong></p>
@@ -16,26 +26,16 @@ const CustomTooltip = ({ active, payload, xIndex, yIndex }) => {
   return null;
 };
 
-function DimensionChart({ data, predictions, dimensionDescriptions, selectedX, selectedY, onXChange, onYChange }) {
+function DimensionChart({ data, predictions, dimensionDescriptions, selectedX, selectedY, onXChange, onYChange, engagementCenters, selectedChannel }) {
   const defaultAxes = useMemo(() => {
-    if (predictions && predictions.length > 0) {
-      let minCoef = Infinity;
-      let minIdx = 0;
-      let maxCoef = -Infinity;
-      let maxIdx = 0;
-
-      predictions.forEach((p) => {
-        if (p.coefficient < minCoef) {
-          minCoef = p.coefficient;
-          minIdx = p.dimension_index;
+    if (predictions && predictions.length >= 2) {
+      const sorted = [...predictions].sort((a, b) => {
+        if (a.p_value === b.p_value) {
+          return a.dimension_index - b.dimension_index;
         }
-        if (p.coefficient > maxCoef) {
-          maxCoef = p.coefficient;
-          maxIdx = p.dimension_index;
-        }
+        return a.p_value - b.p_value;
       });
-
-      return { x: minIdx.toString(), y: maxIdx.toString() };
+      return { x: sorted[0].dimension_index.toString(), y: sorted[1].dimension_index.toString() };
     }
     return { x: '0', y: '1' }; // Fallback
   }, [predictions]);
@@ -128,6 +128,35 @@ function DimensionChart({ data, predictions, dimensionDescriptions, selectedX, s
 
       return [{x: x1, y: y1}, {x: x2, y: y2}];
   }, [predictions, xIndex, yIndex, minX, maxX, minY, maxY, chartData]);
+
+  const engagementCenterPoint = useMemo(() => {
+    if (!engagementCenters || !selectedChannel || xIndex === '' || yIndex === '' || chartData.length === 0) return null;
+
+    const center = engagementCenters.find((item) => item.channel_name === selectedChannel);
+    if (!center || !Array.isArray(center.engagement_center_20d) || center.engagement_center_20d.length < 20) {
+      return null;
+    }
+
+    const xNum = parseInt(xIndex, 10);
+    const yNum = parseInt(yIndex, 10);
+
+    const rawX = center.engagement_center_20d[xNum];
+    const rawY = center.engagement_center_20d[yNum];
+
+    const maxVideoDistance = chartData.reduce((maxDist, item) => {
+      const pointDist = Math.sqrt(item.x * item.x + item.y * item.y);
+      return Math.max(maxDist, pointDist);
+    }, 0);
+
+    const [scaledX, scaledY] = scaleCenterToMaxDistance(rawX, rawY, maxVideoDistance);
+
+    return {
+      x: scaledX,
+      y: scaledY,
+      isEngagementCenter: true
+    };
+  }, [engagementCenters, selectedChannel, xIndex, yIndex, chartData]);
+
 
   const xLabel = dimensionDescriptions[parseInt(xIndex, 10)]
       ? `Dim ${xIndex}: ${dimensionDescriptions[parseInt(xIndex, 10)].substring(0, 40)}...`
@@ -227,6 +256,15 @@ function DimensionChart({ data, predictions, dimensionDescriptions, selectedX, s
                 strokeDasharray="5 5"
                 label="Engagement Growth Direction"
               />
+            )}
+            {engagementCenterPoint && (
+              <Scatter
+                name="Engagement Center"
+                data={[engagementCenterPoint]}
+                fill="#ffffff"
+              >
+                <Cell fill="#ffffff" stroke="#000000" strokeWidth={1} />
+              </Scatter>
             )}
           </ScatterChart>
         </ResponsiveContainer>

@@ -1,5 +1,6 @@
 import { useState, useMemo } from 'react';
 import { ScatterChart, Scatter, XAxis, YAxis, Tooltip, ResponsiveContainer, Legend, Cell } from 'recharts';
+import { scaleCenterToMaxDistance } from '../utils/math';
 
 // Simple color palette for clusters
 const COLORS = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042', '#8884d8', '#82ca9d'];
@@ -87,7 +88,6 @@ function Chart({ data, selectedChannel, engagementCenters = [] }) {
 
     const rawX = center.engagement_center_20d[0];
     const rawY = center.engagement_center_20d[1];
-    const distance = Math.sqrt(rawX * rawX + rawY * rawY);
 
     const maxVideoDistance = data.reduce((maxDistance, item) => {
       const pointX = item.embedding_2d && item.embedding_2d.length >= 2 ? item.embedding_2d[0] : item.x;
@@ -101,18 +101,11 @@ function Chart({ data, selectedChannel, engagementCenters = [] }) {
       return Math.max(maxDistance, pointDistance);
     }, 0);
 
-    let x = rawX;
-    let y = rawY;
-
-    if (maxVideoDistance > 0 && distance > maxVideoDistance) {
-      const scale = maxVideoDistance / distance;
-      x = rawX * scale;
-      y = rawY * scale;
-    }
+    const [scaledX, scaledY] = scaleCenterToMaxDistance(rawX, rawY, maxVideoDistance);
 
     return {
-      x,
-      y,
+      x: scaledX,
+      y: scaledY,
       isEngagementCenter: true,
       channel_name: selectedChannel,
     };

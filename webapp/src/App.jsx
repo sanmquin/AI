@@ -9,7 +9,7 @@ import ChannelStatsTable from './components/ChannelStatsTable';
 import EngagementMetricsTable from './components/EngagementMetricsTable';
 import DimensionChart from './components/DimensionChart';
 import DimensionTable from './components/DimensionTable';
-import HighlightVideos from './components/HighlightVideos';
+import PerformanceVideoTable from './components/PerformanceVideoTable';
 import CompetitionChart from './components/CompetitionChart';
 import Recommendations from './components/Recommendations';
 import ExportView from './components/ExportView';
@@ -135,26 +135,16 @@ function App() {
     return statsArray;
   }, [data]);
 
-  // Calculate default axes for HighlightVideos if they are null
+  // Calculate default axes based on top p_value
   const defaultAxes = useMemo(() => {
-      if (channelPredictions && channelPredictions.length > 0) {
-        let minCoef = Infinity;
-        let minIdx = 0;
-        let maxCoef = -Infinity;
-        let maxIdx = 0;
-
-        channelPredictions.forEach((p) => {
-          if (p.coefficient < minCoef) {
-            minCoef = p.coefficient;
-            minIdx = p.dimension_index;
+      if (channelPredictions && channelPredictions.length >= 2) {
+        const sorted = [...channelPredictions].sort((a, b) => {
+          if (a.p_value === b.p_value) {
+            return a.dimension_index - b.dimension_index;
           }
-          if (p.coefficient > maxCoef) {
-            maxCoef = p.coefficient;
-            maxIdx = p.dimension_index;
-          }
+          return a.p_value - b.p_value;
         });
-
-        return { x: minIdx.toString(), y: maxIdx.toString() };
+        return { x: sorted[0].dimension_index.toString(), y: sorted[1].dimension_index.toString() };
       }
       return { x: '0', y: '1' }; // Fallback
   }, [channelPredictions]);
@@ -201,8 +191,8 @@ function App() {
             <li className={activeTab === 'overview' ? 'is-active' : ''}>
               <a onClick={() => setActiveTab('overview')}>Overview</a>
             </li>
-            <li className={activeTab === 'dimensions' ? 'is-active' : ''}>
-              <a onClick={() => setActiveTab('dimensions')}>Dimensions</a>
+            <li className={activeTab === 'performance' ? 'is-active' : ''}>
+              <a onClick={() => setActiveTab('performance')}>Performance</a>
             </li>
             <li className={activeTab === 'competition' ? 'is-active' : ''}>
               <a onClick={() => setActiveTab('competition')}>Competition</a>
@@ -282,7 +272,7 @@ function App() {
             selectedChannel={selectedChannel}
           />
         </>
-      ) : (
+      ) : activeTab === 'performance' ? (
         <>
           <DimensionChart
             data={filteredData}
@@ -292,12 +282,16 @@ function App() {
             selectedY={selectedY}
             onXChange={setSelectedX}
             onYChange={setSelectedY}
+            engagementCenters={engagementCenters}
+            selectedChannel={selectedChannel}
           />
 
-          <HighlightVideos
+          <PerformanceVideoTable
             data={filteredData}
             selectedX={currentX}
             selectedY={currentY}
+            engagementCenters={engagementCenters}
+            selectedChannel={selectedChannel}
           />
 
           <DimensionTable
@@ -305,7 +299,7 @@ function App() {
             predictions={channelPredictions}
           />
         </>
-      )}
+      ) : null}
     </div>
   );
 }
