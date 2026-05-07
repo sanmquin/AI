@@ -12,6 +12,7 @@ import DimensionTable from './components/DimensionTable';
 import HighlightVideos from './components/HighlightVideos';
 import CompetitionChart from './components/CompetitionChart';
 import Recommendations from './components/Recommendations';
+import ExportView from './components/ExportView';
 
 function App() {
   const [data, setData] = useState([]);
@@ -209,6 +210,9 @@ function App() {
             <li className={activeTab === 'recommendations' ? 'is-active' : ''}>
               <a onClick={() => setActiveTab('recommendations')}>Recommendations</a>
             </li>
+            <li className={activeTab === 'export' ? 'is-active' : ''}>
+              <a onClick={() => setActiveTab('export')}>Export</a>
+            </li>
           </ul>
         </div>
       )}
@@ -267,6 +271,15 @@ function App() {
             allVideos={data}
             selectedChannel={selectedChannel}
             engagementCenters={engagementCenters}
+          />
+        </>
+      ) : activeTab === 'export' ? (
+        <>
+          <ExportView
+            predictions={channelPredictions}
+            descriptions={dimensionDescriptions}
+            data={filteredData}
+            selectedChannel={selectedChannel}
           />
         </>
       ) : (
