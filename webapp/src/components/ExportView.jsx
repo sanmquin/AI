@@ -1,5 +1,5 @@
 import { useMemo } from 'react';
-import { euclideanDistance } from '../utils/math';
+import { euclideanDistance, normalizeVector } from '../utils/math';
 
 function humanizeViews(views) {
   if (views >= 1000000000) {
@@ -42,7 +42,7 @@ function getStats(videos) {
   return null;
 }
 
-function ExportView({ predictions, descriptions, data, selectedChannel, allVideos }) {
+function ExportView({ predictions, descriptions, data, selectedChannel, allVideos, engagementCenters }) {
   const markdownContent = useMemo(() => {
     if (!predictions || predictions.length === 0 || !data || data.length === 0) {
       return 'No data available for export.';
@@ -213,8 +213,50 @@ function ExportView({ predictions, descriptions, data, selectedChannel, allVideo
       }
     }
 
+    // ---------------------------------------------------------
+    // Top Engagement Videos Section
+    // ---------------------------------------------------------
+    if (allVideos && allVideos.length > 0 && engagementCenters && engagementCenters.length > 0) {
+      const centerData = engagementCenters.find(item => item.channel_name === selectedChannel);
+
+      if (centerData && Array.isArray(centerData.engagement_center_20d) && centerData.engagement_center_20d.length === 20) {
+        const normalizedCenter = normalizeVector(centerData.engagement_center_20d);
+
+        const videosWithDistance = [];
+        allVideos.forEach(v => {
+          const embedding = v.embedding_20d;
+          if (embedding && embedding.length === 20) {
+            // Distance calculated against normalized engagement center per memory instruction
+            const distance = euclideanDistance(embedding, normalizedCenter);
+            // Engagement metric currently uses views, though could use predicted engagement
+            const views = typeof v.view_count === 'number' ? v.view_count : (typeof v.viewCount === 'number' ? v.viewCount : 0);
+            videosWithDistance.push({ ...v, distance, view_count: views });
+          }
+        });
+
+        // Select closest 100 videos by distance
+        videosWithDistance.sort((a, b) => a.distance - b.distance);
+        const closest100 = videosWithDistance.slice(0, 100);
+
+        // Select top 20 by engagement (views) from the closest 100, then order them by views
+        closest100.sort((a, b) => b.view_count - a.view_count);
+        const top20Engagement = closest100.slice(0, 20);
+
+        if (top20Engagement.length > 0) {
+          md += `---\n\n`;
+          md += `## Top 20 Engagement Videos (Closest to Engagement Center)\n\n`;
+
+          top20Engagement.forEach((video, i) => {
+            md += `${i + 1}. **${video.video_title}** (${humanizeViews(video.view_count)} views, Distance: ${video.distance.toFixed(4)})\n`;
+            md += `   - Channel: ${video.channel_name}\n`;
+            md += `   - Link: https://www.youtube.com/watch?v=${video.video_id}\n\n`;
+          });
+        }
+      }
+    }
+
     return md;
-  }, [predictions, descriptions, data, selectedChannel, allVideos]);
+  }, [predictions, descriptions, data, selectedChannel, allVideos, engagementCenters]);
 
   return (
     <div className="box">
