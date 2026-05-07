@@ -137,14 +137,14 @@ function DimensionChart({ data, predictions, dimensionDescriptions, selectedX, s
       return null;
     }
 
-    const normalizedCenter = normalizeVector(center.engagement_center_20d);
-
     const xNum = parseInt(xIndex, 10);
     const yNum = parseInt(yIndex, 10);
 
+    const normalizedCenter = normalizeVector(center.engagement_center_20d, [xNum, yNum]);
+
     return {
-      x: normalizedCenter[xNum],
-      y: normalizedCenter[yNum],
+      x: normalizedCenter[0], // normalized subset dimension 0 (xNum)
+      y: normalizedCenter[1], // normalized subset dimension 1 (yNum)
       isEngagementCenter: true
     };
   }, [engagementCenters, selectedChannel, xIndex, yIndex]);

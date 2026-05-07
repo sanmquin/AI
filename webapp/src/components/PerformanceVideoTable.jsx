@@ -14,7 +14,7 @@ function PerformanceVideoTable({ data, selectedX, selectedY, engagementCenters, 
     if (engagementCenters && selectedChannel) {
       const centerData = engagementCenters.find(c => c.channel_name === selectedChannel);
       if (centerData && Array.isArray(centerData.engagement_center_20d) && centerData.engagement_center_20d.length >= 20) {
-        normalizedCenter = normalizeVector(centerData.engagement_center_20d);
+        normalizedCenter = normalizeVector(centerData.engagement_center_20d, [xNum, yNum]);
       }
     }
 
@@ -27,8 +27,8 @@ function PerformanceVideoTable({ data, selectedX, selectedY, engagementCenters, 
 
       let distance = null;
       if (normalizedCenter) {
-        const dx = xVal - normalizedCenter[xNum];
-        const dy = yVal - normalizedCenter[yNum];
+        const dx = xVal - normalizedCenter[0];
+        const dy = yVal - normalizedCenter[1];
         distance = Math.sqrt(dx * dx + dy * dy);
       }
 
