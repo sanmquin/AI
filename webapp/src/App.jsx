@@ -11,6 +11,8 @@ import DimensionChart from './components/DimensionChart';
 import DimensionTable from './components/DimensionTable';
 import HighlightVideos from './components/HighlightVideos';
 import CompetitionChart from './components/CompetitionChart';
+import Recommendations from './components/Recommendations';
+import ExportView from './components/ExportView';
 
 function App() {
   const [data, setData] = useState([]);
@@ -26,6 +28,8 @@ function App() {
   const [dimensionDescriptions, setDimensionDescriptions] = useState([]);
   const [predictions, setPredictions] = useState([]);
   const [activeTab, setActiveTab] = useState('overview');
+  const [homeTab, setHomeTab] = useState('overview');
+  const [globalPredictions, setGlobalPredictions] = useState([]);
 
   const [selectedX, setSelectedX] = useState(null);
   const [selectedY, setSelectedY] = useState(null);
@@ -83,6 +87,8 @@ function App() {
           setDimensionDescriptions(descriptions);
 
           const channelModels = predictionsData?.artifacts?.channel_models || [];
+          const globalModel = predictionsData?.artifacts?.global_model || [];
+          setGlobalPredictions(globalModel);
           setPredictions(channelModels);
 
           setLoading(false);
@@ -205,32 +211,60 @@ function App() {
             <li className={activeTab === 'competition' ? 'is-active' : ''}>
               <a onClick={() => setActiveTab('competition')}>Competition</a>
             </li>
+            <li className={activeTab === 'recommendations' ? 'is-active' : ''}>
+              <a onClick={() => setActiveTab('recommendations')}>Recommendations</a>
+            </li>
+            <li className={activeTab === 'export' ? 'is-active' : ''}>
+              <a onClick={() => setActiveTab('export')}>Export</a>
+            </li>
           </ul>
         </div>
       )}
 
       {!selectedChannel || showCenters ? (
         <>
-          <div className="box">
-            <h2 className="subtitle">Channels Overview (2D Projection)</h2>
-            <ChannelsChart
-              data={channelProjections}
-              videos={data}
-              showCenters={showCenters}
-              setShowCenters={setShowCenters}
-              selectedChannels={selectedChannelsMulti}
+          {!showCenters && (
+            <div className="tabs is-boxed">
+              <ul>
+                <li className={homeTab === 'overview' ? 'is-active' : ''}>
+                  <a onClick={() => setHomeTab('overview')}>Overview</a>
+                </li>
+                <li className={homeTab === 'dimensions' ? 'is-active' : ''}>
+                  <a onClick={() => setHomeTab('dimensions')}>Dimensions</a>
+                </li>
+              </ul>
+            </div>
+          )}
+
+          {homeTab === 'overview' || showCenters ? (
+            <>
+              <div className="box">
+                <h2 className="subtitle">Channels Overview (2D Projection)</h2>
+                <ChannelsChart
+                  data={channelProjections}
+                  videos={data}
+                  showCenters={showCenters}
+                  setShowCenters={setShowCenters}
+                  selectedChannels={selectedChannelsMulti}
+                />
+              </div>
+
+              <div className="box">
+                <h2 className="subtitle">Channel Cluster Performance</h2>
+                <ChannelStatsTable data={channelStats} onSelectChannel={setSelectedChannel} />
+              </div>
+
+              <div className="box">
+                <h2 className="subtitle">Engagement Metrics Overview</h2>
+                <EngagementMetricsTable data={engagementMetrics} />
+              </div>
+            </>
+          ) : (
+            <DimensionTable
+              descriptions={dimensionDescriptions}
+              predictions={globalPredictions}
             />
-          </div>
-
-          <div className="box">
-            <h2 className="subtitle">Channel Cluster Performance</h2>
-            <ChannelStatsTable data={channelStats} onSelectChannel={setSelectedChannel} />
-          </div>
-
-          <div className="box">
-            <h2 className="subtitle">Engagement Metrics Overview</h2>
-            <EngagementMetricsTable data={engagementMetrics} />
-          </div>
+          )}
         </>
       ) : activeTab === 'overview' ? (
         <>
@@ -255,6 +289,25 @@ function App() {
           <CompetitionChart
             videos={data}
             selectedChannel={selectedChannel}
+          />
+        </>
+      ) : activeTab === 'recommendations' ? (
+        <>
+          <Recommendations predictions={channelPredictions} descriptions={dimensionDescriptions}
+            allVideos={data}
+            selectedChannel={selectedChannel}
+            engagementCenters={engagementCenters}
+          />
+        </>
+      ) : activeTab === 'export' ? (
+        <>
+          <ExportView
+            predictions={channelPredictions}
+            descriptions={dimensionDescriptions}
+            data={filteredData}
+            selectedChannel={selectedChannel}
+            allVideos={data}
+            engagementCenters={engagementCenters}
           />
         </>
       ) : (
