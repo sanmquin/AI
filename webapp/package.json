@@ -13,7 +13,9 @@
     "bulma": "^1.0.4",
     "react": "^19.2.5",
     "react-dom": "^19.2.5",
-    "recharts": "^3.8.1"
+    "react-select": "^5.10.2",
+    "recharts": "^3.8.1",
+    "simple-statistics": "^7.8.9"
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",

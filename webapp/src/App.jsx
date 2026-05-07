@@ -267,7 +267,7 @@ function App() {
         </>
       ) : activeTab === 'recommendations' ? (
         <>
-          <Recommendations
+          <Recommendations predictions={channelPredictions} descriptions={dimensionDescriptions}
             allVideos={data}
             selectedChannel={selectedChannel}
             engagementCenters={engagementCenters}
