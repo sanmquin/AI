@@ -63,4 +63,4 @@ All notebooks follow the conventions in `docs/Graphiko/coding_guidelines.md`:
 - Channel **names** (not opaque IDs) are used in all human-facing outputs.
 - Artifacts are written with stable `latest/` pointers.
 - Skip-if-exists logic is applied to any LLM-generated artifact so re-running a notebook does not incur unnecessary API calls.
-- Each notebook includes a local headless fallback with dummy data so it can be executed in CI without Drive access.
+- Each notebook detects non-Colab environments via an `is_colab` flag and generates synthetic dummy data, allowing the full notebook to execute locally or offline without Drive access.
