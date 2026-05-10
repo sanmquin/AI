@@ -46,3 +46,25 @@ The output shape is:
 ```
 
 By default, only channels present in all three source artifacts are included so every channel has three comparable descriptions. To include channels that are missing one or more source descriptions, set `REQUIRE_ALL_SOURCES = False` in the notebook configuration cell before running the merge.
+
+## Description cosine-similarity matrices
+
+After the merged JSON object is written, `Merge-Drive-Descriptions.ipynb` can encode each source's channel descriptions with the configured Sentence Transformers model (`sentence-transformers/all-MiniLM-L6-v2` by default) and compute one symmetric cosine-similarity matrix per source description set.
+
+The default matrix output directory is:
+
+```text
+/content/drive/MyDrive/Graphiko/research/merged_channel_descriptions/latest/description_cosine_similarity_matrices/
+```
+
+The notebook writes one CSV per source:
+
+- `Jules_description_cosine_similarity.csv`
+- `codex_description_cosine_similarity.csv`
+- `copilot_description_cosine_similarity.csv`
+
+Each CSV is a square channel-by-channel matrix. The first column and header row contain the channel names in identical order, each cell contains the cosine similarity for that row/column channel pair, and the matrix is symmetric by construction. A `manifest.json` file records the model name, output paths, and channel counts. When `WRITE_DESCRIPTION_EMBEDDINGS = True`, the notebook also writes the normalized per-description embedding vectors to:
+
+```text
+/content/drive/MyDrive/Graphiko/research/merged_channel_descriptions/latest/description_embeddings/
+```
