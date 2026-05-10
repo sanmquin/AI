@@ -1,0 +1,151 @@
+:root {
+  color: #1f2937;
+  background: #f4f7fb;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  background: #f4f7fb;
+}
+
+button {
+  font: inherit;
+}
+
+.admin-shell {
+  display: flex;
+  min-height: 100vh;
+}
+
+.admin-sidebar {
+  position: sticky;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  width: 280px;
+  height: 100vh;
+  padding: 1.5rem;
+  color: #f8fafc;
+  background: linear-gradient(180deg, #111827 0%, #1f245c 100%);
+}
+
+.brand-block {
+  display: flex;
+  gap: 0.85rem;
+  align-items: center;
+}
+
+.brand-mark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 14px;
+  color: #111827;
+  background: #00d1b2;
+  font-weight: 800;
+}
+
+.admin-sidebar .menu-label {
+  color: #a7b4d8;
+  letter-spacing: 0.08em;
+}
+
+.admin-sidebar .menu-list button {
+  width: 100%;
+  padding: 0.75rem 0.85rem;
+  border: 0;
+  border-radius: 12px;
+  color: #dce5ff;
+  background: transparent;
+  cursor: pointer;
+  text-align: left;
+}
+
+.admin-sidebar .menu-list button:hover,
+.admin-sidebar .menu-list button.is-active {
+  color: #fff;
+  background: rgb(255 255 255 / 12%);
+}
+
+.sidebar-footer {
+  margin-top: auto;
+  padding-top: 1.5rem;
+}
+
+.admin-main {
+  flex: 1;
+  min-width: 0;
+}
+
+.admin-hero {
+  background:
+    radial-gradient(circle at top right, rgb(0 209 178 / 22%), transparent 30%),
+    linear-gradient(135deg, #ffffff 0%, #eef5ff 100%);
+  border-bottom: 1px solid #dce5ef;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.admin-card {
+  border: 1px solid #e4eaf3;
+  border-radius: 18px;
+  box-shadow: 0 18px 45px rgb(15 23 42 / 6%);
+}
+
+.metric-card {
+  min-height: 138px;
+}
+
+.admin-table th {
+  color: #64748b;
+  font-size: 0.75rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.service-list {
+  display: grid;
+  gap: 1rem;
+}
+
+.service-row .progress {
+  height: 0.55rem;
+}
+
+.timeline .media {
+  align-items: flex-start;
+}
+
+.timeline-dot {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  margin-top: 0.45rem;
+  border: 3px solid #00d1b2;
+  border-radius: 999px;
+  background: #fff;
+}
+
+@media (max-width: 1023px) {
+  .admin-shell {
+    display: block;
+  }
+
+  .admin-sidebar {
+    position: static;
+    width: 100%;
+    height: auto;
+  }
+
+  .sidebar-footer {
+    margin-top: 1.5rem;
+  }
+}
