@@ -1,0 +1,82 @@
+:root {
+  background: #f4f6fb;
+}
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+.admin-shell {
+  display: flex;
+  min-height: 100vh;
+  background: #f4f6fb;
+}
+
+.admin-sidebar {
+  width: 280px;
+  flex: 0 0 280px;
+  background: #14161a;
+  box-shadow: 12px 0 30px rgba(20, 22, 26, 0.1);
+}
+
+.admin-sidebar .menu-list a {
+  color: #d5d9e2;
+  border-radius: 12px;
+}
+
+.admin-sidebar .menu-list a:hover,
+.admin-sidebar .menu-list a.is-active {
+  background: #3273dc;
+  color: #fff;
+}
+
+.admin-main {
+  flex: 1;
+  min-width: 0;
+}
+
+.admin-hero {
+  border-bottom-left-radius: 28px;
+}
+
+.metric-card {
+  border: 1px solid rgba(50, 115, 220, 0.08);
+}
+
+.h-100 {
+  height: 100%;
+}
+
+.gap-4 {
+  gap: 1rem;
+}
+
+.audit-dot {
+  display: inline-flex;
+  width: 0.85rem;
+  height: 0.85rem;
+  margin-top: 0.35rem;
+  border-radius: 999px;
+  background: #3273dc;
+  box-shadow: 0 0 0 6px rgba(50, 115, 220, 0.12);
+}
+
+.timeline-list .media:not(:last-child) {
+  border-bottom: 1px solid #edf0f7;
+}
+
+@media (max-width: 960px) {
+  .admin-shell {
+    flex-direction: column;
+  }
+
+  .admin-sidebar {
+    width: 100%;
+    flex-basis: auto;
+  }
+
+  .admin-hero {
+    border-bottom-left-radius: 0;
+  }
+}
