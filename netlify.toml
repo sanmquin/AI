@@ -1,7 +1,7 @@
 [build]
   base = "webapp"
   publish = "dist"
-  command = "npm install && npm run build"
+  command = "npm install && npm run build && cd ../admin && npm install && npm run build && cp -r dist ../webapp/dist/admin"
 
 [build.environment]
   # Documenting environment variables:
