@@ -1,13 +1,22 @@
 [build]
-  base = "webapp"
   publish = "dist"
-  command = "npm install && npm run build"
+  command = "bash scripts/build-netlify.sh"
 
 [build.environment]
   # Documenting environment variables:
   # Add required environment variables here or in the Netlify UI.
   # VITE_API_URL = "The URL of the backend API"
   # VITE_APP_MODE = "Development or production mode"
+
+[[redirects]]
+  from = "/admin/*"
+  to = "/admin/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
 
 [context.branch-deploy]
   # Do not set branch deployments

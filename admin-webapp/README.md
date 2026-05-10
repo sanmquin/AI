@@ -1,6 +1,6 @@
 # Admin Web App
 
-A Vite-powered React + TypeScript admin console styled with Bulma. The app provides a responsive operations dashboard with metric cards, a review queue, service health indicators, and an audit trail.
+A minimal Vite-powered React + TypeScript admin page styled with Bulma.
 
 ## Scripts
 
@@ -12,10 +12,16 @@ npm run build
 
 ## Netlify
 
-The repository includes `netlify.admin.toml` at the repo root for deploying this app as a separate Netlify site:
+This repository now uses one Netlify config: the root `netlify.toml`.
 
-```bash
-netlify deploy --config netlify.admin.toml --build
-```
+Netlify reads one config file per site by default. It will not automatically read both `netlify.toml` and a second custom TOML file. The root config builds:
 
-Use `--prod` when promoting a verified deploy to production.
+- the existing main app from `webapp/`
+- this admin app from `admin-webapp/`
+
+The build output is combined into root `dist/` so both apps deploy to the same Netlify domain:
+
+- `/` serves the main app
+- `/admin/` serves this admin app
+
+The admin Vite config sets `base: '/admin/'` so its generated assets resolve correctly from the `/admin/` path.
