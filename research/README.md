@@ -68,3 +68,45 @@ Each CSV is a square channel-by-channel matrix. The first column and header row 
 ```text
 /content/drive/MyDrive/Graphiko/research/merged_channel_descriptions/latest/description_embeddings/
 ```
+
+## Video-title vs description similarity alignment
+
+Use `2.Video-Title-Description-Similarity-Alignment.ipynb` after the merge notebook has written description cosine-similarity matrices and after the canonical 20D video-title embedding export is available. The notebook treats the video-title centroid similarity matrix as ground truth, compares each source's description-induced channel geometry against it, and now also ranks individual channel descriptions so the best and worst descriptions can be audited directly.
+
+Default inputs:
+
+| Input | Default Drive path |
+| --- | --- |
+| Description cosine-similarity matrices | `/content/drive/MyDrive/Graphiko/research/merged_channel_descriptions/latest/description_cosine_similarity_matrices/` |
+| Merged description text JSON | `/content/drive/MyDrive/Graphiko/research/merged_channel_descriptions/latest/all_channel_descriptions_by_source.json` |
+| 20D video-title embeddings | `/content/drive/MyDrive/Graphiko/exports/video_embeddings_reduced/latest/business_cluster_video_embeddings_reduced_20d.csv` |
+
+Default output directory:
+
+```text
+/content/drive/MyDrive/Graphiko/research/title_description_similarity_alignment/latest/
+```
+
+The notebook writes reusable tables under `tables/`:
+
+| Output | Purpose |
+| --- | --- |
+| `description_vs_video_title_similarity_correlations.csv` | One row per description source with Pearson, Spearman, Kendall, and Top-k neighbor-overlap metrics against the video-title ground truth. |
+| `description_vs_video_title_topk_neighbor_overlap_by_channel.csv` | Per-source, per-channel Top-k neighbor lists and overlap fractions for each configured `TOP_K_VALUES` entry. |
+| `channel_description_alignment_rankings.csv` | Main continuation table for individual descriptions. Each row is one `(source, channel)` description with row-wise Pearson/Spearman/Kendall correlations, error metrics, Top-k neighbor agreement, ranks within source, and description text when the merged JSON is present. |
+| `best_worst_channel_descriptions.csv` | Review subset containing the top and bottom `BEST_WORST_N` descriptions per source according to per-channel Spearman alignment with video-title ground truth. |
+| `video_title_centroid_cosine_similarity.csv` | Channel-by-channel ground-truth cosine similarity matrix computed from mean 20D video-title centroids. |
+| `video_title_centroid_euclidean_distance.csv` | Channel-by-channel Euclidean distance matrix between the same title centroids. |
+| `video_title_channel_centroids_20d.csv` | Mean 20D video-title centroid for each channel, suitable for reuse in a new notebook. |
+
+The notebook writes plots under `plots/`:
+
+| Plot | Purpose |
+| --- | --- |
+| `description_vs_video_title_similarity_metrics.png` | Source-level metric comparison bar chart. |
+| `channel_description_alignment_score_distribution.png` | Box/strip plot showing the distribution of individual channel-description alignment scores by source. |
+| `channel_description_alignment_spearman_heatmap.png` | Source-by-channel heatmap of per-channel Spearman alignment. |
+| `best_worst_channel_description_alignment.png` | Bar chart of the selected best and worst descriptions per source. |
+| `<source>_description_vs_video_title_similarity_scatter.png` | Pairwise scatter diagnostic for each description source. |
+
+The top-level `run_metadata.json` records the schema version, input paths, output paths, configured Top-k values, ranking Top-k, source names, video counts, channel counts, and embedding columns. A follow-up notebook can start by loading `run_metadata.json`, then reading the `outputs.channel_description_alignment_rankings`, `outputs.best_worst_channel_descriptions`, and title matrix/centroid paths listed inside it.
