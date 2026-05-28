@@ -13,6 +13,7 @@ import PerformanceVideoTable from './components/PerformanceVideoTable';
 import CompetitionChart from './components/CompetitionChart';
 import Recommendations from './components/Recommendations';
 import ExportView from './components/ExportView';
+import VoiceResponseComposer from './components/VoiceResponseComposer';
 
 function App() {
   const [data, setData] = useState([]);
@@ -179,6 +180,8 @@ function App() {
           </a>
         </div>
       </nav>
+
+      <VoiceResponseComposer />
 
       <div className="box">
         <ChannelSelector
